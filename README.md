@@ -18,6 +18,9 @@ The simulator contains:
 Main design goals:
 
 * High performance for simulation and rendering through extensive use of CUDA and OpenGL.
+* No hard-coded behavior patterns. Everything should emerge from the interaction of particles.
 * An enjoyable user interface in spite of the high complexity of the simulation model and the wide range of setting options.
 * Visually appealing post-processing of rendered simulation data.
+
+
 
