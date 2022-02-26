@@ -4,8 +4,8 @@
 
 ## Fundamentals
 
-* [Basic notion](fundamentals/basic-notion.md)
-* [Model](fundamentals/model.md)
+* [Basic Notion](fundamentals/basic-notion.md)
+* [Simulation Model](fundamentals/simulation-model.md)
 
 ## Tutorials
 
