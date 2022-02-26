@@ -1,10 +1,11 @@
 # Table of contents
 
-* [What is Artificial Life Environment?](README.md)
+* [What is ALIEN?](README.md)
 
 ## Fundamentals
 
-* [Page 1](fundamentals/page-1.md)
+* [Basic notion](fundamentals/basic-notion.md)
+* [Model](fundamentals/model.md)
 
 ## Tutorials
 
