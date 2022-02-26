@@ -19,7 +19,7 @@ Main design goals:
 
 * Utilizing GPU for simulation and rendering through extensive use of CUDA and OpenGL.
 * No hard-coded behavior patterns. Everything should emerge from the interaction of particles.
-* An enjoyable user interface in spite of the high complexity of the simulation model and the wide range of setting options.
+* An enjoyable user interface in spite of the high complexity of the simulation model and the wide range of adjustment options.
 * Visually appealing post-processing of the rendered simulation data.
 
 
