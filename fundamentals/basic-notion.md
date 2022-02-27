@@ -15,7 +15,7 @@ Cells are a type of particles which serve as matter building blocks and which ar
 * Internal energy (corresponding to its temperature)
 * Upper limit of connections
 
-and a specialization together with an internal state (e.g. color).
+and a specialization together with an internal state (e.g. memory, color).
 
 ### Cell connection
 
