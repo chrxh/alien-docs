@@ -1,6 +1,6 @@
 # Basic Notion
 
-Generally, all bodies as well as radiations are modeled via different types of particles within an ALIEN simulation. The following terms are frequently used in this documentation.
+Generally, in an ALIEN simulation, all bodies as well as thermal radiation are modeled by different types of particles. The following terms are frequently used in this documentation.
 
 ### World
 
