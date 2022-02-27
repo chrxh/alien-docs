@@ -7,10 +7,10 @@
 * [Basic Notion](fundamentals/basic-notion.md)
 * [Simulation Model](fundamentals/simulation-model.md)
 
-## Tutorials
+## Topics
 
-* [Page 2](tutorials/page-2.md)
+* [Spatio-temporal Navigation](topics/page-2.md)
 
-## Technical documentation
+## Internals
 
-* [Page 3](technical-documentation/page-3.md)
+* [Components](internals/page-3.md)
