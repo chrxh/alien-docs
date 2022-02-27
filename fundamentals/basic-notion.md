@@ -32,3 +32,22 @@ Each cell has a special function that can be triggered and (usually) accepts cer
 * Muscle: Can contract or expand a cell connection. During this process, it can generate a momentum.
 * Scanner: Enables self-inspection of cell structures starting from the host cell. A scanner determines the specialization and state of other cells. Also the reference distance and angles of connecting cells are detected.
 
+### Cell cluster
+
+A cell cluster (or cluster for short) is connected graph consisting of cells and cell connections. Two cells in a cluster are therefore connected to each other directly or via other cells. A cluster physically represents a particular body.
+
+### Energy particle
+
+An energy particle is a particle which has only an energy value, position and velocity. Unlike cells, they cannot form clusters or perform any additional functions. Energy particles are produced by cells as radiation or during decay and can, in turn, also be absorbed.
+
+### Token
+
+A token is an entity which is located on a cell and which as a state and an energy value. Its purpose is to transmit information from cell to cell and to carry out cellular functions. A token does not remain on its cell, but jumps after each time step to connected cells or will be destroyed.
+
+### Pattern
+
+A pattern is a set of cell clusters or energy particles.
+
+\
+
+
