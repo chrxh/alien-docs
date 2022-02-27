@@ -15,7 +15,7 @@ Cells are a type of particles which serve as matter building blocks and which ar
 * Internal energy (corresponding to its temperature)
 * Upper limit of connections
 
-and a specialization together with an internal state.
+and a specialization together with an internal state (e.g. color).
 
 ### Cell connection
 
@@ -30,5 +30,5 @@ Each cell has a special function that can be triggered and (usually) accepts cer
 * Digestion: Converts a surrounding cell to internal energy under certain conditions.
 * Sensor: Scans the vicinity or a particular direction for concentration of particles with a certain color.
 * Muscle: Can contract or expand a cell connection. During this process, it can generate a momentum.
-* Scanner
+* Scanner: Enables self-inspection of cell structures starting from the host cell. A scanner determines the specialization and state of other cells. Also the reference distance and angles of connecting cells are detected.
 
