@@ -17,7 +17,7 @@ What characterizes the simulator:
 
 Main design goals:
 
-* Utilization of CUDA and OpenGL for simulation and rendering.
+* Utilization of CUDA and OpenGL for simulation and rendering to support large worlds with millions of particles.
 * No hard-coded behavior patterns. Everything should emerge from the interaction of particles.
 * An enjoyable user interface in spite of the high complexity of the simulation model and the wide range of adjustment options.
 * Visually appealing post-processing of the rendered simulation data.
