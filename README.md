@@ -7,7 +7,7 @@ coverY: 0
 
 **A**rtificial **LI**fe **EN**vironment (**ALIEN**) is an artificial life simulation tool based on a specialized 2D particle engine in CUDA for soft bodies and fluid-like media. Each simulated body consists of a network of smart particles that can be enriched with higher-level functions, ranging from pure information processing capabilities to physical equipment (such as sensors, actuators, weapons, constructors, etc.) whose executions are orchestrated by a signaling system. The bodies can be thought of as agents or digital organisms operating in a common environment.
 
-The simulator contains:
+What characterizes the simulator:
 
 * Two-layered particle engine: The bottom layer simulates the thermo-mechanical behavior of soft bodies and their surrounding fluids, while a powerful information processing and action processor operates on the top layer.
 * Vector graphics engine: The rendering is completely decoupled from the simulation engine. Sections of the simulated world are rendered as vector graphics and post-processed using shaders. The level of detail is adjusted with the zoom level. At a lower zoom level only the nodes are displayed, whereas at a higher levels, edges, information flows and (optionally) internal states are also visible.
@@ -17,10 +17,7 @@ The simulator contains:
 
 Main design goals:
 
-* Utilizing GPU for simulation and rendering through extensive use of CUDA and OpenGL.
+* Utilization of CUDA and OpenGL for simulation and rendering.
 * No hard-coded behavior patterns. Everything should emerge from the interaction of particles.
 * An enjoyable user interface in spite of the high complexity of the simulation model and the wide range of adjustment options.
 * Visually appealing post-processing of the rendered simulation data.
-
-
-
