@@ -11,6 +11,6 @@
 
 * [Spatio-temporal Navigation](topics/page-2.md)
 
-## Internals
+## Under the hood
 
-* [Components](internals/page-3.md)
+* [Architecture](under-the-hood/page-3.md)
