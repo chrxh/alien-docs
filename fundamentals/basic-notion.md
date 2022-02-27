@@ -25,7 +25,7 @@ A cell connection is a bond between two cells. It stores the reference distance 
 
 Each cell has a special function that can be triggered and (usually) accepts certain inputs and returns output values. Currently, the following functions are implemented:
 
-* Computation: Allows the execution of 15 lines of assembler-like code.
+* Computation: Allows the execution of 15 lines of assembler-like code. The code has access to the memories of the cell and token (see below).
 * Construction: Can create a new cell with or without a connection to the host cell.
 * Digestion: Converts a surrounding cell to internal energy under certain conditions.
 * Sensor: Scans the vicinity or a particular direction for concentration of particles with a certain color.
