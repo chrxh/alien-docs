@@ -8,7 +8,7 @@ An ALIEN world is two-dimensional rectangular domain with periodic boundary cond
 
 ### Cell
 
-Cells are a type of particles which serve as matter building blocks and which are able to connect to each others. One can think of cells as nodes and the connections as edges of a graph embedded in a 2D space. Moreover, cells possess physical properties such as
+Cells are a type of particles which serve as matter building blocks and which are able to connect to each others. One can think of cells as nodes of a graph embedded in a 2D space. Moreover, cells possess physical properties such as
 
 * Position in space
 * Velocity
@@ -16,6 +16,10 @@ Cells are a type of particles which serve as matter building blocks and which ar
 * Upper limit of connections
 
 and a specialization together with an internal state.
+
+### Cell connection
+
+A cell connection is a bond between two cells. It stores the reference distance and on each side a reference angle to a previous cell connection. The reference distance and angles are calculated when the connection is established. As soon as the actual distance is greater than the reference distance, a pulling force is applied at both ends. Conversely, a pushing force occurs when it is less. The forces are linear with respect to the deviation. In the same sense, tangential forces are applied at both ends in the case of an angle mismatch.
 
 ### Cell specialization
 
