@@ -8,4 +8,9 @@ An ALIEN world is two-dimensional rectangular domain with periodic boundary cond
 
 ### Cells
 
-Cells are particles which serve as matter building blocks and which are able to connect to each others. On can think of them as the nodes of a graph embedded in a 2D space. Moreover, they have an internal state and physical properties.
+Cells are particles which serve as matter building blocks and which are able to connect to each others. On can think of them as the nodes of a graph embedded in a 2D space. Moreover, they have an internal state and physical properties such as
+
+* Position in space
+* Velocity
+* Internal energy (corresponding to its temperature)
+
