@@ -25,12 +25,12 @@ A cell connection is a bond between two cells. It stores the reference distance 
 
 Each cell has a special function that can be triggered and (usually) accepts certain inputs and returns output values. Currently, the following functions are implemented:
 
-* Computation: Allows the execution of 15 lines of assembler-like code. The code has access to the memories of the cell and token (see below).
-* Construction: Can create a new cell with or without a connection to the host cell.
-* Digestion: Converts a surrounding cell to internal energy under certain conditions.
-* Sensor: Scans the vicinity or a particular direction for concentration of particles with a certain color.
-* Muscle: Can contract or expand a cell connection. During this process, it can generate a momentum.
-* Scanner: Enables self-inspection of cell structures starting from the host cell. A scanner determines the specialization and state of other cells. Also the reference distance and angles of connecting cells are detected.
+* Computation: It allows the execution of 15 lines of assembler-like code. The code has access to the memories of the cell and token (see below).
+* Construction: It can create a new cell with or without a connection to the host cell.
+* Digestion: It converts a surrounding cell to internal energy under certain conditions.
+* Sensor: It scans the vicinity or a particular direction for concentration of particles with a certain color.
+* Muscle: It can contract or expand a cell connection. During this process, it can generate a momentum.
+* Scanner: It enables self-inspection of cell structures starting from the host cell. A scanner determines the specialization and state of other cells. Also the reference distance and angles of connecting cells are detected.
 
 ### Cell cluster
 
