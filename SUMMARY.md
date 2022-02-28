@@ -9,7 +9,7 @@
 
 ## Topics
 
-* [Spatio-temporal Navigation](topics/page-2.md)
+* [Spatio-Temporal Navigation](topics/page-2.md)
 
 ## Under the hood
 
