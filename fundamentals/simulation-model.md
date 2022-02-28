@@ -14,4 +14,9 @@ Larger rigid bodies can only be simulated very inadequately with the described m
 
 ### Information Processing and Action Layer
 
-Complex behavior patterns such as foraging, self-replication, controlled movements, or information processing may require an immense effort to recreate by using simple particle motions and artificial chemistries. In order to make such interesting behaviors easily accessible, cells can be equipped with a wide range of higher-level functions from a robotic tool set.
+Complex behavior patterns such as foraging, self-replication, controlled movements or information processing may require an immense effort to recreate by using simple particle motions and artificial chemistries. In order to make such interesting behaviors easily accessible, cells can be equipped with a wide range of higher-level functions. A [Petri-Net](https://en.wikipedia.org/wiki/Petri\_net)-related model is used for the  coordination of the execution of cell functions and the communication between adjacent cells.
+
+For this purpose tokens come into action. They are each assigned to a specific cell and jump to a neighboring cell (if possible) after each time step. To define flow directions for the token movements in the graph of cell clusters, numbers (by default from 0 to 5) are assigned to each cell. A token can only jump from a cell with value `a` to a connected cell with value `b` if `(a + 1) mod 6 = b` is fulfilled. Another constraint is that each cell can only hold a maximum number of tokens.
+
+![Example for token movements](../.gitbook/assets/tokenmodel.svg)
+
