@@ -20,4 +20,4 @@ For this purpose tokens come into action. They are each assigned to a specific c
 
 ![Example for token movements](../.gitbook/assets/tokenmodel.svg)
 
-As soon as a token passes a cell, the cell function of the underlying cell is executed. Each cell function requires certain input information and provides an output, which in both cases are obtained from the token memory.
+As soon as a token passes a cell, the function of the underlying cell is executed. Each cell function requires certain input information and provides an output, which in both cases are obtained from the token memory. For example, a sensor function needs to know the mass density and cell type (cell color) to be searched for, and will provide the angle and distance in case of success. All these information are stored in the token memory.
