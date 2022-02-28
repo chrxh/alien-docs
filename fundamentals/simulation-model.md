@@ -14,4 +14,4 @@ Larger rigid bodies can only be simulated very inadequately with the described m
 
 ### Information Processing and Action Layer
 
-Complex behavior patterns such as foraging, self-replication, controlled movements, or neural processing may require an immense effort to recreate by using simple particle motions and artificial chemistries. In order to make such interesting behaviors easily accessible, cells can be equipped with a wide range of higher-level functions from a robotic tool set.
+Complex behavior patterns such as foraging, self-replication, controlled movements, or information processing may require an immense effort to recreate by using simple particle motions and artificial chemistries. In order to make such interesting behaviors easily accessible, cells can be equipped with a wide range of higher-level functions from a robotic tool set.
