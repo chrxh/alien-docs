@@ -20,3 +20,4 @@ For this purpose tokens come into action. They are each assigned to a specific c
 
 ![Example for token movements](../.gitbook/assets/tokenmodel.svg)
 
+As soon as a token passes a cell, the cell function of the underlying cell is executed. Each cell function requires certain input information and provides an output, which in both cases are obtained from the token memory.
