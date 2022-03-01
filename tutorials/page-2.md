@@ -38,3 +38,11 @@ For the sake of completeness, it should be noted here that the world size can be
 
 ### Temporal navigation window
 
+We can now start the simulation by clicking on the play icon in the _Temporal control_ window. This window also shows the execution speed and the time steps calculated so far. Besides the play and pause icons, one finds the following useful functions:
+
+* Move a single time step forward:  This function can be reached via the `>` button.
+* Move a single time step backward: This function can be reached via the `<` button. This only works if a single time step has been calculated beforehand.
+* Make a snapshot: The entire world is stored in the memory. This function can be accessed via the camera button. Note that only one snapshot can be taken. Clicking the camera again will delete the previous snapshot.
+* Restore the previous snapshot: After a snapshot is created, one can invoke the restore button. Then one finds the entire simulation in the state of the snapshot. This also works in a running simulation (... and is fun! Please try it.). A snapshot can be reused, or in other words, it will not be deleted after restoring.
+
+For convenience, a snapshot is always created when loading a new simulation. This allows one to return to the initial state without having to reopen the simulation file.
