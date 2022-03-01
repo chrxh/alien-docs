@@ -2,7 +2,7 @@
 
 ### Abstract
 
-This first tutorial is intended to help one become familiar with the simulator if one has not used it before. One objective is to show the basic spatial and temporal navigation functions. For this purpose, we will load an existing simulation file from the examples provided. For the sake of simplicity, we will choose an example here where the cell clusters do not perform any additional actions. In general, it is possible to equip them with functions that allow programmable interaction with the environment.
+This first tutorial is intended to help one become familiar with the simulator if one has not used it before. One objective is to show the basic spatial and temporal navigation functions. For this purpose, we open an existing simulation file from the provided examples, which provides a (nearly) pure physics demonstration. In general, it is possible to equip cell clusters with functions that allow programmable interaction with the environment.
 
 ### 1. Open a simulation file
 
@@ -46,3 +46,5 @@ We can now start the simulation by clicking on the play icon in the _Temporal co
 * Restore the previous snapshot: After a snapshot is created, one can invoke the restore button. Then one finds the entire simulation in the state of the snapshot. This also works in a running simulation (... and is fun! Please try it.). A snapshot can be reused, or in other words, it will not be deleted after restoring.
 
 For convenience, a snapshot is always created when loading a new simulation. This allows one to return to the initial state without having to reopen the simulation file.
+
+A very useful feature is to limit the computation speed, which can be done via the _Slow down_ toggle. With a particularly low speed, the individual particle movements and cell functions can be better observed.
