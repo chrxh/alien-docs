@@ -9,7 +9,8 @@
 
 ## Tutorials
 
-* [Spatio-Temporal Navigation](tutorials/page-2.md)
+* [Spatio-Temporal Navigation](tutorials/navigation.md)
+* [First Steps with the Editor](tutorials/first-steps-with-the-editor.md)
 
 ## Under the hood
 
