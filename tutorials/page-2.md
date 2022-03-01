@@ -26,4 +26,10 @@ By default, the navigation mode is enabled (or in other words: the editor is dea
 * If we press and hold the right mouse button, we zoom out.
 * If we press and hold the middle mouse button, we can scroll by moving the mouse.
 
-The zoom speed can be adjusted with the slider next to the label _Zoom sensitivity_ in the spatial control window.
+The zoom speed can be adjusted with the slider next to the label _Zoom sensitivity_ in the spatial control window. For large worlds, navigation via the scroll bar on the right and at the bottom of the simulation view are also useful, as well as the zoom icons in the window. When zooming in, one notices that more and more additional details are faded in:
+
+* At the coarsest level, the cells and particles are displayed only as small dots.
+* From a zoom level of 4 and more, connections between the cells can also be recognized.
+* If you zoom in even further, the token pathways can be identified by arrows. Optionally further information can be displayed by activating the _Information overlay_ in the view menu. In this case also the cell specializations and token branch numbers are displayed as labels next to the cells.
+
+![High zoom level with information overlay](<../.gitbook/assets/token pathways.png>)
