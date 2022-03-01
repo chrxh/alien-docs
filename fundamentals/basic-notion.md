@@ -17,11 +17,11 @@ Cells are a type of particles which serve as matter building blocks and which ar
 
 and a specialization together with an internal state (e.g. memory, color).
 
-### Cell Connection
+### Cell connection
 
 A cell connection is a bond between two cells. It stores the reference distance and on each side a reference angle to a previous cell connection. The reference distance and angles are calculated when the connection is established. As soon as the actual distance is greater than the reference distance, a pulling force is applied at both ends. Conversely, a pushing force occurs when it is less. The forces are linear with respect to the deviation. In the same sense, tangential forces are applied at both ends in the case of an angle mismatch.
 
-### Cell Specialization
+### Cell specialization
 
 Each cell has a special function that can be triggered and (usually) accepts certain inputs and returns output values. Currently, the following functions are implemented:
 
@@ -32,11 +32,11 @@ Each cell has a special function that can be triggered and (usually) accepts cer
 * Muscle: It can contract or expand a cell connection. During this process, it can generate a momentum.
 * Scanner: It enables self-inspection of cell structures starting from the host cell. A scanner determines the specialization and state of other cells. Also the reference distance and angles of connecting cells are detected.
 
-### Cell Cluster
+### Cell cluster
 
 A cell cluster (or cluster for short) is connected graph consisting of cells and cell connections. Two cells in a cluster are therefore connected to each other directly or via other cells. A cluster physically represents a particular body.
 
-### Energy Particle
+### Energy particle
 
 An energy particle is a particle which has only an energy value, position and velocity. Unlike cells, they cannot form clusters or perform any additional functions. Energy particles are produced by cells as radiation or during decay and can, in turn, also be absorbed.
 

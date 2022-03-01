@@ -7,9 +7,9 @@
 * [Basic Notion](fundamentals/basic-notion.md)
 * [Simulation Model](fundamentals/simulation-model.md)
 
-## Topics
+## Tutorials
 
-* [Spatio-Temporal Navigation](topics/page-2.md)
+* [Spatio-Temporal Navigation](tutorials/page-2.md)
 
 ## Under the hood
 
