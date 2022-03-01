@@ -4,7 +4,7 @@
 
 This first tutorial is intended to help one become familiar with the simulator if one has not used it before. One objective is to show the basic spatial and temporal navigation functions. For this purpose, we will load an existing simulation file from the examples provided. For the sake of simplicity, we will choose an example here where the cell clusters do not perform any additional actions. In general, it is possible to equip them with functions that allow programmable interaction with the environment.
 
-### 1. Open an existing simulation
+### 1. Open a simulation file
 
 We open a prepared simulation file by clicking on _Simulation_ in the menu and then on _Open_. When the corresponding dialog appears we navigate to the directory `./examples/simulations/physics` and select `ALIEN.sim`. Generally, every ALIEN simulation consists of 3 separate files. In this case we have the following:
 
@@ -33,3 +33,8 @@ The zoom speed can be adjusted with the slider next to the label _Zoom sensitivi
 * If you zoom in even further, the token pathways can be identified by arrows. Optionally further information can be displayed by activating the _Information overlay_ in the view menu. In this case also the cell specializations and token branch numbers are displayed as labels next to the cells.
 
 ![High zoom level with information overlay](<../.gitbook/assets/token pathways.png>)
+
+For the sake of completeness, it should be noted here that the world size can be adjusted in the _Spatial control_ window. In addition, the view can be automatically centered on the selection (if there is one) when the simulation is running. For this purpose there is the toggle next to _Autotracking on selection_. We will discuss these functions in later tutorials.
+
+### Temporal navigation window
+
