@@ -4,7 +4,7 @@
 
 This first tutorial is intended to help one become familiar with the simulator if one has not used it before. One objective is to show the basic spatial and temporal navigation functions. For this purpose, we open an existing simulation file from the provided examples, which provides a (nearly) pure physics demonstration. In general, it is possible to equip cell clusters with functions that allow programmable interaction with the environment.
 
-### 1. Open a simulation file
+### 1. Open the simulation files
 
 We open a prepared simulation file by clicking on _Simulation_ in the menu and then on _Open_. When the corresponding dialog appears we navigate to the directory `./examples/simulations/physics` and select `ALIEN.sim`. Generally, every ALIEN simulation consists of 3 separate files. In this case we have the following:
 
