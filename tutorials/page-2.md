@@ -36,7 +36,7 @@ The zoom speed can be adjusted with the slider next to the label _Zoom sensitivi
 
 For the sake of completeness, it should be noted here that the world size can be adjusted in the _Spatial control_ window. In addition, the view can be automatically centered on the selection (if there is one) when the simulation is running. For this purpose there is the toggle next to _Autotracking on selection_. We will discuss these functions in later tutorials.
 
-### Temporal navigation window
+### 3. Temporal navigation window
 
 We can now start the simulation by clicking on the play icon in the _Temporal control_ window. This window also shows the execution speed and the time steps calculated so far. Besides the play and pause icons, one finds the following useful functions:
 
