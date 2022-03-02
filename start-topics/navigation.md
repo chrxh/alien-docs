@@ -5,13 +5,13 @@ description: >-
   temporal navigation functions. For this pur
 ---
 
-# Spatio-Temporal Navigation
+# Spatio-temporal navigation
 
-### Abstract
+#### Abstract
 
 This first tutorial is intended to help one become familiar with the simulator if one has not used it before. One objective is to show the basic spatial and temporal navigation functions. For this purpose, we open an existing simulation file from the provided examples, which provides a (nearly) pure physics demonstration. In general, it is possible to equip cell clusters with functions that allow programmable interaction with the environment.
 
-### 1. Open the simulation files
+### Open a simulation file
 
 We open a prepared simulation file by clicking on _Simulation_ in the menu and then on _Open_. When the corresponding dialog appears we navigate to the directory `./examples/simulations/physics` and select `ALIEN.sim`. Generally, every ALIEN simulation consists of 3 separate files. In this case we have the following:
 
@@ -19,7 +19,7 @@ We open a prepared simulation file by clicking on _Simulation_ in the menu and t
 * `ALIEN.settings.json` - All simulation settings including world size, time step, simulation parameters and zones are stored here. These include, among others, physical parameters responsible for damaging, bonding or radiation of bodies. All this properties are encoded here in the JSON ([JavaScript Object Notation](https://en.wikipedia.org/wiki/JSON)) format and can thus be edited outside with any editor.
 * `ALIEN.symbols.json` - In this file one finds a list of symbols and their defining values. Symbols are user-defined simple substitution rules and are used to simplify the writing of small programs in a certain assembler-like language for computing cell functions. Symbols can be constants or variables.
 
-### 2. Spatial navigation window
+### Spatial navigation window
 
 After opening the file, the view is centered, the zoom level is set to 2.0 and the simulation is paused. By default the two windows _Spatial control_ and _Temporal control_ are visible on the right. If not they can be activated in the _Window_ menu. In this section, we are particularly interested in the spatial navigation window. You should see the following:
 
@@ -43,7 +43,7 @@ The zoom speed can be adjusted with the slider next to the label _Zoom sensitivi
 
 For the sake of completeness, it should be noted here that the world size can be adjusted in the _Spatial control_ window. In addition, the view can be automatically centered on the selection (if there is one) when the simulation is running. For this purpose there is the toggle next to _Autotracking on selection_. We will discuss these functions in later tutorials.
 
-### 3. Temporal navigation window
+### Temporal navigation window
 
 We can now start the simulation by clicking on the play icon in the _Temporal control_ window. This window also shows the execution speed and the time steps calculated so far. Besides the play and pause icons, one finds the following useful functions:
 
