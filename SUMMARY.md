@@ -4,13 +4,13 @@
 
 ## Fundamentals
 
-* [Basic Notion](fundamentals/basic-notion.md)
-* [Simulation Model](fundamentals/simulation-model.md)
+* [Basic notion](fundamentals/basic-notion.md)
+* [Simulation model](fundamentals/simulation-model.md)
 
 ## Tutorials
 
-* [Spatio-Temporal Navigation](tutorials/navigation.md)
-* [First Steps with the Editor](tutorials/first-steps-with-the-editor.md)
+* [Spatio-temporal navigation](tutorials/navigation.md)
+* [First steps with the editor](tutorials/first-steps-with-the-editor.md)
 
 ## Under the hood
 
