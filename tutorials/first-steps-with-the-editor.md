@@ -12,5 +12,12 @@ For testing purposes we load the simulation `./examples/simulations/physics/Sand
 
 As soon as we have clicked on the play button, the simulation runs and we can exert force on the objects by holding down the left mouse button. The faster we move the mouse, the stronger the acting forces are.
 
-### 2. Select objects
+### 2. Select und move objects
 
+After the simulation is paused, we can select objects and move them around by dragging and dropping with the left mouse button. Selected objects are generally highlighted with a higher brightness. If one wishes to extend the selection to several objects, one can accomplish this by holding down the CTRL key. It is also possible to select a whole area by dragging a rectangular box with the right mouse button pressed.
+
+![Rectangular selection area](<../.gitbook/assets/rectangular selection.png>)
+
+The Selection info window shows how many entities have been selected. A selection always consists of two levels: On the one hand the directly selected entities (cells and energy particles) and on the other hand the extended selection, which additionally contains the connected cells.
+
+When a selection is shifted with the mouse, the extended selection is actually affected by default. This behavior can be changed with the toggle _Rollout to cell clusters_. If it is turned off, only the immediate selection is affected by the editing actions. The toggle can also be switched off temporarily by holding down the SHIFT key.
