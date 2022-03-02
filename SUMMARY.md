@@ -15,7 +15,7 @@
 
 ## Advanced topics
 
-* [Evolution experiment](advanced-topics/evolution-experiment.md)
+* [Evolution experiments](advanced-topics/evolution-experiments.md)
 * [Cell programming](advanced-topics/cell-programming/README.md)
   * [Controlled muscles](advanced-topics/cell-programming/controlled-muscles.md)
   * [Digestion](advanced-topics/cell-programming/digestion.md)
