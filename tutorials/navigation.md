@@ -1,3 +1,10 @@
+---
+description: >-
+  This first tutorial is intended to help one become familiar with the simulator
+  if one has not used it before. One objective is to show the basic spatial and
+  temporal navigation functions. For this pur
+---
+
 # Spatio-Temporal Navigation
 
 ### Abstract
