@@ -29,11 +29,11 @@ When a selection is shifted with the mouse, the extended selection is actually a
 
 ### Reference versus current configuration
 
-For an elastic solid, the reference configuration denotes the body in its undeformed state. In this situation, no internal forces act on individual components. If external forces are applied to the body, it deforms over time and internal forces build up which want to bring the body into the reference configuration. This phenomenon is illustrated in the following illustration.
+For an elastic solid, the reference configuration denotes the body in its undeformed state. In this situation, no internal forces act on individual parts. If external forces are applied to the body, it may deform over time and internal forces build up which want to bring the body into the reference configuration. This phenomenon is illustrated in the following.
 
 ![Left: reference configuration, Right: current configuration after deformation](../.gitbook/assets/configuration.svg)
 
-If one moves cells in ALIEN without the associated cluster, one changes the lengths of and the angles between the connections. These changes apply only to the current configuration. The reference configuration remains unchanged. As a result, considerable internal stresses build up in some cases, which cannot be seen in the paused state. With the help of the Release tensions function in the pattern editor, the internal forces can be released by setting the reference configuration to the current configuration.
+If one moves cells in ALIEN without the associated cluster, one changes the lengths of and the angles between the connections. These changes apply only to the current configuration. The reference configuration remains unchanged. As a result, considerable internal stresses build up in some cases, which cannot be seen in the paused state. With the help of the _Release tensions_ function in the _Pattern editor_, the internal forces can be released by setting the reference configuration to the current configuration.
 
 ### Other useful editing functions
 
