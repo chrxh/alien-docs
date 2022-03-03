@@ -9,7 +9,7 @@ description: >-
 
 #### Abstract
 
-This first tutorial is intended to help one become familiar with the simulator if one has not used it before. One objective is to show the basic spatial and temporal navigation functions. For this purpose, we open an existing simulation file from the provided examples, which provides a (nearly) pure physics demonstration. In general, it is possible to equip cell clusters with functions that allow programmable interaction with the environment.
+This first topic is intended to familiarize oneself with the simulator if one has not used it before. One objective is to show the basic spatial and temporal navigation functions. For this purpose, we will play around with an existing simulation file from the provided examples, which provides a (nearly) pure physics demonstration. In general, it is possible to equip cell clusters with functions that allow programmable interaction with the environment.
 
 ### Open a simulation file
 

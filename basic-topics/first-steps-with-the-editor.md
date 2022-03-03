@@ -2,7 +2,7 @@
 
 #### Abstract
 
-In this section we will familiarize ourselves with some basic functions of the editor. The user has the possibility to directly intervene both in running and paused simulation. In the latter case, extensive editing features are available, a few of which will be mentioned here.
+In this section, we will familiarize ourselves with some basic functions of the editor. The user has the possibility to directly intervene both in running and paused simulation. In the latter case, extensive editing features are available, a few of which will be mentioned here.
 
 ### Apply forces to objects in a running simulation
 
