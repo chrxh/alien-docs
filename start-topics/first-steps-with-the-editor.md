@@ -20,11 +20,20 @@ After the simulation is paused, we can select objects and move them around by dr
 
 The Selection info window shows how many entities have been selected. A selection always consists of two levels: On the one hand the directly selected entities (cells and energy particles) and on the other hand the extended selection, which additionally contains the connected cells.
 
-When a selection is shifted with the mouse, the extended selection is actually affected by default. This behavior can be changed with the toggle _Rollout to cell clusters_. If it is turned off, only the immediate selection is affected by the editing actions. The toggle can also be switched off temporarily by holding down the SHIFT key. As one may notice after some experimentation, the cell clusters can be rewired when the switch is disabled. More precisely:
+When a selection is shifted with the mouse, the extended selection is actually affected by default. This behavior can be changed with the toggle _Rollout to cell clusters_ in the _Pattern editor_. If it is turned off, only the immediate selection is affected by the editing actions. The toggle can also be switched off temporarily by holding down the SHIFT key. As one may notice after some experimentation, the cell clusters can be rewired when the switch is disabled. More precisely:
 
 * If one moves a cell too far from its connected cell, the connection will be removed.
 * If one brings a cell in the proximity of another cell and if both cells are capable of making connections, a new connection will be established.
 
 ![Rewire cell clusters](../.gitbook/assets/rewiring.png)
 
-### Reference versus actual configuration
+### Reference versus current configuration
+
+For an elastic solid, the reference configuration denotes the body in its undeformed state. In this situation, no internal forces act on individual components. If external forces are applied to the body, it deforms over time and internal forces build up which want to bring the body into the reference configuration. This phenomenon is illustrated in the following illustration.
+
+![Left: reference configuration, Right: current configuration after deformation](../.gitbook/assets/configuration.svg)
+
+If one moves cells in ALIEN without the associated cluster, one changes the lengths of and the angles between the connections. These changes apply only to the current configuration. The reference configuration remains unchanged. As a result, considerable internal stresses build up in some cases, which cannot be seen in the paused state. With the help of the Release tensions function in the pattern editor, the internal forces can be released by setting the reference configuration to the current configuration.
+
+### Other useful editing functions
+
