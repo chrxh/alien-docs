@@ -33,7 +33,13 @@ For an elastic solid, the reference configuration denotes the body in its undefo
 
 ![Left: reference configuration, Right: current configuration after deformation](../.gitbook/assets/configuration.svg)
 
-If one moves cells in ALIEN without the associated cluster, one changes the lengths of and the angles between the connections. These changes apply only to the current configuration. The reference configuration remains unchanged. As a result, considerable internal stresses build up in some cases, which cannot be seen in the paused state. With the help of the _Release tensions_ function in the _Pattern editor_, the internal forces can be released by setting the reference configuration to the current configuration.
+If one moves cells in ALIEN without the associated cluster, one changes the lengths of and the angles between the connections. These changes apply only to the current configuration. The reference configuration remains unchanged. As a result, considerable internal stresses build up in some cases, which cannot be seen in the paused state. With the help of the _Release stresses_ function in the _Pattern editor_, the internal forces can be released by setting the reference configuration to the current configuration.
 
-### Other useful editing functions
+### Further useful editing functions
+
+The _Pattern editor_ offers a whole range of further editing options, which are best tried out by oneself:
+
+* A slider can be used to rotate the selection as desired.
+* Cells can be colored with one of 7 available color flavors. They do not play any role physically, but they can have a special meaning for cell functions.
+* Speeds and rotational velocities can be updated. In addition, all particle velocities of a selection can be adjusted to the center velocity via the button _Set uniform velocities_.
 

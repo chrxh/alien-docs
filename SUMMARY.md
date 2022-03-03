@@ -9,9 +9,9 @@
 
 ## Basic topics
 
-* [Spatio-temporal navigation](basic-topics/navigation.md)
-* [First steps with the editor](basic-topics/first-steps-with-the-editor.md)
-* [Simulation parameters](basic-topics/simulation-parameters.md)
+* [Spatio-temporal navigation](start-topics/navigation.md)
+* [First steps with the editor](start-topics/first-steps-with-the-editor.md)
+* [Simulation parameters](start-topics/simulation-parameters.md)
 
 ## Advanced topics
 
