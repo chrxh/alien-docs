@@ -11,7 +11,7 @@ Cell connections can be formed and destroyed. If a collision of two particles oc
 Thermal radiation is simulated by special particles, which are denoted as energy particles in the following. Each cell has an internal energy value, which can also be thought of as a temperature value. The higher the energy of a cell, the more energy it radiates into its environment in the form of energy particles. In this spirit, heat conduction within a cell cluster is not explicitly modeled, but results from the exchange of energy particles. Cells can be transformed into energy particles and vice versa when the energy value falls below or exceeds a critical value, respectively.
 
 {% hint style="info" %}
-During all occurring processes the **conservation of energy is fulfilled**.
+During all simulated physical processes and cell activities the **conservation of energy is fulfilled**.
 
 Energy in this context includes the internal cell and token energy as well as the energy from energy particles but not kinetic energy.
 {% endhint %}
