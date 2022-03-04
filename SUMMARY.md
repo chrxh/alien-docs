@@ -11,7 +11,7 @@
 
 * [Spatio-temporal navigation](getting-started/navigation.md)
 * [First steps with the editor](getting-started/first-steps-with-the-editor.md)
-* [Simulation parameters](getting-started/simulation-parameters.md)
+* [Explore simulation parameters](getting-started/explore-simulation-parameters.md)
 
 ## Dive a little deeper
 
