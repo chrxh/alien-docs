@@ -23,5 +23,6 @@ We would like to focus on a few physical parameters and describe their effect in
 * _Radiation strength_: A high radiation leads to rapid energy losses of the cells and ultimately to their decay. If the radiation is too strong, stable structures cannot exist for a longer time and the simulation quickly reaches maximum entropy.
 * _Maximum force_: If the force acting on a cell is greater than this value, the cell and their connections to neighboring cells will be destroyed. A high value consequently produces great amount of damage in an event of collisions.
 * _Binding creation velocity_: When two cells collide, a new connection can be established if both cells still have a free space for a connection and the impact velocity exceeds a specific value that can be set with this parameter. It is easy to perceive that with a high value, the fluid in the simulation clumps very easily.
-* _Binding maximum energy_:
+* _Binding maximum energy_: This value indicates up to what energy a cell can maintain connections. At very low values (below 100), most cell clusters break down into individual cells and all matter in the simulation behaves fluid-like.
 
+## Worlds with spatially varying parameters
