@@ -2,7 +2,7 @@
 
 The implemented particle engine combines two different concepts for the simulation of matter and its dynamics, which can be regarded as two distinct layers.
 
-## Physics layer
+### Physics layer
 
 From the physical perspective, soft bodies and to some extent rigid bodies and fluids are simulated using particles. In ALIEN these matter forming particles are denoted as cells and their dynamics are the result of simple physical laws. Cells have the ability to form connections with other cells. Without a bond, two cells repel each other when they approach. If a bond exists, the cells are held together with a force proportional to the deviation from a reference distance. The situation is more complicated when a cell has multiple bonds to neighboring cells. In this case, forces also arise when the angles between the different bonds deviate from a reference configuration. In this way, a structure can bend back to its original configuration after a certain period of time during which it has been subjected to (moderate) deformations.
 
@@ -12,7 +12,7 @@ Thermal radiation is simulated by special particles, which are denoted as energy
 
 Larger rigid bodies can only be simulated very inadequately with the described model, since momentum changes require a longer time to spread over the entire cell structure. For this reason, an additional processing step can be optionally unlocked, which periodically adjusts the velocities of parts of cell clusters to a rigid body motion. This additionally stabilizes the cell structures and transmits impulse changes more quickly.
 
-## Information processing and action layer
+### Information processing and action layer
 
 Complex behavior patterns such as foraging, self-replication, controlled movements or information processing may require an immense effort to recreate by using simple particle motions and artificial chemistries. In order to make such interesting behaviors easily accessible, cells can be equipped with a wide range of higher-level functions. A [Petri-Net](https://en.wikipedia.org/wiki/Petri\_net)-related model is used for the  coordination of the execution of cell functions and the communication between adjacent cells.
 
