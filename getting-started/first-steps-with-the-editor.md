@@ -39,7 +39,8 @@ If one moves cells in ALIEN without the associated cluster, one changes the leng
 
 The _Pattern editor_ offers a variety of other editing operations, which are best tried out by oneself:
 
-* Copy & paste of selections via CTRL + C and CTRL + V or the toolbar buttons.
+* Copy & paste of selection via CTRL + C and CTRL + V or the associated toolbar buttons.
+* Delete selection via DEL or toolbar button.
 * A slider can be used to rotate the selection as desired.
 * Cells can be colored with one of 7 available color flavors. They do not play any role physically, but they can have a special meaning for cell functions.
 * Speeds and rotational velocities can be updated. In addition, all particle velocities of a selection can be adjusted to the center velocity via the button _Set uniform velocities_.
