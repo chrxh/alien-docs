@@ -1,4 +1,4 @@
-# Explore simulation parameters
+# Simulation parameters
 
 #### Abstract
 
@@ -25,7 +25,7 @@ We would like to focus on a few physical parameters and describe their effect in
 * _Binding creation velocity_: When two cells collide, a new connection can be established if both cells still have a free space for a connection and the impact velocity exceeds a specific value that can be set with this parameter. It is easy to perceive that with a high value, the fluid in the simulation clumps very easily.
 * _Binding maximum energy_: This value indicates up to what energy a cell can maintain connections. At very low values (below 100), most cell clusters break down into individual cells and all matter in the simulation behaves fluid-like.
 
-## Worlds with spatially varying parameters
+## Simulations with spatially varying parameters
 
 There is a possibility to define special zones including transition areas where other simulation parameters can be set. Such so-called spots can be created by clicking on the + button next to the _Base_ tab. By default, the spots are circular, but they can also be made rectangular. To proceed we set the core radius to about 130 and the fadeout radius to 40 and should get the following:
 
@@ -39,9 +39,9 @@ Note that there are some parameters in the _Base_ tab which cannot be changed in
 
 ## Varying parameters over time
 
-A special feature that is particularly interesting for evolution experiments is the possibility to change simulation parameters over time. It is a well-known phenomenon that a population of individuals adapts to environmental conditions through evolutionary pressure, eventually reaching a kind of local optimum of fitness. To break these states of equilibrium, it is useful to change the external conditions at regular periods. In ALIEN there is such an automatism, which can be activated with the _Change automatically_ toggle in the parameter window. If activated it does the following:
+A special feature that is particularly interesting for evolution experiments is the possibility to change simulation parameters over time. It is a well-known phenomenon that a population of individuals adapts to environmental conditions through evolutionary pressure, eventually reaching a kind of local optimum of fitness. To break these states of equilibrium, it is useful to change external conditions at regular periods. In ALIEN there is such an automatism, which can be activated with the _Change automatically_ toggle in the parameter window. If activated it does the following:
 
-At first random target values for certain simulation parameters are chosen. Then, the current parameter values are changed in slow steps towards this target. The duration of such a step can be configured in the window. If the parameter target is reached a new random target will be select.
+At first random target values for certain simulation parameters are chosen. Then the current parameter values are changed in slow steps towards this target. The duration of such a step can be configured in the window. If the parameter target is reached a new random target will be select.
 
 Now it might happen that the population does not manage to adapt to the new conditions. To prevent this situation from becoming critical, all cell activities are measured regularly in the background and if these decrease significantly, e.g. because more and more individuals become extinct, the simulation parameters are turned back again and the target is approached again. If this procedure fails after the third attempt, an other target will be chosen.
 
