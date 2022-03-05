@@ -26,3 +26,13 @@ We would like to focus on a few physical parameters and describe their effect in
 * _Binding maximum energy_: This value indicates up to what energy a cell can maintain connections. At very low values (below 100), most cell clusters break down into individual cells and all matter in the simulation behaves fluid-like.
 
 ## Worlds with spatially varying parameters
+
+There is a possibility to define special zones including transition areas where other simulation parameters can be set. Such so-called spots can be created by clicking on the + button next to the _Base_ tab. By default, the spots are circular, but they can also be made rectangular. To proceed we set the core radius to about 130 and the fadeout radius to 40 and should get the following:
+
+![Simulation parameter spot](../.gitbook/assets/spot.png)
+
+The parameters from the _Base_ tab are initially taken over in the spot, which we can now change. In the transition zones, whose distance is set with the fadeout radius, the simulation parameters are interpolated between the _Base_ and _Spot_ tabs.
+
+{% hint style="warning" %}
+Note that one cannot change all parameters from the _Base_ tab in a spot (e.g. maximum cell bonds).
+{% endhint %}
