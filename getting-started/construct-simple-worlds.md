@@ -29,7 +29,7 @@ We open the _Creator_ via the _Editor_ menu. This window provides various tools 
 * Create disc-shaped cell cluster
 * Draw freehand cell cluster
 
-Except for the freehand drawings, all builds work the same way: One sets the properties in advance (e.g. the dimensions for a rectangular cell cluster) and then clicks _Build_. The cell cluster or energy particle is then generated near the center and automatically selected. This allows one to change the color, velocity or other properties immediately afterward in the _Pattern editor_. Deleting a generated pattern can also be accomplished in the _Pattern editor_.
+Except for the freehand drawings, all constructions work the same way: One sets the properties in advance (e.g. the dimensions for a rectangular cell cluster) and then clicks _Build_. The cell cluster or energy particle is then generated near the center and automatically selected. This allows one to change the color, velocity or other properties immediately afterward in the _Pattern editor_. Deleting a generated pattern can also be accomplished there.
 
 ![Some geometric primitives](<../.gitbook/assets/geometric primitives.png>)
 
