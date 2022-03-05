@@ -34,5 +34,15 @@ There is a possibility to define special zones including transition areas where 
 The parameters from the _Base_ tab are initially taken over in the spot, which we can now change. In the transition zones, whose distance is set with the fadeout radius, the simulation parameters are interpolated between the _Base_ and _Spot_ tabs.
 
 {% hint style="warning" %}
-Note that one cannot change all parameters from the _Base_ tab in a spot (e.g. maximum cell bonds).
+Note that there are some parameters in the _Base_ tab which cannot be changed in a spot (e.g. maximum cell bonds).
 {% endhint %}
+
+## Varying parameters over time
+
+A special feature that is particularly interesting for evolution experiments is the possibility to change simulation parameters over time. It is a well-known phenomenon that a population of individuals adapts to environmental conditions through evolutionary pressure, eventually reaching a kind of local optimum of fitness. To break these states of equilibrium, it is useful to change the external conditions at regular periods. In ALIEN there is such an automatism, which can be activated with the _Change automatically_ toggle in the parameter window. If activated it does the following:
+
+At first random target values for certain simulation parameters are chosen. Then, the current parameter values are changed in slow steps towards this target. The duration of such a step can be configured in the window. If the parameter target is reached a new random target will be select.
+
+Now it might happen that the population does not manage to adapt to the new conditions. To prevent this situation from becoming critical, all cell activities are measured regularly in the background and if these decrease significantly, e.g. because more and more individuals become extinct, the simulation parameters are turned back again and the target is approached again. If this procedure fails after the third attempt, an other target will be chosen.
+
+We will discuss evolution simulations in more detail in a later article.
