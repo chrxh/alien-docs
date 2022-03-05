@@ -33,7 +33,7 @@ Except for the freehand drawings, all builds work the same way: One sets the pro
 
 ![Some geometric primitives](<../.gitbook/assets/geometric primitives.png>)
 
-In order to draw freehand, the drawing mode must be activated and explicitly deactivated when one is finished. As soon as it is activated, one can place cells in the simulation view with the left mouse button pressed.
+In order to draw freehand, the drawing mode must first be activated and then explicitly deactivated. As soon as it is activated, one can place cells in the simulation view with the left mouse button pressed.
 
 ![Freehand drawing](<../.gitbook/assets/freehand drawing.png>)
 
