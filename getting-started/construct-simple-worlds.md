@@ -1,4 +1,4 @@
-# Construct worlds
+# Construct simple worlds
 
 #### Abstract
 
@@ -17,3 +17,9 @@ It is also possible to resize a world afterwards. For this purpose there is a re
 {% endhint %}
 
 Then we open the simulation parameters window and set the _Radiation strength_ to 0, so that our constructions will last for a long time.
+
+## Create cell clusters
+
+We open the _Creator_ via the _Editor_ menu. This window provides various tools with which new cell structures can be created.
+
+## Multiply structures

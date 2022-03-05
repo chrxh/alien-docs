@@ -12,7 +12,9 @@
 * [Spatio-temporal navigation](getting-started/navigation.md)
 * [First steps with the editor](getting-started/first-steps-with-the-editor.md)
 * [Simulation parameters](getting-started/simulation-parameters.md)
-* [Construct worlds](getting-started/construct-worlds.md)
+* [Construct simple worlds](getting-started/construct-simple-worlds.md)
+* [Scaling functions](getting-started/scaling-functions.md)
+* [Particle editing](getting-started/particle-editing.md)
 
 ## Dive a little deeper
 
