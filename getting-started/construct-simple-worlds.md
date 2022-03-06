@@ -31,9 +31,13 @@ We open the _Creator_ via the _Editor_ menu. This window provides various tools 
 
 Except for the freehand drawings, all constructions work the same way: One sets the properties in advance (e.g. the dimensions for a rectangular cell cluster) and then clicks _Build_. The cell cluster or energy particle is then generated near the center and automatically selected. This allows one to change the color, velocity or other properties immediately afterward in the _Pattern editor_. Deleting a generated pattern can also be accomplished there.
 
+If desired, the cell structures can be connected to other structures by selecting _Make sticky_ before generation and then moving them with the mouse and the SHIFT key pressed into the vicinity of another structure that was also created with _Make sticky_.
+
 ![Some geometric primitives](<../.gitbook/assets/geometric primitives.png>)
 
 In order to draw freehand, the drawing mode must first be activated and then explicitly deactivated. As soon as it is activated, one can place cells in the simulation view with the left mouse button pressed.
+
+Finally, we load an existing pattern into our world. We do this by clicking on the load button in the _Pattern editor_ and select the file `./examples/patterns/dark forest/Plant Deco 3.sim`. This pattern is a passive structure, which has similarities to a virus. We can now admire our work of art ;-)
 
 ![Freehand drawing](<../.gitbook/assets/freehand drawing.png>)
 
