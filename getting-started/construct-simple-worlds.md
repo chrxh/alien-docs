@@ -1,4 +1,4 @@
-# Construct simple passive worlds
+# Construct simple worlds
 
 #### Abstract
 
@@ -37,7 +37,7 @@ If desired, the cell structures can be connected to other structures by selectin
 
 In order to draw freehand, the drawing mode must first be activated and then explicitly deactivated. As soon as it is activated, one can place cells in the simulation view with the left mouse button pressed.
 
-Finally, we load an existing pattern into our world. We do this by clicking on the load button in the _Pattern editor_ and select the file `./examples/patterns/dark forest/Plant Deco 3.sim`. This pattern is a passive structure, which has similarities to a virus. We can now admire (or delete) our work of art ;-)
+Finally, we load an existing pattern into our world. We do this by clicking on the load button in the _Pattern editor_ and, e.g., select the file `./examples/patterns/dark forest/Plant Deco 3.sim`. This pattern is a passive structure, which has similarities to a virus. We can now admire (or delete) our work of art ;-)
 
 ![Freehand drawing](<../.gitbook/assets/freehand drawing.png>)
 
