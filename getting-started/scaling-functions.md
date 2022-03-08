@@ -42,4 +42,8 @@ When one now starts the simulation, one observes a much more dynamic world. The 
 
 It is also still worth trying to set a slight vertical velocity increment. For example, in the _Multiplier_ panel we can set the _Velocity Y increment_ to 0.02 in the part for the vertical settings. Have fun trying it out!
 
-## Scaling up entire world
+## Scaling up entire worlds
+
+With the previous shown scaling functions, we can multiply a pattern arbitrarily in a given world. But now we want to go one step further: We want to scale up not only the patterns but the complete space!
+
+This function is very useful, for example, to produce a significantly larger world from a small one at a later time during an evolution simulation (and, of course, it also works the other way around).
