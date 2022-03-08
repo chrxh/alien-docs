@@ -10,18 +10,18 @@ The basic design is as follows: We place a larger cell cluster, such as a ring i
 
 We start by creating an empty world with dimensions of 1000 x 1000 units and make some adjustments to the simulation parameters:
 
-* Friction is set 0.001 (default)
-* Radiation strength is set 0
-* Cell specialization: Sensor function -> Range is set to 350
+* Friction is set to 0.001 (default)
+* Radiation strength is set to 0
+* Cell specialization: Sensor function -> Range is set to 350 units
 
 With the last parameter we set the range of the sensor cells. Then we switch to the editor and create a blue ring with an outer radius of 30 and an inner radius of 25. With the pattern editor we load the file `./examples/patterns/swarmbots/Attacker (Blue Target).sim` into our world and place it below the ring.
 
 ![Blue ring with a swarmbot](<../.gitbook/assets/interceptor world design.png>)
 
-The tiny swarmbot is colored red and searches, navigates and attacks cell clusters with a blue color. Threshold values for the desired mass density can be set dynamically by the machine. To reprogram its behavior, a deeper knowledge of cell programming is required, which we will discuss in a later article.
+The tiny swarmbot is colored red and searches, navigates and attacks cell clusters with a blue color. The orientation of the swarmbot is important because it cannot move backwards: The upper part is the front and the lower the back part. Threshold values for the desired mass density can be set dynamically by the machine. .
 
 {% hint style="info" %}
-The orientation of the swarmbot is important because it cannot move backwards: The upper part is the front and the lower the back part.
+To reprogram the swarmbots behavior, a deeper knowledge of cell programming is required, which we will discuss in a later article
 {% endhint %}
 
 We can run the simulation for testing (important: take a snapshot and enable slow down). One can see nicely that the swarmbot heads for the blue ring, bounces off due to the collision and takes a new course again. After some time it is on a circular course around the ring. When the friction is altered, the behavior changes somewhat.
