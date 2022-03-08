@@ -55,6 +55,10 @@ We obtain the following result:
 
 ![Copies of worlds which contains copies of swarmbots](<../.gitbook/assets/world scaled.png>)
 
-When starting the simulation one can see how 16 times the same events take place as before. Since no determinism is guaranteed due to the GPU parallelization, the world copies develop differently after some time and interact with each other.
+When starting the simulation one can see how 16 times the same events take place as before.&#x20;
 
-![Ongoing simulation of the copied worlds](<../.gitbook/assets/world scaled running.png>)
+{% hint style="info" %}
+Since no determinism is guaranteed due to the GPU parallelization, the world copies develop differently after some time and interact with each other.
+{% endhint %}
+
+![Ongoing simulation of the copied worlds](<../.gitbook/assets/world scaled running2.png>)
