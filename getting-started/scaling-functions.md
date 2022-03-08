@@ -46,12 +46,12 @@ It is also still worth trying to set a slight vertical velocity increment. For e
 
 With the previous shown scaling functions, we can multiply a pattern arbitrarily in a given world. But now we want to go one step further: We want to scale up not only the patterns but the complete space! This function is very useful, for example, to produce a significantly larger population from a small one at a later time during an evolution simulation (and, of course, it also works the other way around).
 
-We now proceed as follows: Our world has a size of 1000 x 1000 units. We now want to enlarge it to 4000 x 4000 and also duplicate any content. This operation can be performed in the _Spatial control_ window. We click there on the toolbar button that symbolizes a resize operation. A dialog opens where we can set the new dimensions of the world. In this dialog there is the important toggle _Scale content_.
+We now proceed as follows: Our world has a size of 1000 x 1000 units. We now want to enlarge it to 4000 x 4000 and also multiply the entire content. This operation can be performed in the _Spatial control_ window. We click there on the toolbar button that symbolizes a resize operation. A dialog opens where we can set the new dimensions of the world. In this dialog there is the important toggle _Scale content_.
 
 * If it is turned off, then the content of the existing world is simply transferred to the new one.
 * If it is turned on, then the new space will be periodically filled with copies of the original content or cut off (e.g. during a downsizing).
 
-We obtain the following result:
+We turn on the toggle and obtain the following result:
 
 ![Copies of worlds which contains copies of swarmbots](<../.gitbook/assets/world scaled.png>)
 
