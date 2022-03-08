@@ -61,4 +61,4 @@ When starting the simulation one can see how 16 times the same events take place
 Since no determinism is guaranteed due to the GPU parallelization, the world copies develop differently after some time and interact with each other.
 {% endhint %}
 
-![Ongoing simulation of the copied worlds](<../.gitbook/assets/world scaled running2.png>)
+![Ongoing simulation of the copied world](<../.gitbook/assets/world scaled running2.png>)
