@@ -30,7 +30,7 @@ We can run the simulation for testing (important: take a snapshot and enable slo
 
 A simulation with only one swarmbot is actually relatively boring, because it cannot do much damage to the ring. It would be much more exciting to have thousands of attacking specimens at the same time. As the workload is also distributed to thousands of GPU threads, this should not be a problem for our graphics card.
 
-The multiplier window allows us to create a formation of swarmbots arranged in a grid. It is important that we have selected the already existing one. Then we open the multiplier window and click on the first toolbar button. For the moment we are modest and create copies on a 100 x 30 grid with 6 units between each copy horizontally and vertically.
+The multiplier window allows us to create a formation of swarmbots arranged in a grid. It is important that we have selected the already existing one. Then we open the multiplier window and click on the first toolbar button. For the moment we are modest and create copies on a 100 x 30 grid with 6 units between each copy horizontally and vertically. After we click _Build_, the copies are created and selected automatically. In this state it is possible to undo this action by invoking the _Undo_ button, in case we want to change something in the settings.
 
 ![Copies of the swarmbot](<../.gitbook/assets/swarmbot copies.png>)
 
@@ -38,6 +38,8 @@ The multiplier window allows us to create a formation of swarmbots arranged in a
 The simulation code on the GPU works with arrays of fixed size for all entities. The array limits can be quickly exceeded after scaling the data. Fortunately, there is an automatic adjustment that enlarges the arrays as needed. The _Log_ window reports such events.
 {% endhint %}
 
+When one now starts the simulation, one observes a much more dynamic world. The ring is almost completely destroyed after a short time.
 
+It is also still worth trying to set a slight vertical velocity increment. For example, in the _Multiplier_ panel we can set the _Velocity Y increment_ to 0.02 in the part for the vertical settings. Have fun trying it out!
 
 ## Scaling up entire world
