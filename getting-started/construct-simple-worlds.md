@@ -47,7 +47,7 @@ Finally, we load an existing pattern into our world. We do this by clicking on t
 
 ## Multiply structures
 
-For assembling larger worlds, we need to mass-copy structures. There are several functions for this, which we will discuss in more detail in the next article. At this point, we will perform a simple random multiplication by opening the _Multiplier_ window and click on the second toolbar button. In the panel we set 40 copies and activate the overlapping check. This ensures that the copies placed here at random positions do not overlap with existing copies. The angles of the copies are randomly selected between 0 and 360 degrees in the default settings. Before clicking on _Build_, we have to make a selection which we want to copy. After the copying process, the result in our case looks like this:
+For assembling larger worlds, we need to mass copy structures. There are several functions for this, which we will discuss in more detail in the next article. At this point, we will perform a simple random multiplication by opening the _Multiplier_ window and click on the second toolbar button. In the panel we set 40 copies and activate the overlapping check. This ensures that the copies placed here at random positions do not overlap with existing copies. The angles of the copies are randomly selected between 0 and 360 degrees in the default settings. Before clicking on _Build_, we have to make a selection which we want to copy. After the copying process, the result in our case looks like this:
 
 ![Copies at random positions and angles](../.gitbook/assets/duplication.png)
 
