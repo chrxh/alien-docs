@@ -26,7 +26,17 @@ To reprogram the swarmbots behavior, a deeper knowledge of cell programming is r
 
 We can run the simulation for testing (important: take a snapshot and enable slow down). One can see nicely that the swarmbot heads for the blue ring, bounces off due to the collision and takes a new course again. After some time it is on a circular course around the ring. When the friction is altered, the behavior changes somewhat.
 
-## Mass copy on grid layout
+## Mass copy function on grid layout
+
+A simulation with only one swarmbot is actually relatively boring, because it cannot do much damage to the ring. It would be much more exciting to have thousands of attacking specimens at the same time. As the workload is also distributed to thousands of GPU threads, this should not be a problem for our graphics card.
+
+The multiplier window allows us to create a formation of swarmbots arranged in a grid. It is important that we have selected the already existing one. Then we open the multiplier window and click on the first toolbar button. For the moment we are modest and create copies on a 100 x 30 grid with 6 units between each copy horizontally and vertically.
+
+![Copies of the swarmbot](<../.gitbook/assets/swarmbot copies.png>)
+
+{% hint style="info" %}
+The simulation code on the GPU works with arrays of fixed size for all entities. The array limits can be quickly exceeded after scaling the data. Fortunately, there is an automatic adjustment that enlarges the arrays as needed. The _Log_ window reports such events.
+{% endhint %}
 
 
 
