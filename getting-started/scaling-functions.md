@@ -46,4 +46,4 @@ It is also still worth trying to set a slight vertical velocity increment. For e
 
 With the previous shown scaling functions, we can multiply a pattern arbitrarily in a given world. But now we want to go one step further: We want to scale up not only the patterns but the complete space!
 
-This function is very useful, for example, to produce a significantly larger world from a small one at a later time during an evolution simulation (and, of course, it also works the other way around).
+This function is very useful, for example, to produce a significantly larger population from a small one at a later time during an evolution simulation (and, of course, it also works the other way around).
