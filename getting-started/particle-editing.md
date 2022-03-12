@@ -14,7 +14,16 @@ The cell that glows white possesses a token. By default, tokens always jump in t
 
 ![Inspecting a machine which build spiral structures](<../.gitbook/assets/particle editors.png>)
 
+The pinned windows are identical in structure and consist of several tabs:
 
+* _General_: Contains the properties common to each cell. Among other things, we can change the cell specialization here. In this example, we only use _Computation_ and _Construction_ functions. If the specialization is changed, the tabs may also change.
+* _Code_: This tab is only displayed for computation cells. It contains the source code that the cell executes when a token passes it. The code is written in an assembler-like language and  consist of a maximum of 15 operations. It is translated into a machine language for the cells. If the source code is edited, it is immediately compiled and a feedback from the compiler is given under _Compilation result_.
+
+{% hint style="info" %}
+Inside the code tab next to the compilation result there is a tooltip that gives an overview of the assembly language.
+{% endhint %}
+
+* _Memory_: This tab is also only visible for computation cells. Here one can view and edit the memory contents of the cell with a hex editor. Each computation cell has 2 different memories: a fixed and a variable memory. The fixed memory is called instruction section and contains the translated source code. Each instruction is compiled into 3 bytes. The variable memory is called Data section and is the memory that can be accessed by the program itself.
 
 ## Autotracking and live updates&#x20;
 
