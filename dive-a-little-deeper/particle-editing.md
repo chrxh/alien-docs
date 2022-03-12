@@ -2,7 +2,7 @@
 
 #### Abstract
 
-It is possible to select any entity, manipulate their properties and memory, and get real time updates during a running simulation. For this purpose, editing windows can be pinned to particles. We will make use of this feature by inspecting a structure building particle machine in more detail and perform specific changes.
+It is possible to select any entity, manipulate their properties and memory, and get real time updates during a running simulation. For this purpose, editing windows can be pinned to particles. We will make use of this feature and experiment with an own example containing a structure building particle machine. We will then reprogram it by performing specific changes in the cell code and finally put several of them together.
 
 ## Pin editing windows to cells
 
@@ -45,7 +45,7 @@ However, one usually has the problem that the inspected cells move out of the re
 
 So let us try this out: We activate _Autotracking on selection_, set a slow down of e.g. 3 time steps per second and start the simulation. Now one can observe well how the token jumps back and forth between the cells and how new cells are generated bit by bit. During the generation energy is consumed, which is provided in this example by the token (i.e. the token has a very large energy value initially).
 
-## Change cell properties
+## Reprogram builder
 
 As an example, we will make minimal changes to the cell code of the builder and observe the changes. Originally, the builder creates a red ribbon of connected cells that rolls up in a spiral. The red cell color of the new cells is set in the source code of the cell with the number 0 at line 4:
 
@@ -65,9 +65,10 @@ Now let us create a green ribbon for fun. For this we change the 4th line into:
 
 ```
 mov CONSTR_IN_CELL_COLOR, 2
-
 ```
 
 We then obtain our desired result:
 
 ![Reprogrammed builder](<../.gitbook/assets/green spiral.png>)
+
+## Combining several builders
