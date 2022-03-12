@@ -24,6 +24,8 @@ Inside the code tab next to the compilation result there is a tooltip that gives
 {% endhint %}
 
 * _Memory_: This tab is also only visible for computation cells. Here one can view and edit the memory contents of the cell with a hex editor. Each computation cell has 2 different memories: a fixed and a variable memory. The fixed memory is called instruction section and contains the translated source code. Each instruction is compiled into 3 bytes. The variable memory is called Data section and is the memory that can be accessed by the program itself.
+* _In/out channels_: This tab is visible for all non-computation cells and only gives general information about the input and output signals that are accessed from the token memory.
+* _Token \[1|2|3|...]_: Cells can hold a certain number of tokens. Each token is displayed in an extra tab. In each tab the energy value and the memory of the corresponding token can be edited. The cell code of computation cells can also access this memory.
 
 ## Autotracking and live updates&#x20;
 
