@@ -14,10 +14,10 @@
 * [Simulation parameters](getting-started/simulation-parameters.md)
 * [Construct simple worlds](getting-started/construct-simple-worlds.md)
 * [Scaling functions](getting-started/scaling-functions.md)
-* [Particle editing](getting-started/particle-editing.md)
 
 ## Dive a little deeper
 
+* [Particle editing](dive-a-little-deeper/particle-editing.md)
 * [Evolution experiments](dive-a-little-deeper/evolution-experiments.md)
 * [Cell programming](dive-a-little-deeper/cell-programming/README.md)
   * [Controlled muscles](dive-a-little-deeper/cell-programming/controlled-muscles.md)
