@@ -6,7 +6,7 @@ It is possible to select any entity, manipulate their properties and memory, and
 
 ## Pin editing windows to cells
 
-We create a new simulation with the dimensions 1000 x 1000 and set the radiation strength and rigidity value to 0. Then, we open the pattern editor and load the example `/examples/patterns/builders/Spiral Builder.sim` into our world.
+We create a new simulation with the dimensions 1000 x 1000 and set the friction and radiation strength to 0 and the rigidity value to 0.2. Then, we open the pattern editor and load the example `/examples/patterns/builders/Spiral Builder.sim` into our world.
 
 Our first goal is first to inspect the internals of the builder more detail. We zoom in, activate the  information overlay, select all cells of the cell cluster and click the tool button with the microscope icon in the _Pattern editor_ (or even faster: ALT + N). For each selected particle, a window is now pinned, which displays all internal properties and offers editing. We place the windows so that we can easily see the cells. In addition, the overlay information allows us to identify the so-called token branch numbers and cell specializations.
 
@@ -46,3 +46,28 @@ However, one usually has the problem that the inspected cells move out of the re
 So let us try this out: We activate _Autotracking on selection_, set a slow down of e.g. 3 time steps per second and start the simulation. Now one can observe well how the token jumps back and forth between the cells and how new cells are generated bit by bit. During the generation energy is consumed, which is provided in this example by the token (i.e. the token has a very large energy value initially).
 
 ## Change cell properties
+
+As an example, we will make minimal changes to the cell code of the builder and observe the changes. Originally, the builder creates a red ribbon of connected cells that rolls up in a spiral. The red cell color of the new cells is set in the source code of the cell with the number 0 at line 4:
+
+```
+mov CONSTR_IN, CONSTR_IN::CONSTRUCT
+mov CONSTR_IN_OPTION, CONSTR_IN_OPTION::STANDARD
+mov CONSTR_IN_DIST, 0x70
+mov CONSTR_IN_CELL_COLOR, 1
+mov i, 0x11
+mov j, 0
+mov k, 0
+```
+
+The colors are numbered from 0 to 6 and correspond to the order of the color selection in the _Pattern editor_. If a token passes this cell, the 4th line causes the color code for red (=1) to be written into the token memory byte named _CONSTR\_IN\_CELL\_COLOR_. Later when the token passes the construction cell, it reads the token memory byte _CONSTR\_IN\_CELL\_COLOR_, calculates modulo 7 and thus gets the corresponding color code for the new cell.
+
+Now let us create a green ribbon for fun. For this we change the 4th line into:
+
+```
+mov CONSTR_IN_CELL_COLOR, 2
+
+```
+
+We then obtain our desired result:
+
+![Reprogrammed builder](<../.gitbook/assets/green spiral.png>)
