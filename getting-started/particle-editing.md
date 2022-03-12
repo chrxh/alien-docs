@@ -35,6 +35,14 @@ In the above screenshot for example the memory address 5 possesses the names _CO
 
 ## Autotracking and live updates&#x20;
 
+A very helpful feature is that the pinned editing windows are maintained during a running simulation. One can then observe the changes of the contents in real time. The windows remain even when resetting to a snapshot. Only when the particles no longer exist, the corresponding pinned windows are hidden.
 
+{% hint style="info" %}
+If you press ESC, all pinned windows will be closed, unless you are currently editing.
+{% endhint %}
+
+However, one usually has the problem that the inspected cells move out of the rendered area while the pinned windows are still visible. Manual navigation with the mouse is cumbersome and one can no longer concentrate on the content of the pinned windows. To solve this problem, one can enable the autotracking function in the _Spatial control_ window. In this case, the visible area in the current zoom level is selected during simulation execution so that the selection is always centered.
+
+So let us try this out: We activate _Autotracking on selection_, set a slow down of e.g. 3 time steps per second and start the simulation. Now one can observe well how the token jumps back and forth between the cells and how new cells are generated bit by bit. During the generation energy is consumed, which is provided in this example by the token (i.e. the token has a very large energy value initially).
 
 ## Change cell properties
