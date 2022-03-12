@@ -71,4 +71,10 @@ We then obtain our desired result:
 
 ![Reprogrammed builder](<../.gitbook/assets/green spiral.png>)
 
-## Combining several builders
+## Combine several builders
+
+We will extend our example a bit more by plugging several builders together. To do this, we add a larger cluster, such as a rectangular 20 x 20 cluster to our world. We create it via the _Creator_ window. It is important that we select the _Make sticky_ option. With this option the created cells are still able to make new connections. By default all cells in this cluster are computation cells and have the token branch number 0.
+
+As a next step, we also need to make parts of our builder sticky. Therefore, we select the cells numbered 0 and 5, as they will be glued to the rectangular cluster. We inspect these two cells and set the _Max connections_ property to the maximum value of 6.
+
+![](<../.gitbook/assets/sticky builder.png>)
