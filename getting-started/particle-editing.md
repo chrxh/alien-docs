@@ -25,7 +25,13 @@ Inside the code tab next to the compilation result there is a tooltip that gives
 
 * _Memory_: This tab is also only visible for computation cells. Here one can view and edit the memory contents of the cell with a hex editor. Each computation cell has 2 different memories: a fixed and a variable memory. The fixed memory is called instruction section and contains the translated source code. Each instruction is compiled into 3 bytes. The variable memory is called Data section and is the memory that can be accessed by the program itself.
 * _In/out channels_: This tab is visible for all non-computation cells and only gives general information about the input and output signals that are accessed from the token memory.
-* _Token \[1|2|3|...]_: Cells can hold a certain number of tokens. Each token is displayed in an extra tab. In each tab the energy value and the memory of the corresponding token can be edited. The cell code of computation cells can also access this memory.
+* _Token \[1|2|3|...]_: Cells can hold a certain number of tokens. Each token is displayed in an extra tab. In each tab the energy value and the memory of the corresponding token can be edited. The cell code of computation cells can also access this memory.&#x20;
+
+The token memory is represented in a special way as multiple hex editors arranged in a table. At the beginning of each row in the table one finds the address of the memory block, followed by the content (which can be edited) and the name(s) for this memory block, if available. Named memory blocks always have 1 byte length. It is also possible to define several names for one memory block. In this case all names are listed. The names of the memory blocks can be defined in the symbol editor and are used to be able to write more readable code for the computation cells.
+
+![Token memory editor](<../.gitbook/assets/token editor.png>)
+
+In the above screenshot for example the memory address 5 possesses the names _CONSTR\_OUT_, _DIGESTION\_OUT_, _MUSCLE\_OUT_, _SCANNER\_OUT_ and _SENSOR\_OUT_ and currently has the content `0x00`.
 
 ## Autotracking and live updates&#x20;
 
