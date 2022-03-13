@@ -87,6 +87,6 @@ To make the simulation a bit more interesting and to deepen our cell editing pra
 
 ![Many builders attached to a rectangle](<../.gitbook/assets/rect with builders.png>)
 
-When we run the simulation it is worth trying different settings for the simulation parameters. For example, you can set the rigidity to 0.
+We can now execute the simulation. It is worth trying different settings for the simulation parameters. For example, one can set the rigidity value to 0.
 
-![](<../.gitbook/assets/rect with builders result.png>)
+![Result of our strange construction ](<../.gitbook/assets/rect with builders result.png>)
