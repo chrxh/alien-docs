@@ -89,4 +89,4 @@ To make the simulation a bit more interesting and to deepen our cell editing pra
 
 We are curious and can now execute the simulation. The created construction looks somewhat similar to a protein. It is worth trying different settings for the simulation parameters. For example, one can play around with the value for rigidity.
 
-![Result of our strange construction ](<../.gitbook/assets/rect with builders result.png>)
+![Construction result of our builders ](<../.gitbook/assets/rect with builders result.png>)
