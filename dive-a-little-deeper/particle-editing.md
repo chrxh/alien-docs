@@ -2,7 +2,7 @@
 
 #### Abstract
 
-It is possible to select any entity, manipulate their properties and memory, and get real time updates during a running simulation. For this purpose, editing windows can be pinned to particles. We will make use of this feature and experiment with an own example containing a structure building particle machine. We will then reprogram it by performing specific changes in the cell code and finally put several of them together.
+It is possible to select any entity, manipulate their properties and memory, and get real time updates during a running simulation. For this purpose, editing windows can be pinned to particles. We will make use of this feature and experiment with an own example containing a structure building particle machine. We will then reprogram it by performing specific changes in the cell code and finally put several of them together to let them build something even more bizarre.
 
 ## Pin editing windows to cells
 
