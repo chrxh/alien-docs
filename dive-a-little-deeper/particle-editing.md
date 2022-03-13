@@ -6,7 +6,7 @@ It is possible to select any entity, manipulate their properties and memory, and
 
 ## Pin editing windows to cells
 
-We create a new simulation with the dimensions 1000 x 1000 and set the friction and radiation strength to 0 and the rigidity value to 0.2. Then, we open the pattern editor and load the example `/examples/patterns/builders/Spiral Builder.sim` into our world.
+We create a new simulation with the dimensions 1000 x 500 and set the friction and radiation strength to 0 and the rigidity value to 0.15. Then, we open the pattern editor and load the example `/examples/patterns/builders/Spiral Builder.sim` into our world.
 
 Our first goal is first to inspect the internals of the builder more detail. We zoom in, activate the  information overlay, select all cells of the cell cluster and click the tool button with the microscope icon in the _Pattern editor_ (or even faster: ALT + N). For each selected particle, a window is now pinned, which displays all internal properties and offers editing. We place the windows so that we can easily see the cells. In addition, the overlay information allows us to identify the so-called token branch numbers and cell specializations.
 
@@ -77,4 +77,16 @@ We will extend our example a bit more by plugging several builders together. To 
 
 As a next step, we also need to make parts of our builder sticky. Therefore, we select the cells numbered 0 and 5, as they will be glued to the rectangular cluster. We inspect these two cells and set the _Max connections_ property to the maximum value of 6.
 
-![](<../.gitbook/assets/sticky builder.png>)
+![Make upper side of the builder sticky](<../.gitbook/assets/sticky builder.png>)
+
+We select all 5 cells of the builder, keep the SHIFT key pressed and move the cells near the rectangular cell cluster. As soon as the distance falls below a critical threshold new connections are created automatically: The builder and the rectangular cluster are connected now! What remains to be done is to prevent the tokens from moving from the builder to the rectangle. This can be accomplished by selecting the connected cells on the side of the rectangle, inspect them and activate the flag _Block token_ (see screenshot below). This flag causes that the cell cannot accept tokens anymore.
+
+![Block tokens on rectangle side](<../.gitbook/assets/rect connected with builder.png>)
+
+To make the simulation a bit more interesting and to deepen our cell editing practice, we repeat the whole thing and attach more builders to the rectangle, e.g. also to other sides. Our strange construction could then look like this, for example:
+
+![Many builders attached to a rectangle](<../.gitbook/assets/rect with builders.png>)
+
+When we run the simulation it is worth trying different settings for the simulation parameters. For example, you can set the rigidity to 0.
+
+![](<../.gitbook/assets/rect with builders result.png>)
