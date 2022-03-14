@@ -18,6 +18,14 @@ Let us take a closer look at the loop and inspect its computation cells:
 
 The cell cluster consists of 2 muscle cells for movement, a scanner cell for reading out the internal structure, a digestion cell for transforming surrounding particles into internal energy, a construction cell for creating new particles and several computational cells that are used for coordination. The exact replication process will be discussed in a later article. The cell code is also shown in the inspected cells.
 
+In our first experiment we use almost the default settings for the simulation parameters except for:
+
+* _Radiation strength_: 0
+* _Cell mutation rate_: 0.0000016
+* _Token mutation rate_: 0.0005
+
+The cell mutation rate indicates the probability with which a byte of the cell memory or other properties (e.g. specialization, color, etc.) are randomly changed per time step. The analog setting is also available for the tokens.
+
 ## Inhomogeneous simulation parameters
 
 
