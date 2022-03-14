@@ -32,9 +32,15 @@ If we now run the simulation for a few minutes, our world already does not look 
 
 If you let the simulation run even longer, mutations are increasingly created that multiply faster or move differently. The color also changes more or less randomly. An example of a longer simulation run can be found in the file `./examples/simulations/evolution/Loops Evolved.sim`.
 
+{% hint style="info" %}
+To increase the simulation speed, one can disable _Render simulation_ in the _View_ menu..
+{% endhint %}
+
 ## Increase diversity through color semantics for cell types
 
+It can be observed that after some time a certain equilibrium develops. The population size remains roughly stable, gradually fewer traits are changing and evolutionary leaps become rarer. One way of regularly breaking through equilibria and creating more refuge areas is to assign special importance to the color flavor of the cell.
 
+![](../.gitbook/assets/statistics.PNG)
 
 ## Inhomogeneous simulation parameters
 
