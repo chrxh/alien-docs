@@ -2,9 +2,9 @@
 
 #### Abstract
 
-We will perform evolutionary simulations by injecting self-replicating machines into pristine worlds. Mutations will lead to gradual optimizations of the individuals. In this context, we want discuss the influence of crucial simulation parameters on cell functions. ALIEN offers advanced features like inhomogeneous parameter values, which we will also make use of. We will then address how we  larger self-replicating machines can be utilized.
+We will perform evolutionary simulations by injecting self-replicating machines into pristine worlds. Mutations will lead to gradual optimizations of the individuals. In this context, we want discuss the influence of crucial simulation parameters on cell functions. ALIEN offers advanced features like inhomogeneous parameter values, which we will also make use of. We will then address how larger self-replicating machines can be made functioning.
 
-## Simulation setup for small self-replicators
+## Simple simulation setup for small self-replicators
 
 The basic idea is simple: We create an empty world, fill it with enough particles serving as food source, inject a self-replicating machine and activate occasional mutations. The rest is done by the ongoing simulation.
 
@@ -25,6 +25,16 @@ In our first experiment we use almost the default settings for the simulation pa
 * _Token mutation rate_: 0.0005
 
 The cell mutation rate indicates the probability with which a byte of the cell memory or other properties (e.g. specialization, color, etc.) are randomly changed per time step. The analog setting is also available for the tokens.
+
+If we now run the simulation for a few minutes, our world already does not look that idyllic anymore. The replicators have then eaten up most of the free resources and are now increasingly competing with each others.
+
+![](<../.gitbook/assets/loop later.png>)
+
+If you let the simulation run even longer, mutations are increasingly created that multiply faster or move differently. The color also changes more or less randomly. An example of a longer simulation run can be found in the file `./examples/simulations/evolution/Loops Evolved.sim`.
+
+## Increase diversity through color semantics for cell types
+
+
 
 ## Inhomogeneous simulation parameters
 
