@@ -38,7 +38,7 @@ One way to increase the simulation speed is to disable _Render simulation_ in th
 
 ## Simulations with larger self-replicators
 
-In our last example, we initially started with replicators of nearly minimal size, although even smaller structures with certain functional trade-offs are conceivable. Somewhat more exciting and challenging are experiments with self-replicating machines, which are larger and consist of a more complex particle network. On the one hand, the copying process takes longer here and, on the other hand, we have to replicate particles with more connections. Furthermore, the sensitivity with respect to the simulation parameters requires a precise tuning.
+In our last example, we initially started with replicators of nearly minimal size, although even smaller structures with certain functional trade-offs are conceivable. Somewhat more exciting and challenging are experiments with self-replicating machines, which are larger and consist of a more complex particle network. The copying process will take longer and we have to replicate particles with more connections. Furthermore, the sensitivity with respect to the simulation parameters requires a precise tuning. A significant advantage, however, is that larger structures can accommodate more functionality and that the optimization potential in evolutionary simulations is generally greater.
 
 ## Increase diversity through color semantics for cell types
 
