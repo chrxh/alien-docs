@@ -48,7 +48,17 @@ As in the previous section, we can build our own world and inject a large replic
 * One should also have several copies of the hexagon ready at the beginning because unfortunate coincidences can damage some.
 * Larger cell clusters are significantly more susceptible to mutations. We should set the mutation rates very low at the beginning. For instance, a cell mutation rate of 0.000001 and a token mutation rate of 0.0001 should work.
 
+There is also a readymade simulation for it, where all parameters are tuned and the food sources are distributed: `./examples/simulations/evolution/Hexagons.sim`
+
 ![Internals of the hexagon replicator](<../.gitbook/assets/hexagon closeup.png>)
+
+In contrast to the loop replicator, this one also has a sensor cell. This machine uses it to locate food sources and to control its muscle cells such that it moves there. However, due to its size, this navigation takes a very long time.&#x20;
+
+Once we have assembled or loaded our world, we can start the simulation. As it can be noticed, we have to run the simulation much longer to have all the free food sources used up and to have the world filled with replicators. However, if we wait sufficiently long, we notice that at some point mutations arise that can multiply much more efficiently.
+
+Have fun watching it!
+
+![The hexagon world after more than 10 million time steps.](<../.gitbook/assets/hexagons evolved.png>)
 
 ## Color semantics for cell types
 
