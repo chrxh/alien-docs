@@ -20,9 +20,8 @@
 * [Particle editing](dive-a-little-deeper/particle-editing.md)
 * [Evolution experiments](dive-a-little-deeper/evolution-experiments.md)
 * [Cell programming](dive-a-little-deeper/cell-programming/README.md)
-  * [Controlled muscles](dive-a-little-deeper/cell-programming/controlled-muscles.md)
+  * [Simple swarmbot](dive-a-little-deeper/cell-programming/simple-swarmbot.md)
   * [Digestion](dive-a-little-deeper/cell-programming/digestion.md)
-  * [Sensors](dive-a-little-deeper/cell-programming/sensors.md)
   * [Self-replication](dive-a-little-deeper/cell-programming/self-replication.md)
 
 ## Under the hood
