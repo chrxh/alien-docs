@@ -28,7 +28,7 @@ The cell mutation rate indicates the probability with which a byte of the cell m
 
 If we now run the simulation for a few minutes, our world already does not look that idyllic anymore. The replicators have then eaten up most of the free resources and are now increasingly competing with each others.
 
-![](<../.gitbook/assets/loop later.png>)
+![Loop replicators after some minutes](<../.gitbook/assets/loop later.png>)
 
 If you let the simulation run even longer, mutations are increasingly created that multiply faster or move differently. The color also changes more or less randomly. An example of a longer simulation run can be found in the file `./examples/simulations/evolution/Loops Evolved.sim`.
 
@@ -46,7 +46,9 @@ As in the previous section, we can build our own world and inject a large replic
 
 * One must be careful to distribute the food properly, because this machine needs longer for movement maneuvers. It is a good idea to place many small square cell clusters.
 * One should also have several copies of the hexagon ready at the beginning because unfortunate coincidences can damage some.
-* Larger cell clusters are significantly more susceptible to mutations. We should set the mutation rates very low at the beginning.
+* Larger cell clusters are significantly more susceptible to mutations. We should set the mutation rates very low at the beginning. For instance, a cell mutation rate of 0.000001 and a token mutation rate of 0.0001 should work.
+
+![Internals of the hexagon replicator](<../.gitbook/assets/hexagon closeup.png>)
 
 ## Color semantics for cell types
 
