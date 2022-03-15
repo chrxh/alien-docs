@@ -36,6 +36,10 @@ If you let the simulation run even longer, mutations are increasingly created th
 One way to increase the simulation speed is to disable _Render simulation_ in the _View_ menu.
 {% endhint %}
 
+## Simulations with larger self-replicators
+
+In our last example, we initially started with replicators of nearly minimal size, although even smaller structures with certain functional trade-offs are conceivable. Somewhat more exciting and challenging are experiments with self-replicating machines, which are larger and consist of a more complex particle network. On the one hand, the copying process takes longer here and, on the other hand, we have to replicate particles with more connections. Furthermore, the sensitivity with respect to the simulation parameters requires a precise tuning.
+
 ## Increase diversity through color semantics for cell types
 
 It can be observed that after some time a certain equilibrium develops. The population size remains roughly stable, gradually fewer traits are changing and evolutionary leaps become rarer. One way of regularly breaking through equilibria and creating more refuge areas is to assign special importance to the color flavor of the cell.
@@ -47,5 +51,3 @@ It can be observed that after some time a certain equilibrium develops. The popu
 
 
 ![](<../.gitbook/assets/inhomogeneous parameters.png>)
-
-## Simulations with larger self-replicators
