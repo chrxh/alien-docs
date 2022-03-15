@@ -8,7 +8,9 @@ We will perform evolutionary simulations by injecting self-replicating machines 
 
 The basic idea is simple: We create an empty world, fill it with enough particles serving as food source, inject a self-replicating machine and activate occasional mutations. The rest is done by the ongoing simulation.
 
-We can already load a simple setup using the simulation file `./examples/simulations/evolution/Loops.sim`. Or to reconstruct it, we create a new simulation with the size 1000 x 500, fill it with enough particles (80,000 should be sufficient) and load the pattern `./examples/patterns/replicators/Loop.sim` into it. The self-replicating structure has a loop shape, can move randomly, eat other particles to obtain energy from its environment and copy itself by inspecting its own structure to rebuild it. Can you find the little particle machine right away?
+To this end, we create a new simulation with the size 1000 x 500, fill it with enough particles (80,000 should be sufficient) and load the pattern `./examples/patterns/replicators/Loop.sim` into it. The self-replicating structure has a loop shape, can move randomly, eat other particles to obtain energy from its environment and copy itself by inspecting its own structure to rebuild it. Alternatively, one can also load the ready-made simulation file `./examples/simulations/evolution/Loops.sim`.
+
+Can you find the little particle machine right away?
 
 ![Initial setup](../.gitbook/assets/loop.png)
 
