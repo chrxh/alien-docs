@@ -25,6 +25,10 @@ We would like to focus on a few physical parameters and describe their effect in
 * _Binding creation velocity_: When two cells collide, a new connection can be established if both cells still have a free space for a connection and the impact velocity exceeds a specific value that can be set with this parameter. It is easy to perceive that with a high value, the fluid in the simulation clumps very easily.
 * _Binding maximum energy_: This value indicates up to what energy a cell can maintain connections. At very low values (below 100), most cell clusters break down into individual cells and all matter in the simulation behaves fluid-like.
 
+We can observe the influence of changes of some parameters in the statistics function. For instance, if we drop the radiation to 0 there will be muss less energy particles as shown in the following.
+
+![](../.gitbook/assets/statistics.png)
+
 ## Simulations with spatially varying parameters
 
 There is a possibility to define special zones including transition areas where other simulation parameters can be set. Such so-called spots can be created by clicking on the + button next to the _Base_ tab. By default, the spots are circular, but they can also be made rectangular. To proceed we set the core radius to about 130 and the fadeout radius to 40 and should get the following:
