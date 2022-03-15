@@ -36,11 +36,19 @@ If you let the simulation run even longer, mutations are increasingly created th
 One way to increase the simulation speed is to disable _Render simulation_ in the _View_ menu.
 {% endhint %}
 
+After some time one can experiment with the simulation parameters. For example, we can increase the mutation rates, or make the world more hostile to life by increasing the radiation. If one does not overdo it, the population should be able to adapt. A good possibility for the control offers the statistics window which can be activated in the _Window_ menu. It shows the total number of tokens in the world, which in turn is a measure of the cell activities. If this value falls too fast, then there is a danger that the population will die out.
+
 ## Simulations with larger self-replicators
 
 In our last example, we initially started with replicators of nearly minimal size, although even smaller structures with certain functional trade-offs are conceivable. Somewhat more exciting and challenging are experiments with self-replicating machines, which are larger and consist of a more complex particle network. The copying process will take longer and we have to replicate particles with more connections. Furthermore, the sensitivity with respect to the simulation parameters requires a precise tuning. A significant advantage, however, is that larger structures can accommodate more functionality and that the optimization potential in evolutionary simulations is generally greater.
 
-## Increase diversity through color semantics for cell types
+As in the previous section, we can build our own world and inject a large replicator. The pattern `./examples/patterns/replicators/Hexogon.sim` is available for this purpose. There are a few things to keep in mind here:
+
+* One must be careful to distribute the food properly, because this machine needs longer for movement maneuvers. It is a good idea to place many small square cell clusters.
+* One should also have several copies of the hexagon ready at the beginning because unfortunate coincidences can damage some.
+* Larger cell clusters are significantly more susceptible to mutations. We should set the mutation rates very low at the beginning.
+
+## Color semantics for cell types
 
 It can be observed that after some time a certain equilibrium develops. The population size remains roughly stable, gradually fewer traits are changing and evolutionary leaps become rarer. One way of regularly breaking through equilibria and creating more refuge areas is to assign special importance to the color flavor of the cell.
 
