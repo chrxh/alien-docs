@@ -64,7 +64,10 @@ Have fun watching it!
 
 ## Color semantics for cell types
 
-It can be observed that after some time a certain equilibrium develops. The population size remains roughly stable, gradually fewer traits are changing and evolutionary leaps become rarer. One way of regularly breaking through equilibria and creating more refuge areas is to assign special importance to the color flavor of the cell.
+It can be observed that after some time a certain equilibrium develops. The population size remains roughly stable, gradually fewer traits are changing and evolutionary leaps become rarer. One way of regularly breaking through equilibria and creating more refuge areas is to assign special importance to the color flavor of the cell. There exist two simulation parameters with which one can give the cell color a stronger meaning:
+
+* _Target color mismatch penalty_: A target color can be set for each digestion process, but it is ignored in the default settings. If this parameter is set greater than 0, the cell can extract less energy from another cell if it does not match the specified color. If this value is above 1, the cell actually loses energy during the digestion process if there is a color mismatch. This parameter can be used to exert selection pressure on the population, favoring those individuals that find and digest the particles with the matching color. At the same time, other populations can protect themselves from attacks by exhibiting a different color. This allows, for example, several populations with different colors to coexist peacefully.
+*
 
 ![](../.gitbook/assets/statistics.PNG)
 
