@@ -79,6 +79,8 @@ Small populations can sometimes fail to survive the pressure to adapt. In order 
 
 ## Inhomogeneous simulation parameters
 
+An interesting way to construct more dynamic worlds is to specify regions with different simulation parameters. We can utilize this feature for evolution simulations, for example, by separating two parts of an elongated world by vertical zones with high friction. One can use the simulation file `./examples/simulations/evolution/Loops.sim` mentioned at the beginning, scale it by twice the length and then set up two high friction zones with values around 0.1 and a smooth transition in the simulation parameters window. We end up with two ecosystems that are almost, but not quite, separated.
 
+![Two nearly distinct ecosystems separated by layers of high friction](<../.gitbook/assets/inhomogeneous parameters.png>)
 
-![](<../.gitbook/assets/inhomogeneous parameters.png>)
+Another possibility to model external influences and regular disturbances is to let the parameters change automatically in time. This functionality can also be enabled in the simulation parameters window with the toggle _Change automatically_. The parameters are then not only periodically varied, but the population size based on the number of tokens is continuously monitored and the parameters are restored if necessary.
