@@ -74,7 +74,7 @@ The statistics window gives us a good overview of the different cell colors. One
 ![Statistics window shows the number of cells broken down by color](../.gitbook/assets/statistics.PNG)
 
 {% hint style="warning" %}
-Small populations can quickly fail to survive the pressure to adapt. In order to prevent this as far as possible, the world including the population should be enlarged using the scaling function.
+Small populations can sometimes fail to survive the pressure to adapt. In order to prevent this as far as possible, the world including the population should be enlarged using the scaling function.
 {% endhint %}
 
 ## Inhomogeneous simulation parameters
