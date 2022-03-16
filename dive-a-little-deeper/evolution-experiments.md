@@ -66,10 +66,16 @@ Have fun watching it!
 
 It can be observed that after some time a certain equilibrium develops. The population size remains roughly stable, gradually fewer traits are changing and evolutionary leaps become rarer. One way of regularly breaking through equilibria and creating more refuge areas is to assign special importance to the color flavor of the cell. There exist two simulation parameters with which one can give the cell color a stronger meaning:
 
-* _Target color mismatch penalty_: A target color can be set for each digestion process, but it is ignored in the default settings. If this parameter is set greater than 0, the cell can extract less energy from another cell if it does not match the specified color. If this value is above 1, the cell actually loses energy during the digestion process if there is a color mismatch. This parameter can be used to exert selection pressure on the population, favoring those individuals that find and digest the particles with the matching color. At the same time, other populations can protect themselves from attacks by exhibiting a different color. This allows, for example, several populations with different colors to coexist peacefully.
-*
+* _Target color mismatch penalty_: A target color can be set in the token memory for each digestion process, but it is ignored in the default settings. If this parameter is set greater than 0, the cell can extract less energy from another cell if it does not match the specified color. If this value is above 1, the cell actually loses energy during the digestion process if there is a color mismatch. This parameter can be used to exert selection pressure on the population, favoring those individuals that find and digest the particles with the matching color. At the same time, other populations can protect themselves from attacks by exhibiting a different color. This allows, for example, several populations with different colors to coexist peacefully.
+* _Successive color dominance_: This parameter compares the color of the attacking with the attacked cell and establishes cyclic pattern of superiority. There are 7 different color flavors in ALIEN. If this parameter is greater than 0, a cell can get more energy from the digestion process if it has the next higher color value (in the MOD 7 sense) than the attacked cell. The idea behind this is that once a population with a certain color has become established, a color mutation that leads to the expression of individuals with the next higher color will have a selection advantage. It will prevail in the long run and in this process it will also be able to accumulate further mutations. Since this process can be repeated endlessly, there is a possibility of permanent change.
 
-![](../.gitbook/assets/statistics.PNG)
+The statistics window gives us a good overview of the different cell colors. One has to invoke the plus button next to the cell diagram to obtain the number of cells broken down by color. In the following screenshot from a long simulation run we can see clearly how populations with certain colors have dominated at different time epochs.
+
+![Statistics window shows the number of cells broken down by color](../.gitbook/assets/statistics.PNG)
+
+{% hint style="warning" %}
+Small populations can quickly fail to survive the pressure to adapt. In order to prevent this as far as possible, the world including the population should be enlarged using the scaling function.
+{% endhint %}
 
 ## Inhomogeneous simulation parameters
 
