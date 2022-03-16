@@ -62,7 +62,7 @@ Have fun watching it!
 
 ![The hexagon world after more than 10 million time steps.](<../.gitbook/assets/hexagons evolved.png>)
 
-## Color semantics for cell types
+## Colored cell types
 
 It can be observed that after some time a certain equilibrium develops. The population size remains roughly stable, gradually fewer traits are changing and evolutionary leaps become rarer. One way of regularly breaking through equilibria and creating more refuge areas is to assign special importance to the color flavor of the cell. There exist two simulation parameters with which one can give the cell color a stronger meaning:
 
