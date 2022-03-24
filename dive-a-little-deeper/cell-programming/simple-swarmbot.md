@@ -14,7 +14,7 @@ The above structure is composed of 7 cells and consists of 3 functional units:
 
 * The 2 cells on the left side are used to generate an impulse to steer to the right. One of these cells is a computational cell and is used to control the muscle cells. A muscle cell can only generate an impulse in the direction or opposite direction from which the token originates.
 * We still need a similar unit on the right side. A forward impulse on the right side leads to a left steering of the total structure.
-* In front is our visual unit. It also consists of a computational cell and a mass sensor.
+* In front of the swarmbot is our visual unit. It consists of a computational cell and a mass sensor.
 
 We now construct the basic structure in the editor by creating 7 cells and connecting them individually. Because there are only 6 different token branch numbers, at least one edge is undirected. Here we will help later with a special cell program. Furthermore we create a token at an arbitrary cell. For this we inspect one of these cells in the pattern editor (shortcut ALT+N) and click on the tab with the plus symbol.
 
