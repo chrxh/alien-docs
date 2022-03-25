@@ -2,7 +2,7 @@
 
 #### Abstract
 
-We will perform evolutionary simulations by injecting self-replicating machines into pristine worlds. Mutations will lead to gradual optimizations of the individuals. In this context, we want discuss the influence of crucial simulation parameters on cell functions. ALIEN offers advanced features like inhomogeneous parameter values, which we will also make use of. We will then address how larger self-replicating machines can be made functioning.
+We will perform evolutionary simulations by injecting self-replicating machines into pristine worlds. Mutations will lead to gradual optimizations of the individuals. In this context, we want discuss the influence of crucial simulation parameters on cell functions.ALIEN offers several features for changing simulation parameters, which we will also make use of. We will then address how larger self-replicating machines can be made functioning.
 
 ## Simple simulation setup for small self-replicators
 
