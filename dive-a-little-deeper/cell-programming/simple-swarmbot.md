@@ -74,6 +74,25 @@ endif
 * Line 1: The memory cell which contains the return value from the sensor is stored in another memory cell with the symbol `j`. This is necessary because different cell functions sometimes use the same memory cell as output.
 * Line 2: An angle correction of sensor data is performed here. We will examine this in more detail in the next section.
 * Line 3: As default, we instruct the muscle cell to do nothing. This will always be the case when the sensor finds nothing.
-* Line 8 - 15: It is checked whether the memory cell `i` is equal to `0`. This is the case if no muscle operations were performed in the last cycle. It is then checked whether the sensor has found something and whether the target is on the left side (with respect to the orientation in the picture above). The muscle cell is instructed to perform an expansion together with a backward momentum, which will cause the swarmbot to turn left. The memory cell `i` is set to `1` to perform a contraction in the next cycle.
+* Line 8 - 15: It is checked whether the memory cell `i` is equal to `0`. This is the case if no muscle operations were performed in the last cycle. It is then checked whether the sensor has found something and whether the target is on the left side (with respect to the orientation in the picture above). The muscle cell on the right hand side is instructed to perform an expansion together with a backward momentum, which will cause the swarmbot to turn left. The memory cell `i` is set to `1` to perform a contraction in the next cycle.
 * Line 4 - 7: The memory cell `i` is equal to `1` if an expansion was instructed in the last cycle. In order for the cell connection to regain its original reference distance, a contraction without an additional momentum is now instructed.
+
+The cell program on the left side works analogously with the difference that here a forward momentum must be generated to initiate a clockwise rotation. This is due to the fact that the token reaches the muscle cell from below while in the right side it reaches the muscle cell from above.
+
+```
+mov BRANCH_NUMBER, 3
+mov MUSCLE_IN, MUSCLE_IN::DO_NOTHING
+if i=2
+  mov MUSCLE_IN, MUSCLE_IN::EXPAND_RELAX
+  mov i, 3
+endif
+if i=0
+  if j=SENSOR_OUT::CLUSTER_FOUND
+    if SENSOR_INOUT_ANGLE<128
+      mov MUSCLE_IN, MUSCLE_IN::CONTRACT
+      mov i, 2
+    endif
+  endif
+endif
+```
 
