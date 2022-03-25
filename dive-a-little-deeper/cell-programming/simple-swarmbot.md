@@ -19,3 +19,11 @@ The above structure is composed of 7 cells and consists of 3 functional units:
 We now construct the basic structure in the editor by creating 7 cells and connecting them individually. Because there are only 6 different token branch numbers, it is not possible to reproduce a closed cycle. Here we will help later with a special cell program. Furthermore, we create a token at an arbitrary cell. To this end, we inspect one of these cells in the pattern editor (shortcut ALT+N) and click on the tab with the plus symbol.
 
 ![Skeleton of our swarmbot in ALIEN](../../.gitbook/assets/skeleton.PNG)
+
+We have now completed our basic scaffolding and can devote ourselves to the cell functions.
+
+## Functioning of a muscle cell
+
+Muscle cells can perform 4 different operations. The reference distance of the muscle cell to the predecessor cell is changed and, if necessary, an impulse is generated at the same time. The predecessor cell designates the cell from which the token originates that has just entered the muscle cell.
+
+![The four different operations of a muscle cell](../../.gitbook/assets/muscle.svg)
