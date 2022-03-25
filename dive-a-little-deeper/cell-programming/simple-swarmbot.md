@@ -16,7 +16,7 @@ The above structure is composed of 7 cells and consists of 3 functional units:
 * We still need a similar unit on the right side. A forward impulse on the right side leads to a left steering of the total structure.
 * In front of the swarmbot is our visual unit. It consists of a computational cell and a mass sensor.
 
-We now construct the basic structure in the editor by creating 7 cells and connecting them individually. Because there are only 6 different token branch numbers, it is not possible to reproduce a closed cycle. Here we will help later with a special cell program. Furthermore, we create a token at an arbitrary cell. To this end, we inspect one of these cells in the pattern editor (shortcut ALT+N) and click on the tab with the plus symbol.
+We now construct the basic structure in the editor by creating 7 cells and connecting them individually. Because there are only 6 different token branch numbers, it is not possible to reproduce a directed cycle. Here we will help later with a special cell program. Furthermore, we create a token at an arbitrary cell. To this end, we inspect one of these cells in the pattern editor (shortcut ALT+N) and click on the tab with the plus symbol.
 
 ![Skeleton of our swarmbot in ALIEN](../../.gitbook/assets/skeleton.PNG)
 
