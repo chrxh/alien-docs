@@ -35,5 +35,8 @@ The graphic above illustrates the different operations. Here we have two connect
 * The third operation describes a pure expansion. The distance between the connected cells is increased.
 * Analogous to the second case, the fourth operation leads to an increase in distance and, at the same time, to a backward impulse of the muscle cell.
 
-The indication of which operation should be performed is specified in the token memory. To simplify programming, there are default symbols for the memory location and its values.
+The indication of which operation should be performed is specified in the token memory. To simplify programming, there are default symbols for the memory location and its values. These can be viewed in the symbol editor, which can be opened in the editor menu.
 
+![Symbol editor](../../.gitbook/assets/symbols.PNG)
+
+The symbol _MUSCLE\_IN_ denotes the memory cell in the token where the muscle cell reads the operation. The different operations, on the other hand, are encoded via the symbols _MUSCLE\_IN::CONTRACT\_RELAX, MUSCLE\_IN::CONTRACT, MUSCLE\_IN::EXPAND\_RELAX, MUSCLE\_IN::EXPAND_ in the above order. These simply refer to constant values.
