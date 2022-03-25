@@ -20,7 +20,7 @@ We now construct the basic structure in the editor by creating 7 cells and conne
 
 ![Skeleton of our swarmbot in ALIEN](../../.gitbook/assets/skeleton.PNG)
 
-We have now completed our basic scaffolding and can devote ourselves to the cell functions.
+We set the cell specializations (_Computation_, _Muscle_ and _Sensor_) as indicated in the screenshot above. They will be explained in detail in the following sections.&#x20;
 
 ## Functioning of a muscle cell
 
@@ -40,3 +40,35 @@ The indication of which operation should be performed is specified in the token 
 ![Symbol editor](../../.gitbook/assets/symbols.PNG)
 
 The symbol _MUSCLE\_IN_ denotes the memory cell in the token where the muscle cell reads the operation. The different operations, on the other hand, are encoded via the symbols _MUSCLE\_IN::CONTRACT\_RELAX, MUSCLE\_IN::CONTRACT, MUSCLE\_IN::EXPAND\_RELAX, MUSCLE\_IN::EXPAND_ in the above order. These simply refer to constant values.
+
+For example, if we want the muscle cell to perform a contraction, we must set the appropriate value in the token memory beforehand. There the following command in a preceding computation cell we do.
+
+```
+mov MUSCLE_IN, MUSCLE_IN::CONTRACT_RELAX
+```
+
+To control the muscles for our swarmbot, we need the following programming:
+
+![Cell programs for the muscle control](<../../.gitbook/assets/muscle programming.PNG>)
+
+Let us have a closer look at the cell program on the right hand side first:
+
+```
+mov j, SENSOR_OUT
+add SENSOR_INOUT_ANGLE, 64
+mov MUSCLE_IN, MUSCLE_IN::DO_NOTHING
+if i=1
+  mov MUSCLE_IN, MUSCLE_IN::CONTRACT_RELAX
+  mov i, 3
+endif
+if i=0
+  if j=SENSOR_OUT::CLUSTER_FOUND
+    if SENSOR_INOUT_ANGLE>128
+      mov MUSCLE_IN, MUSCLE_IN::EXPAND
+      mov i, 1
+    endif
+  endif
+endif
+
+```
+
