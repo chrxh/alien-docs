@@ -31,15 +31,15 @@ Muscle cells can perform 4 different operations. The reference distance of the m
 The graphic above illustrates the different operations. Here we have two connected cells (a computation cell on the left and a muscle cell on the right) and a token that jumps from the left to the right cell and thus triggers the muscle function.
 
 * The first operation refers to a pure contraction. Here, the reference distance of the cell connections is reduced by a fixed factor. This results in a force that brings the cells closer together.
-* In the second case, the reference distance is also reduced and at the same time the muscle cell is given a forward impulse.
+* In the second case, the reference distance is also reduced and at the same time the muscle cell is given a forward momentum.
 * The third operation describes a pure expansion. The distance between the connected cells is increased.
-* Analogous to the second case, the fourth operation leads to an increase in distance and, at the same time, to a backward impulse of the muscle cell.
+* Analogous to the second case, the fourth operation leads to an increase in distance and, at the same time, to a backward momentum of the muscle cell.
 
 The indication of which operation should be performed is specified in the token memory. To simplify programming, there are default symbols for the memory location and its values. These can be viewed in the symbol editor, which can be opened in the editor menu.
 
 ![Symbol editor](../../.gitbook/assets/symbols.PNG)
 
-The symbol _MUSCLE\_IN_ denotes the memory cell in the token where the muscle cell reads the operation. The different operations, on the other hand, are encoded via the symbols _MUSCLE\_IN::CONTRACT\_RELAX, MUSCLE\_IN::CONTRACT, MUSCLE\_IN::EXPAND\_RELAX, MUSCLE\_IN::EXPAND_ in the above order. These simply refer to constant values.
+The symbol `MUSCLE_IN` __ denotes the memory cell in the token where the muscle cell reads the operation. The different operations, on the other hand, are encoded via the symbols `MUSCLE_IN::CONTRACT_RELAX`, `MUSCLE_IN::CONTRACT`, `MUSCLE_IN::EXPAND_RELAX`, `MUSCLE_IN::EXPAND` in the above order. These simply refer to constant values.
 
 For example, if we want the muscle cell to perform a contraction, we must set the appropriate value in the token memory beforehand. There the following command in a preceding computation cell we do.
 
@@ -69,6 +69,11 @@ if i=0
     endif
   endif
 endif
-
 ```
+
+* Line 1: The memory cell which contains the return value from the sensor is stored in another memory cell with the symbol `j`. This is necessary because different cell functions sometimes use the same memory cell as output.
+* Line 2: An angle correction of sensor data is performed here. We will examine this in more detail in the next section.
+* Line 3: As default, we instruct the muscle cell to do nothing. This will always be the case when the sensor finds nothing.
+* Line 8 - 15: It is checked whether the memory cell `i` is equal to `0`. This is the case if no muscle operations were performed in the last cycle. It is then checked whether the sensor has found something and whether the target is on the left side (with respect to the orientation in the picture above). The muscle cell is instructed to perform an expansion together with a backward momentum, which will cause the swarmbot to turn left. The memory cell `i` is set to `1` to perform a contraction in the next cycle.
+* Line 4 - 7: The memory cell `i` is equal to `1` if an expansion was instructed in the last cycle. In order for the cell connection to regain its original reference distance, a contraction without an additional momentum is now instructed.
 
