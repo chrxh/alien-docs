@@ -27,3 +27,13 @@ We have now completed our basic scaffolding and can devote ourselves to the cell
 Muscle cells can perform 4 different operations. The reference distance of the muscle cell to the predecessor cell is changed and, if necessary, an impulse is generated at the same time. The predecessor cell designates the cell from which the token originates that has just entered the muscle cell.
 
 ![The four different operations of a muscle cell](../../.gitbook/assets/muscle.svg)
+
+The graphic above illustrates the different operations. Here we have two connected cells (a computation cell on the left and a muscle cell on the right) and a token that jumps from the left to the right cell and thus triggers the muscle function.
+
+* The first operation refers to a pure contraction. Here, the reference distance of the cell connections is reduced by a fixed factor. This results in a force that brings the cells closer together.
+* In the second case, the reference distance is also reduced and at the same time the muscle cell is given a forward impulse.
+* The third operation describes a pure expansion. The distance between the connected cells is increased.
+* Analogous to the second case, the fourth operation leads to an increase in distance and, at the same time, to a backward impulse of the muscle cell.
+
+The indication of which operation should be performed is specified in the token memory. To simplify programming, there are default symbols for the memory location and its values.
+
