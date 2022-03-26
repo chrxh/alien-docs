@@ -107,10 +107,10 @@ Our machine would not work properly yet. For this we still need to adjust the se
 
 ## Working principle of a sensor cell
 
-A cell with a sensor is able to detect particle concentrations with a certain minimum density and a certain color in the vicinity. It will return the relative distance and relative angle of the found target. If it finds multiple targets, the one with the smallest distance is considered. Let us illustrate its working with a simple example.
+A cell with a sensor is able to detect particle concentrations with a certain minimum density and a certain color in the vicinity. It will return the relative distance and relative angle of the found target. If there are multiple targets, the one with the smallest distance is considered. Let us illustrate its working with a simple example.
 
 ![Illustration of the operation of a sensor](../../.gitbook/assets/sensor.svg)
 
-To understand the functionality, we consider the cell of the sensor and the predecessor cell of the token. In the graphic above we see in the center a sensor cell to which a token jumps from a cell connected on the left. From the relative position of both cells we can define what means _front_ and _back_. In the case above, e.g., the right direction is the front.
+To understand the functionality, we consider the cell of the sensor and the predecessor cell of the token. In the graphic above we see in the center a sensor cell to which a token jumps from a cell connected on the left. From the relative position of both cells we can define what means _front_ and _back_. In the case above, e.g., the direction to the right is specified as the front.
 
-We now assume that we want to search for nearby green particle assemblages. In the illustration, three colored clusters can be seen. The cluster with the smallest distance is yellow and then two green ones follow. Our sensor would detect the middle one and would measure the relative distance _d_ and the relative angle _α_ from that cluster. The sign of the angle gives us the information whether the target is above or below the sensor line. Since the determined target in our case is below the sensor line (red shaded area), the angle is positive.
+We now assume that we want to search for nearby green particle assemblages. In our illustration, three colored clusters can be seen. The cluster with the smallest distance is yellow and then two green ones follow. Our sensor would detect the middle one and would measure the relative distance _d_ and the relative angle _α_ from that cluster. The sign of the angle gives us the information whether the target is above or below the sensor line. Since the determined target in our case is below the sensor line (red shaded area), the angle is positive.
