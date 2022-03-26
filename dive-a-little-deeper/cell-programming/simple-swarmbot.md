@@ -4,7 +4,7 @@
 
 Cells in ALIEN can perform a wide variety of actions. We will address mass sensors and motion control in this section. These functions will be explained by building a simple swarm robot that scans its environment for particle concentrations with a specific color and moves in that direction.
 
-## Build a cell skeleton
+## Cell skeleton
 
 The basic idea is that our swarmbot scans its environment for certain particle concentrations and as soon as it finds something, it heads for the target. If the target is on the left side, a forward movement combined with a left turn should take place and in the other case a right turn.
 
@@ -107,6 +107,10 @@ Our machine would not work properly yet. For this we still need to adjust the se
 
 ## Working principle of a sensor cell
 
-A cell with a sensor is able to detect particle concentrations with a certain minimum density and a certain color in the vicinity. It will return the relative distance and relative angle of the found target. If it finds multiple targets, the one with the smallest distance is considered. Let us illustrate the working with a simple example.
+A cell with a sensor is able to detect particle concentrations with a certain minimum density and a certain color in the vicinity. It will return the relative distance and relative angle of the found target. If it finds multiple targets, the one with the smallest distance is considered. Let us illustrate its working with a simple example.
 
-![](../../.gitbook/assets/sensor.svg)
+![Illustration of the operation of a sensor](../../.gitbook/assets/sensor.svg)
+
+To understand the functionality, we consider the cell of the sensor and the predecessor cell of the token. In the graphic above we see in the center a sensor cell to which a token jumps from a cell connected on the left. From the relative position of both cells we can define what means _front_ and _back_. In the case above, e.g., the right direction is the front.
+
+We now assume that we want to search for nearby green particle assemblages. In the illustration, three colored clusters can be seen. The cluster with the smallest distance is yellow and then two green ones follow. Our sensor would detect the middle one and would measure the relative distance _d_ and the relative angle _α_ from that cluster. The sign of the angle gives us the information whether the target is above or below the sensor line. Since the determined target in our case is below the sensor line (red shaded area), the angle is positive.
