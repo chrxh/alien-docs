@@ -106,3 +106,7 @@ endif
 Our machine would not work properly yet. For this we still need to adjust the sensor appropriately.
 
 ## Working principle of a sensor cell
+
+A cell with a sensor is able to detect particle concentrations with a certain minimum density and a certain color in the vicinity. It will return the relative distance and relative angle of the found target. If it finds multiple targets, the one with the smallest distance is considered. Let us illustrate the working with a simple example.
+
+![](../../.gitbook/assets/sensor.svg)
