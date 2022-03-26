@@ -6,6 +6,8 @@ Cells in ALIEN can perform a wide variety of actions. We will address mass senso
 
 ## Build a cell skeleton
 
+The basic idea is that our swarmbot scans its environment for certain particle concentrations and as soon as it finds something, it heads for the target. If the target is on the left side, a forward movement combined with a left turn should take place and in the other case a right turn.
+
 A simple skeleton for our purpose consists of a loop-shaped structure in which a token can circulate. In this structure, we need a _muscle_ on both sides that provides us with an impulse depending on the direction we want to direct. We also need to accommodate a sensor that will give us the distance and angle where particle concentrations of a certain color are located.
 
 ![Cell skeleton of a simple swarmbot](../../.gitbook/assets/skeleton.svg)
@@ -22,7 +24,7 @@ We now construct the basic structure in the editor by creating 7 cells and conne
 
 We set the cell specializations (_Computation_, _Muscle_ and _Sensor_) as indicated in the screenshot above. They will be explained in detail in the following sections.&#x20;
 
-## Functioning of a muscle cell
+## Working principle of a muscle cell
 
 Muscle cells can perform 4 different operations. The reference distance of the muscle cell to the predecessor cell is changed and, if necessary, an impulse is generated at the same time. The predecessor cell designates the cell from which the token originates that has just entered the muscle cell.
 
@@ -47,7 +49,9 @@ For example, if we want the muscle cell to perform a contraction, we must set th
 mov MUSCLE_IN, MUSCLE_IN::CONTRACT_RELAX
 ```
 
-To control the muscles for our swarmbot, we need the following programming:
+## Implementation of a muscle control
+
+In the following we will focus on the concrete implementation. To control the muscles for our swarmbot, we need the following cell programs:
 
 ![Cell programs for the muscle control](<../../.gitbook/assets/muscle programming.PNG>)
 
@@ -98,3 +102,7 @@ endif
 
 * Line 1: Here a new branch number is assigned to the token. Normally the token obtains the branch number of the underlying cell. However, in our case we want the token to jump from the cell with the number 4 to the cell above with the same number. Since tokens always jump to the cells with the next higher number, we have to set the branch number of the token to 3.
 * Line 2 - 14: The code works similarly to the previous one with the difference that we first perform a contraction and then an expansion. Since this results in a right turn, this operation is only performed when the sensor has found a target on the right side.
+
+Our machine would not work properly yet. For this we still need to adjust the sensor appropriately.
+
+## Working principle of a sensor cell
