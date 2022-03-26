@@ -164,3 +164,5 @@ which is used in one of the computational cells for the muscle control becomes n
 ## Testing the result
 
 We have now finished putting together our machine. One can also find it as a pattern file at `./examples/patterns/swarmbots/Interceptor (Red Target).sim` if something does not work as expected. To experiment with our creature, we can, for example, build a large red rectangular cluster of cells nearby. We should then observe how the red cluster is pursued or orbited by the swarmbot while running the simulation (with a slow down!)
+
+![Swarmbot orbiting red cell cluster](<../../.gitbook/assets/swarmbot orbit.PNG>)
