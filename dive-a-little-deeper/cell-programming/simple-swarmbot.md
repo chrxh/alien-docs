@@ -26,7 +26,7 @@ We set the cell specializations (_Computation_, _Muscle_ and _Sensor_) as indica
 
 ## Working principle of a muscle cell
 
-Muscle cells can perform 4 different operations. The reference distance of the muscle cell to the predecessor cell is changed and, if necessary, an impulse is generated at the same time. The predecessor cell designates the cell from which the token originates that has just entered the muscle cell.
+Muscle cells can perform four different operations. The reference distance of the muscle cell to the predecessor cell is changed and, if necessary, an impulse is generated at the same time. The predecessor cell designates the cell from which the token originates that has just entered the muscle cell.
 
 ![The four different operations of a muscle cell](../../.gitbook/assets/muscle.svg)
 
@@ -41,7 +41,7 @@ The indication of which operation should be performed is specified in the token 
 
 ![Symbol editor](../../.gitbook/assets/symbols.PNG)
 
-The symbol `MUSCLE_IN` __ denotes the memory cell in the token where the muscle cell reads the operation. The different operations, on the other hand, are encoded via the symbols `MUSCLE_IN::CONTRACT_RELAX`, `MUSCLE_IN::CONTRACT`, `MUSCLE_IN::EXPAND_RELAX`, `MUSCLE_IN::EXPAND` in the above order. These simply refer to constant values.
+The symbol `MUSCLE_IN` __ denotes the memory byte in the token where the muscle cell reads the operation to be performed. It is an alias for the memory byte at position 36, which can also be written as \[36] in the code. The different operations, on the other hand, are encoded via the symbols `MUSCLE_IN::CONTRACT_RELAX`, `MUSCLE_IN::CONTRACT`, `MUSCLE_IN::EXPAND_RELAX`, `MUSCLE_IN::EXPAND` in the above order. These simply refer to constant values.
 
 For example, if we want the muscle cell to perform a contraction, we must set the appropriate value in the token memory beforehand. There the following command in a preceding computation cell we do.
 
@@ -75,11 +75,11 @@ else
   endif
 ```
 
-* Line 1: The memory cell which contains the return value from the sensor is stored in another memory cell with the symbol `j`. This is necessary because different cell functions sometimes use the same memory cell as output.
+* Line 1: The memory byte which contains the return value from the sensor is stored in another memory byte with the symbol `j`. This is necessary because different cell functions sometimes use the same memory byte as output.
 * Line 2: An angle correction of sensor data is performed here. We will examine this in more detail in the next section.
 * Line 3: As default, we instruct the muscle cell to do nothing. This will always be the case when the sensor finds nothing.
-* Line 8 - 15: It is checked whether the memory cell `i` is equal to `0`. This is the case if no muscle operations were performed in the last cycle. It is then checked whether the sensor has found something and whether the target is on the left side (with respect to the orientation in the picture above). The muscle cell on the right hand side is instructed to perform an expansion together with a backward momentum, which will cause the swarmbot to turn left. The memory cell `i` is set to `1` to perform a contraction in the next cycle.
-* Line 4 - 7: The memory cell `i` is equal to `1` if an expansion was instructed in the last cycle. In order for the cell connection to regain its original reference distance, a contraction without an additional momentum is now instructed.
+* Line 8 - 15: It is checked whether the memory byte `i` is equal to `0`. This is the case if no muscle operations were performed in the last cycle. It is then checked whether the sensor has found something and whether the target is on the left side (with respect to the orientation in the picture above). The muscle cell on the right hand side is instructed to perform an expansion together with a backward momentum, which will cause the swarmbot to turn left. The memory byte `i` is set to `1` to perform a contraction in the next cycle.
+* Line 4 - 7: The memory byte `i` is equal to `1` if an expansion was instructed in the last cycle. In order for the cell connection to regain its original reference distance, a contraction without an additional momentum is now instructed.
 
 {% hint style="info" %}
 In the code one can see that an `endif` is missing. It can be omitted at the end of a program. This is even necessary here, because a cell program can only consist of a maximum of 15 commands.
@@ -118,13 +118,13 @@ A cell with a sensor is able to detect particle concentrations with a certain mi
 
 To understand the functionality, we consider the cell of the sensor and the predecessor cell of the token. In the graphic above we see in the center a sensor cell to which a token jumps from a cell connected on the left. From the relative position of both cells we can define what means _front_ and _back_. In the case above, e.g., the direction to the right (sensor line) is specified as the front.
 
-We now assume that we want to search for nearby green particle assemblages. In our illustration, three colored clusters can be seen. The cluster with the smallest distance is yellow and then two green ones follow. Our sensor would detect the middle one and would measure the relative distance _d_ and the relative angle _α_ from that cluster. The sign of the angle gives us the information whether the target is above or below the sensor line. Since the determined target in our case is below the sensor line (red shaded area), the angle is positive.
+We now assume that we want to search for nearby green particle accumulations. In our illustration, three colored clusters can be seen. The cluster with the smallest distance is yellow and then two green ones follow. Our sensor would detect the middle one and would measure the relative distance _d_ and the relative angle _α_ from that cluster. The sign of the angle gives us the information whether the target is above or below the sensor line. Since the determined target in our case is below the sensor line (red shaded area), the angle is positive.
 
 ## Implementation of a sensor control
 
 The control of a sensor is relatively simple compared to the muscle cells. We only need to set a few options that provide the needed information for the sensor. For this purpose we can place the following small program in the upper left computation cell for our swarmbot.
 
-![](<../../.gitbook/assets/sensor programming.PNG>)
+![Cell programs for sensor and muscle control](<../../.gitbook/assets/sensor programming.PNG>)
 
 The code reads as:
 
@@ -134,8 +134,9 @@ mov SENSOR_IN_MIN_DENSITY, 5
 mov SENSOR_IN_COLOR, 1
 ```
 
-The code is actually self-explanatory. A sensor knows two different working modes, which are defined in the memory cell SENSOR\_IN:
+The code is actually self-explanatory. A sensor knows two different working modes, which are defined in the memory byte `SENSOR_IN`:
 
-* The scanning of the entire vicinity, which is indicated by the value SENSOR\_IN::SEARCH\_VICINITY.
-* Scanning of a certain direction for which it is necessary to set the value SENSOR\_IN::SEARCH\_BY\_ANGLE.
+* The scanning of the entire vicinity, which is indicated by the value `SENSOR_IN::SEARCH_VICINITY`.
+* Scanning of a certain direction for which it is necessary to set the value `SENSOR_IN::SEARCH_BY_ANGLE`.
 
+In line 2 we specify the sensitivity of the sensor. The memory byte SENSOR\_IN\_MIN\_DENSITY contains the minimum mass density of particle accumulations that the sensor would detect as potential targets. The density value indicates the number of particles in an area with size 8 x 8.
