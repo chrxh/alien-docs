@@ -63,16 +63,16 @@ add SENSOR_INOUT_ANGLE, 64
 mov MUSCLE_IN, MUSCLE_IN::DO_NOTHING
 if i=1
   mov MUSCLE_IN, MUSCLE_IN::CONTRACT_RELAX
-  mov i, 3
-endif
-if i=0
-  if j=SENSOR_OUT::CLUSTER_FOUND
-    if SENSOR_INOUT_ANGLE>128
-      mov MUSCLE_IN, MUSCLE_IN::EXPAND
-      mov i, 1
+  mov i, 0
+else
+  if i=0
+    if j=SENSOR_OUT::CLUSTER_FOUND
+      if SENSOR_INOUT_ANGLE>128
+        mov MUSCLE_IN, MUSCLE_IN::EXPAND
+        mov i, 1
+      endif
     endif
   endif
-endif
 ```
 
 * Line 1: The memory cell which contains the return value from the sensor is stored in another memory cell with the symbol `j`. This is necessary because different cell functions sometimes use the same memory cell as output.
@@ -81,6 +81,10 @@ endif
 * Line 8 - 15: It is checked whether the memory cell `i` is equal to `0`. This is the case if no muscle operations were performed in the last cycle. It is then checked whether the sensor has found something and whether the target is on the left side (with respect to the orientation in the picture above). The muscle cell on the right hand side is instructed to perform an expansion together with a backward momentum, which will cause the swarmbot to turn left. The memory cell `i` is set to `1` to perform a contraction in the next cycle.
 * Line 4 - 7: The memory cell `i` is equal to `1` if an expansion was instructed in the last cycle. In order for the cell connection to regain its original reference distance, a contraction without an additional momentum is now instructed.
 
+{% hint style="info" %}
+In the code one can see that an `endif` is missing. It can be omitted at the end of a program. This is even necessary here, because a cell program can only consist of a maximum of 15 commands.
+{% endhint %}
+
 The program of the computation cell on the left side works analogously with the difference that here a forward momentum must be generated to initiate a clockwise rotation. This is due to the fact that the token reaches the muscle cell from below while in the right side it reaches the muscle cell from above.
 
 ```
@@ -88,20 +92,21 @@ mov BRANCH_NUMBER, 3
 mov MUSCLE_IN, MUSCLE_IN::DO_NOTHING
 if i=2
   mov MUSCLE_IN, MUSCLE_IN::EXPAND_RELAX
-  mov i, 3
-endif
-if i=0
-  if j=SENSOR_OUT::CLUSTER_FOUND
-    if SENSOR_INOUT_ANGLE<128
-      mov MUSCLE_IN, MUSCLE_IN::CONTRACT
-      mov i, 2
+  mov i, 0
+else
+  if i=0
+    if j=SENSOR_OUT::CLUSTER_FOUND
+      if SENSOR_INOUT_ANGLE<128
+       mov MUSCLE_IN, MUSCLE_IN::CONTRACT
+        mov i, 2
+      endif
     endif
   endif
 endif
 ```
 
 * Line 1: Here a new branch number is assigned to the token. Normally the token obtains the branch number of the underlying cell. However, in our case we want the token to jump from the cell with the number 4 to the cell above with the same number. Since tokens always jump to the cells with the next higher number, we have to set the branch number of the token to 3.
-* Line 2 - 14: The code works similarly to the previous one with the difference that we first perform a contraction and then an expansion. Since this results in a right turn, this operation is only performed when the sensor has found a target on the right side.
+* Line 2 - 15: The code works similarly to the previous one with the difference that we first perform a contraction and then an expansion. Since this results in a right turn, this operation is only performed when the sensor has found a target on the right side.
 
 Our machine would not work properly yet. For this we still need to adjust the sensor appropriately.
 
@@ -111,6 +116,26 @@ A cell with a sensor is able to detect particle concentrations with a certain mi
 
 ![Illustration of the operation of a sensor](../../.gitbook/assets/sensor.svg)
 
-To understand the functionality, we consider the cell of the sensor and the predecessor cell of the token. In the graphic above we see in the center a sensor cell to which a token jumps from a cell connected on the left. From the relative position of both cells we can define what means _front_ and _back_. In the case above, e.g., the direction to the right is specified as the front.
+To understand the functionality, we consider the cell of the sensor and the predecessor cell of the token. In the graphic above we see in the center a sensor cell to which a token jumps from a cell connected on the left. From the relative position of both cells we can define what means _front_ and _back_. In the case above, e.g., the direction to the right (sensor line) is specified as the front.
 
 We now assume that we want to search for nearby green particle assemblages. In our illustration, three colored clusters can be seen. The cluster with the smallest distance is yellow and then two green ones follow. Our sensor would detect the middle one and would measure the relative distance _d_ and the relative angle _α_ from that cluster. The sign of the angle gives us the information whether the target is above or below the sensor line. Since the determined target in our case is below the sensor line (red shaded area), the angle is positive.
+
+## Implementation of a sensor control
+
+The control of a sensor is relatively simple compared to the muscle cells. We only need to set a few options that provide the needed information for the sensor. For this purpose we can place the following small program in the upper left computation cell for our swarmbot.
+
+![](<../../.gitbook/assets/sensor programming.PNG>)
+
+The code reads as:
+
+```
+mov SENSOR_IN, SENSOR_IN::SEARCH_VICINITY
+mov SENSOR_IN_MIN_DENSITY, 5
+mov SENSOR_IN_COLOR, 1
+```
+
+The code is actually self-explanatory. A sensor knows two different working modes, which are defined in the memory cell SENSOR\_IN:
+
+* The scanning of the entire vicinity, which is indicated by the value SENSOR\_IN::SEARCH\_VICINITY.
+* Scanning of a certain direction for which it is necessary to set the value SENSOR\_IN::SEARCH\_BY\_ANGLE.
+
