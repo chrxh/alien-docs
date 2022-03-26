@@ -85,7 +85,7 @@ else
 In the code one can see that an `endif` is missing. It can be omitted at the end of a program. This is even necessary here, because a cell program can only consist of a maximum of 15 commands.
 {% endhint %}
 
-The program of the computation cell on the left side works analogously with the difference that here a forward momentum must be generated to initiate a clockwise rotation. This is due to the fact that the token reaches the muscle cell from below while in the right side it reaches the muscle cell from above.
+The program of the computation cell on the left side works analogously with the difference that here a forward momentum must be generated to initiate a clockwise rotation. This is due to the fact that the token reaches the muscle cell from below while in the right side it reaches the muscle cell from above (i.e. the frame of reference is rotated by 180°).
 
 ```
 mov BRANCH_NUMBER, 3
