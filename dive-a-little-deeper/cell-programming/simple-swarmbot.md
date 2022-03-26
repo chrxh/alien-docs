@@ -51,7 +51,7 @@ To control the muscles for our swarmbot, we need the following programming:
 
 ![Cell programs for the muscle control](<../../.gitbook/assets/muscle programming.PNG>)
 
-Let us have a closer look at the cell program on the right hand side first:
+Let us have a closer look at the cell program on the right side first:
 
 ```
 mov j, SENSOR_OUT
@@ -96,3 +96,5 @@ if i=0
 endif
 ```
 
+* Line 1: Here a new branch number is assigned to the token. Normally the token obtains the branch number of the underlying cell. However, in our case we want the token to jump from the cell with the number 4 to the cell above with the same number. Since tokens always jump to the cells with the next higher number, we have to set the branch number of the token to 3.
+* Line 2 - 14: The code works similarly to the previous one with the difference that we first perform a contraction and then an expansion. Since this results in a right turn, this operation is only performed when the sensor has found a target on the right side.
