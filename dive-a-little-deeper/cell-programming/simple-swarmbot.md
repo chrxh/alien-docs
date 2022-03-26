@@ -151,7 +151,7 @@ The instruction
 add SENSOR_INOUT_ANGLE, 64
 ```
 
-taken from the code of the computation cell on the right side gives us the relative angle of our target if we would rotate our frame of reference by 90° counterclockwise. It corresponds to the reference frame where we control our muscle cells.
+taken from the code of the computation cell on the right side calculates the relative angle of our target if we would rotate our frame of reference by 90° counterclockwise. It corresponds to the reference frame where the muscle cells are controlled.
 
 Also the line
 
