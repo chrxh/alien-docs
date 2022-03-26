@@ -140,3 +140,24 @@ The code is actually self-explanatory. A sensor knows two different working mode
 * Scanning of a certain direction for which it is necessary to set the value `SENSOR_IN::SEARCH_BY_ANGLE`.
 
 In line 2 we specify the sensitivity of the sensor. The memory byte SENSOR\_IN\_MIN\_DENSITY contains the minimum mass density of particle accumulations that the sensor would detect as potential targets. The density value indicates the number of particles in an area with size 8 x 8.
+
+Finally, we provide a particle color in line 3. A value between 0 to 6 is expected here. The value 1 corresponds to the red color.
+
+When the sensor function has been executed, we can retrieve the result in `SENSOR_OUT` whether a target has been found or not. If this is the case, it has the value `SENSOR_OUT::CLUSTER_FOUND` (see code from the muscle control). We obtain the angle of the target in `SENSOR_INOUT_ANGLE`, the distance in `SENSOR_OUT_DISTANCE` and the exact density in `SENSOR_OUT_MASS`. It should be noted that all these information are encoded in one byte each. For the specification of the angle, 0° to +180° correspond to the byte values from 0 to 127 and -180° to 0° correspond to the byte values from 128 to 255.
+
+The instruction
+
+```
+add SENSOR_INOUT_ANGLE, 64
+```
+
+taken from the code of the computation cell on the right side gives us the relative angle of our target if we would rotate our frame of reference by 90° counterclockwise. It corresponds to the reference frame where we control our muscle cells.
+
+Also the line
+
+```
+if SENSOR_INOUT_ANGLE<128
+```
+
+which is used in one of the computational cells for the muscle control becomes now clear: We just check whether the angle is positive or negative.
+
