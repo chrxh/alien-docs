@@ -53,19 +53,19 @@ In C syntax, for example, the statement at line 1 would read as `op1 = op2` and 
 * Direct reference to a cell memory byte: A memory byte of the cell can also be referenced. Syntax (example): ** `(0)`**
 * Indirect reference to a token memory byte: It is also possible when referencing a token memory byte to obtain the address itself from the memory. Syntax (example): **`[[32]]` or `[[0x20]]`** In this case the actual address is obtained from `[0x20]` and then used to reference the corresponding memory byte.
 
-To make writing code easier, there is a symbol table where one can specify aliases for constants and references to memory bytes. For instance,
+To make writing code easier, there is a symbol table where one can specify aliases for constants and references to memory bytes. For instance, a code like
 
 ```
 if i=0
   mov CONSTR_IN_OPTION, CONSTR_IN_OPTION::STANDARD
   mov CONSTR_INOUT_ANGLE, 0xD0
 endif
-if SCANNER_OUT=1
-  mov CONSTR_IN_OPTION, 6
+if SCANNER_OUT = SCANNER_OUT::FINISHED
+  mov CONSTR_IN_OPTION, CONSTR_IN_OPTION::FINISH_WITH_DUP_TOKEN_SEP
 endif
 mov CONSTR_IN_CELL_MAX_CONNECTIONS, CONSTR_IN_CELL_MAX_CONNECTIONS::AUTO
 mov CONSTR_IN_DIST, 0x78
-mov CONSTR_IN_UNIFORM_DIST,CONSTR_IN_UNIFORM_DIST::YES
+mov CONSTR_IN_UNIFORM_DIST, CONSTR_IN_UNIFORM_DIST::YES
 ```
 
 is much easier to understand than the decompiled machine code
