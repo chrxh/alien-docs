@@ -26,7 +26,64 @@ We set the cell specializations (_Computation_, _Muscle_ and _Sensor_) as indica
 
 ## Working principle of a computing cell
 
-A computing cell has a memory in which instructions are encoded and a data memory. As soon as a token enters such a cell, its cell code is executed. The instructions have access to the data memory of the cell as well as to the data memory of the token. Basically, a cell program can consist of a maximum of 15 commands. Each command is represented as 3 bytes in the memory. The data memory of a cell contains 8 bytes while the memory of a token contains 256 bytes.
+A computing cell has a memory in which instructions are encoded and a data memory. As soon as a token enters such a cell, its cell code is executed. The instructions have access to the data memory of the cell as well as to the data memory of the token. Basically, a cell program can consist of a maximum of 15 commands. Each command is represented as 3 bytes in the memory. The data memory of a cell contains 8 bytes while the memory of a token contains 256 bytes. ALIEN provides a built-in compiler that allows the user to write the code in an assembler-like language. The following instructions are supported:
+
+```
+    mov op1, op2
+    add op1, op2
+    sub op1, op2
+    mul op1, op2  
+    div op1, op2  
+    xor op1, op2  
+    or op1, op2  
+    and op1, op2 
+    if op1 > op2
+    if op1 >= op2
+    if op1 = op2  
+    if op1 != op2
+    if op1 <= op2
+    if op1 < op2
+    else
+    endif
+```
+
+In C syntax, for example, the statement at line 1 would read as `op1 = op2` and at line 2 `op1 += op2`. `op1` should point to a particular byte in memory, while `op2` can be a memory byte or a constant (8 bits large). There are several ways to reference a memory byte for `op1` or `op2`:
+
+* Direct reference to a token memory byte: In this case a byte in the token memory is referenced via an 8 bit address. The address can be specified as decimal or hexadecimal value. Syntax (example): ** `[32]` or `[0x20]`**
+* Direct reference to a cell memory byte: A memory byte of the cell can also be referenced. Syntax (example): ** `(0)`**
+* Indirect reference to a token memory byte: It is also possible when referencing a token memory byte to obtain the address itself from the memory. Syntax (example): **`[[32]]` or `[[0x20]]`** In this case the actual address is obtained from `[0x20]` and then used to reference the corresponding memory byte.
+
+To make writing code easier, there is a symbol table where one can specify aliases for constants and references to memory bytes. For instance,
+
+```
+if i=0
+  mov CONSTR_IN_OPTION, CONSTR_IN_OPTION::STANDARD
+  mov CONSTR_INOUT_ANGLE, 0xD0
+endif
+if SCANNER_OUT=1
+  mov CONSTR_IN_OPTION, 6
+endif
+mov CONSTR_IN_CELL_MAX_CONNECTIONS, CONSTR_IN_CELL_MAX_CONNECTIONS::AUTO
+mov CONSTR_IN_DIST, 0x78
+mov CONSTR_IN_UNIFORM_DIST,CONSTR_IN_UNIFORM_DIST::YES
+```
+
+is much easier to understand than the decompiled machine code
+
+```
+if [0xff] = 0x0
+  mov [0x7], 0x0
+  mov [0xf], 0xd0
+endif
+if [0x5] = 0x1
+  mov [0x7], 0x6
+endif
+mov [0x11], 0x0
+mov [0x10], 0x78
+mov [0xd], 0x1
+```
+
+The symbols can be viewed in the _Symbols_ window reachable via the _Editor_ menu. Some of the memory bytes are used to control other cell functions. There are many predefined symbols for this purpose.
 
 ## Working principle of a muscle cell
 
