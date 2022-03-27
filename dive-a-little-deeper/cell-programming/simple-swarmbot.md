@@ -137,7 +137,7 @@ mov SENSOR_IN_COLOR, 1
 At line 1 we specify the working mode. A sensor knows two different working modes, which are defined in the memory byte `SENSOR_IN`:
 
 * The scanning of the entire vicinity, which is indicated by the value `SENSOR_IN::SEARCH_VICINITY`.
-* Scanning of a certain direction for which it is necessary to set the value `SENSOR_IN::SEARCH_BY_ANGLE`.
+* If we want to scan only in a particular direction it is necessary to set the value `SENSOR_IN::SEARCH_BY_ANGLE`.
 
 At line 2 we specify the sensitivity of the sensor. The memory byte SENSOR\_IN\_MIN\_DENSITY contains the minimum mass density of particle accumulations that the sensor would detect as potential targets. The density value indicates the number of particles in an area with size 8 x 8.
 
