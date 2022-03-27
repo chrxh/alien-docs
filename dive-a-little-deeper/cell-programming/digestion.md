@@ -14,4 +14,15 @@ As one can see, we have to sacrifice a computational cell for this purpose. Howe
 
 ## Working principle of a digestion cell
 
-The basic principle is simple: As soon as a digestive cell is triggered by a token, it searches for cells in the immediate vicinity that are not connected to it directly or via another cell. For each of these matched cells, it is calculated how much internal energy can be drawn from it. However, the amount of energy drawn depends strongly on the simulation parameters and the digestion configuration in the token memory. In the worst case, the digestion cell even loses energy if the foreign cells do not meet certain criteria.
+The basic principle is simple: As soon as a digestive cell is triggered by a token, it searches for cells in the immediate vicinity that are not connected to it directly or via another cell. For each of these matched cells, it is calculated how much internal energy can be drawn from it. However, the amount of energy drawn depends strongly on the simulation parameters and the digestion configuration in the token memory. In the worst case, the digestion cell even loses energy if the foreign cells do not meet certain criteria. Let us discuss the corresponding simulation parameters under _Cell specialization: Digestion function_:
+
+#### Energy cost
+
+If we have set energy cost greater than 0, then after each digestion process, even if no neighboring cells were found, the cell loses the energy specified in this parameter and in return releases an energy particle with this energy. Thus, a large value penalizes structures that attack other cells on a massive and unselective basis.
+
+#### Target color mismatch penalty
+
+In the token memory, a specific color can be set for the cells that are aimed to be digested. This effect will be activated with the _Target color mismatch penalty_ parameter if it is greater than 0. If the color of the cell to be digested does not match the specified color, less energy is drawn from it, depending on the value of this parameter. In the extreme case, when the parameter is greater than 1, the cell even loses energy when it tries to digest cells with the wrong color.
+
+#### Successive color dominance
+
