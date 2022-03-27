@@ -22,7 +22,8 @@ If we have set energy cost greater than 0, then after each digestion process, ev
 
 #### Target color mismatch penalty
 
-In the token memory, a specific color can be set for the cells that are aimed to be digested. This effect will be activated with the _Target color mismatch penalty_ parameter if it is greater than 0. If the color of the cell to be digested does not match the specified color, less energy is drawn from it, depending on the value of this parameter. In the extreme case, when the parameter is greater than 1, the cell even loses energy when it tries to digest cells with the wrong color.
+This parameter (among others) assigns a special meaning to the color of a cell. One can also think of the cell color as another form of typification, which can contribute to more diverse ecosystems. In the token memory, a specific color can be set for the cells that are aimed to be digested. This effect will be activated with the _Target color mismatch penalty_ parameter if it is greater than 0. If the color of the cell to be digested does not match the specified color, less energy is drawn from it, depending on the value of this parameter. In the extreme case, when the parameter is greater than 1, the cell even loses energy when it tries to digest cells with the wrong color.
 
 #### Successive color dominance
 
+This parameter results in a comparison of the cell color of the digestion cell with the color of the cell being digested.
