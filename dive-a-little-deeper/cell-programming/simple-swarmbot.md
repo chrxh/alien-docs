@@ -2,7 +2,7 @@
 
 #### Abstract
 
-Cells in ALIEN can perform a wide variety of actions. We will address mass sensors and motion control in this section. These functions will be explained by building a simple swarm robot that scans its environment for particle concentrations with a specific color and moves in that direction.
+Cells in ALIEN can perform a wide variety of actions. We will address cell programs, mass sensors and motion control in this section. These functions will be explained by building a simple swarm robot that scans its environment for particle concentrations with a specific color and moves in that direction.
 
 ## Cell skeleton
 
@@ -22,7 +22,11 @@ We now construct the basic structure in the editor by creating 7 cells and conne
 
 ![Skeleton of our swarmbot in ALIEN](../../.gitbook/assets/skeleton.PNG)
 
-We set the cell specializations (_Computation_, _Muscle_ and _Sensor_) as indicated in the screenshot above. They will be explained in detail in the following sections.&#x20;
+We set the cell specializations (_Computation_, _Muscle_ and _Sensor_) as indicated in the screenshot above. The different cell types will be explained in more detail in the following sections and then an  appropriate implementation for our machine will be presented.
+
+## Working principle of a computing cell
+
+A computing cell has a memory in which instructions are encoded and a data memory. As soon as a token enters such a cell, its cell code is executed. The instructions have access to the data memory of the cell as well as to the data memory of the token. Basically, a cell program can consist of a maximum of 15 commands. Each command is represented as 3 bytes in the memory. The data memory of a cell contains 8 bytes while the memory of a token contains 256 bytes.
 
 ## Working principle of a muscle cell
 
@@ -48,6 +52,16 @@ For example, if we want the muscle cell to perform a contraction, we must set th
 ```
 mov MUSCLE_IN, MUSCLE_IN::CONTRACT_RELAX
 ```
+
+## Working principle of a sensor cell
+
+A cell with a sensor is able to detect particle concentrations with a certain minimum density and a certain color in the vicinity. It will return the relative distance and relative angle of the found target. If there are multiple targets, the one with the smallest distance is considered. Let us illustrate its working with a simple example.
+
+![Illustration of the operation of a sensor](../../.gitbook/assets/sensor.svg)
+
+To understand the functionality, we consider the cell of the sensor and the predecessor cell of the token. In the graphic above we see in the center a sensor cell to which a token jumps from a cell connected on the left. From the relative position of both cells we can define what means _front_ and _back_. In the case above, e.g., the direction to the right (sensor line) is specified as the front.
+
+We now assume that we want to search for nearby green particle accumulations. In our illustration, three colored clusters can be seen. The cluster with the smallest distance is yellow and then two green ones follow. Our sensor would detect the middle one and would measure the relative distance _d_ and the relative angle _α_ from that cluster. The sign of the angle gives us the information whether the target is above or below the sensor line. Since the determined target in our case is below the sensor line (red shaded area), the angle is positive.
 
 ## Implementation of a muscle control
 
@@ -109,16 +123,6 @@ endif
 * Line 2 - 15: The code works similarly to the previous one with the difference that we first perform a contraction and then an expansion. Since this results in a right turn, this operation is only performed when the sensor has found a target on the right side.
 
 Our machine would not work properly yet. For this we still need to adjust the sensor appropriately.
-
-## Working principle of a sensor cell
-
-A cell with a sensor is able to detect particle concentrations with a certain minimum density and a certain color in the vicinity. It will return the relative distance and relative angle of the found target. If there are multiple targets, the one with the smallest distance is considered. Let us illustrate its working with a simple example.
-
-![Illustration of the operation of a sensor](../../.gitbook/assets/sensor.svg)
-
-To understand the functionality, we consider the cell of the sensor and the predecessor cell of the token. In the graphic above we see in the center a sensor cell to which a token jumps from a cell connected on the left. From the relative position of both cells we can define what means _front_ and _back_. In the case above, e.g., the direction to the right (sensor line) is specified as the front.
-
-We now assume that we want to search for nearby green particle accumulations. In our illustration, three colored clusters can be seen. The cluster with the smallest distance is yellow and then two green ones follow. Our sensor would detect the middle one and would measure the relative distance _d_ and the relative angle _α_ from that cluster. The sign of the angle gives us the information whether the target is above or below the sensor line. Since the determined target in our case is below the sensor line (red shaded area), the angle is positive.
 
 ## Implementation of a sensor control
 
