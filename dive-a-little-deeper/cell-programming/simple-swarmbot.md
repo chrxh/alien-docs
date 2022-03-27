@@ -91,7 +91,7 @@ Muscle cells can perform four different operations. The reference distance of th
 
 ![The four different operations of a muscle cell](../../.gitbook/assets/muscle.svg)
 
-The graphic above illustrates the different operations. Here we have two connected cells (a computation cell on the left and a muscle cell on the right) and a token that jumps from the left to the right cell and thus triggers the muscle function.
+The graphic above illustrates the different operations. Here we have two connected cells (a computing cell on the left and a muscle cell on the right) and a token that jumps from the left to the right cell and thus triggers the muscle function.
 
 * The first operation refers to a pure contraction. Here, the reference distance of the cell connections is reduced by a fixed factor. This results in a force that brings the cells closer together.
 * In the second case, the reference distance is also reduced and at the same time the muscle cell is given a forward momentum.
@@ -104,7 +104,7 @@ The indication of which operation should be performed is specified in the token 
 
 The symbol `MUSCLE_IN` __ denotes the memory byte in the token where the muscle cell reads the operation to be performed. It is an alias for the memory byte at position 36, which can also be written as \[36] in the code. The different operations, on the other hand, are encoded via the symbols `MUSCLE_IN::CONTRACT_RELAX`, `MUSCLE_IN::CONTRACT`, `MUSCLE_IN::EXPAND_RELAX`, `MUSCLE_IN::EXPAND` in the above order. These simply refer to constant values.
 
-For example, if we want the muscle cell to perform a contraction, we must set the appropriate value in the token memory beforehand. There the following command in a preceding computation cell we do.
+For example, if we want the muscle cell to perform a contraction, we must set the appropriate value in the token memory beforehand. The following command in a preceding computing cell we do this:
 
 ```
 mov MUSCLE_IN, MUSCLE_IN::CONTRACT_RELAX
