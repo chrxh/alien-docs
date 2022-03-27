@@ -14,7 +14,7 @@ As one can see, we have to sacrifice a computational cell for this purpose. Howe
 
 ## Working principle of a digestion cell
 
-The basic principle is simple: As soon as a digestive cell is triggered by a token, it searches for cells in the immediate vicinity that are not connected to it directly or via another cell. For each of these matched cells, it is calculated how much internal energy can be drawn from it. However, the amount of energy drawn depends strongly on the simulation parameters and the digestion configuration in the token memory. In the worst case, the digestion cell even loses energy if the foreign cells do not meet certain criteria. Let us discuss the corresponding simulation parameters grouped under _Cell specialization: Digestion function_:
+The basic principle is simple: As soon as a digestion cell is triggered by a token, it searches for cells in the immediate vicinity that are not connected to it directly or via another cell. For each of these matched cells, it is calculated how much internal energy can be drawn from it. However, the amount of energy drawn depends strongly on the simulation parameters and the digestion configuration in the token memory. In the worst case, the digestion cell even loses energy if the foreign cells do not meet certain criteria. Let us discuss the corresponding simulation parameters grouped under _Cell specialization: Digestion function_:
 
 #### Energy cost
 
