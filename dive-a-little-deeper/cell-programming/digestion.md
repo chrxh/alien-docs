@@ -10,4 +10,7 @@ We do not need to change the basic structure, but we will adjust the cell functi
 
 ![Cell skeleton of a swarmbot with attack capabilities](<../../.gitbook/assets/skeleton attacker.svg>)
 
-As one can see, we have to sacrifice a computational cell for this purpose. However, we still have a cell available at the bottom center, which we had not used so far.
+As one can see, we have to sacrifice a computational cell for this purpose. However, we still have a cell available at the bottom center, which we had not used so far. Before we get to the implementation details, let us give a more detailed explanation of the digestion process.
+
+## Working principle of a digestion cell
+
