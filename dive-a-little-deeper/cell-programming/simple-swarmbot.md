@@ -122,9 +122,9 @@ We now assume that we want to search for nearby green particle accumulations. In
 
 ## Implementation of a sensor control
 
-In the following we will focus on the concrete implementation. The sensor cell of our swarmbot has an preceding computing cell that controls it. We only need to set a few options that provide the needed information for the sensor. For this purpose we can place the following small program in the upper left computation cell.
+In the following we will focus on the concrete implementation. The sensor cell of our swarmbot has an preceding computing cell that controls it. We only need to set a few options that provide the needed information for the sensor. For this purpose we can place the following small program in the upper left computing cell.
 
-![Cell programs for sensor and muscle control](<../../.gitbook/assets/sensor programming.PNG>)
+![Cell programs for sensor and muscle control](<../../.gitbook/assets/swarmbot sensor.PNG>)
 
 The code reads as:
 
@@ -145,19 +145,15 @@ Finally, we provide a particle color in line 3. A value between 0 to 6 is expect
 
 When the sensor function has been executed, we can retrieve the result in `SENSOR_OUT` whether a target has been found or not. If this is the case, it has the value `SENSOR_OUT::CLUSTER_FOUND` (see code from the muscle control). We obtain the angle of the target in `SENSOR_INOUT_ANGLE`, the distance in `SENSOR_OUT_DISTANCE` and the exact density in `SENSOR_OUT_MASS`. It should be noted that all these information are encoded in one byte each. For the specification of the angle, 0° to +180° correspond to the byte values from 0 to 127 and -180° to 0° correspond to the byte values from 128 to 255.
 
-The instruction
-
-```
-add SENSOR_INOUT_ANGLE, 64
-```
-
-taken from the code of the computation cell on the right side calculates the relative angle of our target if we would rotate our frame of reference by 90° counterclockwise. It corresponds to the reference frame where the muscle cells are controlled.
+{% hint style="info" %}
+If there is a compile error with the code, it may be because the correct symbols were not loaded. In this case, the default symbols, which can be restored in the editor, are sufficient.
+{% endhint %}
 
 ## Implementation of a muscle control
 
 To control the muscles for our swarmbot, we need the following cell programs:
 
-![Cell programs for the muscle control](<../../.gitbook/assets/muscle programming.PNG>)
+![Cell programs for the muscle control](<../../.gitbook/assets/swarmbot muscles.PNG>)
 
 Let us have a closer look at the cell program on the right side first:
 
@@ -165,46 +161,52 @@ Let us have a closer look at the cell program on the right side first:
 mov j, SENSOR_OUT
 add SENSOR_INOUT_ANGLE, 64
 mov MUSCLE_IN, MUSCLE_IN::DO_NOTHING
-if i=1
-  mov MUSCLE_IN, MUSCLE_IN::CONTRACT_RELAX
-  mov i, 0
-else
-  if i=0
-    if j=SENSOR_OUT::CLUSTER_FOUND
-      if SENSOR_INOUT_ANGLE>128
-        mov MUSCLE_IN, MUSCLE_IN::EXPAND
-        mov i, 1
-      endif
+if i = 0
+  if j = SENSOR_OUT::CLUSTER_FOUND
+    if SENSOR_INOUT_ANGLE > 127
+      mov MUSCLE_IN, MUSCLE_IN::EXPAND
+      mov i, 1
     endif
+  endif
+else
+  if i = 1
+    mov MUSCLE_IN, MUSCLE_IN::CONTRACT_RELAX
+    mov i, 0
   endif
 ```
 
 * Line 1: The memory byte which contains the return value from the sensor is stored in another memory byte with the symbol `j`. This is necessary because different cell functions sometimes use the same memory byte as output.
-* Line 2: An angle correction of sensor data is performed here. We will examine this in more detail in the next section.
-* Line 3: As default, we instruct the muscle cell to do nothing. This will always be the case when the sensor finds nothing.
-* Line 8 - 15: It is checked whether the memory byte `i` is equal to `0`. This is the case if no muscle operations were performed in the last cycle. It is then checked whether the sensor has found something and whether the target is on the left side (with respect to the orientation in the picture above). The muscle cell on the right hand side is instructed to perform an expansion together with a backward momentum, which will cause the swarmbot to turn left. The memory byte `i` is set to `1` to perform a contraction in the next cycle.
-* Line 4 - 7: The memory byte `i` is equal to `1` if an expansion was instructed in the last cycle. In order for the cell connection to regain its original reference distance, a contraction without an additional momentum is now instructed.
+* Line 2: An angle correction of the sensor data is performed here. The instruction calculates the relative angle of our target if we would rotate our frame of reference by 90° counterclockwise (a value of 64 is interpreted as 90° in our encoding). It corresponds to the reference frame where the muscle cells are controlled.
+* Line 3: As default, we instruct the muscle cell to do nothing.
+* Line 4: It is checked whether the memory byte `i` is equal to `0`. This is the case if no muscle operations were performed in the last cycle.
+* Line 5: It is then checked whether the sensor has found some target.
+* Line 6: The angle of the target is returned as a signed byte. A value greater than 127 therefore represents a negative angle and means that the target is on the left side.
+* Line 7: The muscle cell on the right hand side is instructed to perform an expansion together with a backward momentum, which will cause the swarmbot to turn left.
+* Line 8: The memory byte `i` is set to `1` to perform a contraction in the next cycle.
+* Line 12: The memory byte `i` is equal to `1` if an expansion was instructed in the last cycle.
+* Line 13: In order for the cell connection to regain its original reference distance, a contraction without an additional momentum is now instructed.
+* Line 14: The original state for the muscle is restored, which is `i=0`.
 
 {% hint style="info" %}
 In the code one can see that an `endif` is missing. It can be omitted at the end of a program. This is even necessary here, because a cell program can only consist of a maximum of 15 commands.
 {% endhint %}
 
-The program of the computation cell on the left side works analogously with the difference that here a forward momentum must be generated to initiate a clockwise rotation. This is due to the fact that the token reaches the muscle cell from below while in the right side it reaches the muscle cell from above (i.e. the frame of reference is rotated by 180°).
+The program of the computing cell on the left side is the counterpart to the one of the right side with the difference that here a forward momentum must be generated to initiate a clockwise rotation. This is due to the fact that the token reaches the muscle cell from below while in the right side it reaches the muscle cell from above (i.e. the frame of reference is rotated by 180°).
 
 ```
 mov BRANCH_NUMBER, 3
 mov MUSCLE_IN, MUSCLE_IN::DO_NOTHING
-if i=2
-  mov MUSCLE_IN, MUSCLE_IN::EXPAND_RELAX
-  mov i, 0
-else
-  if i=0
-    if j=SENSOR_OUT::CLUSTER_FOUND
-      if SENSOR_INOUT_ANGLE<128
-       mov MUSCLE_IN, MUSCLE_IN::CONTRACT
-        mov i, 2
-      endif
+if i = 0
+  if j = SENSOR_OUT::CLUSTER_FOUND
+    if SENSOR_INOUT_ANGLE < 128
+      mov MUSCLE_IN, MUSCLE_IN::CONTRACT
+      mov i, 2
     endif
+  endif
+else
+  if i = 2
+    mov MUSCLE_IN, MUSCLE_IN::EXPAND_RELAX
+    mov i, 0
   endif
 endif
 ```
