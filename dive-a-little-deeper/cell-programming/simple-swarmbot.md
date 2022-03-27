@@ -120,9 +120,42 @@ To understand the functionality, we consider the cell of the sensor and the pred
 
 We now assume that we want to search for nearby green particle accumulations. In our illustration, three colored clusters can be seen. The cluster with the smallest distance is yellow and then two green ones follow. Our sensor would detect the middle one and would measure the relative distance _d_ and the relative angle _α_ from that cluster. The sign of the angle gives us the information whether the target is above or below the sensor line. Since the determined target in our case is below the sensor line (red shaded area), the angle is positive.
 
+## Implementation of a sensor control
+
+In the following we will focus on the concrete implementation. The sensor cell of our swarmbot has an preceding computing cell that controls it. We only need to set a few options that provide the needed information for the sensor. For this purpose we can place the following small program in the upper left computation cell.
+
+![Cell programs for sensor and muscle control](<../../.gitbook/assets/sensor programming.PNG>)
+
+The code reads as:
+
+```
+mov SENSOR_IN, SENSOR_IN::SEARCH_VICINITY
+mov SENSOR_IN_MIN_DENSITY, 5
+mov SENSOR_IN_COLOR, 1
+```
+
+In Line 1 we specify the working mode. A sensor knows two different working modes, which are defined in the memory byte `SENSOR_IN`:
+
+* The scanning of the entire vicinity, which is indicated by the value `SENSOR_IN::SEARCH_VICINITY`.
+* Scanning of a certain direction for which it is necessary to set the value `SENSOR_IN::SEARCH_BY_ANGLE`.
+
+In line 2 we specify the sensitivity of the sensor. The memory byte SENSOR\_IN\_MIN\_DENSITY contains the minimum mass density of particle accumulations that the sensor would detect as potential targets. The density value indicates the number of particles in an area with size 8 x 8.
+
+Finally, we provide a particle color in line 3. A value between 0 to 6 is expected here. The value 1 corresponds to the red color.
+
+When the sensor function has been executed, we can retrieve the result in `SENSOR_OUT` whether a target has been found or not. If this is the case, it has the value `SENSOR_OUT::CLUSTER_FOUND` (see code from the muscle control). We obtain the angle of the target in `SENSOR_INOUT_ANGLE`, the distance in `SENSOR_OUT_DISTANCE` and the exact density in `SENSOR_OUT_MASS`. It should be noted that all these information are encoded in one byte each. For the specification of the angle, 0° to +180° correspond to the byte values from 0 to 127 and -180° to 0° correspond to the byte values from 128 to 255.
+
+The instruction
+
+```
+add SENSOR_INOUT_ANGLE, 64
+```
+
+taken from the code of the computation cell on the right side calculates the relative angle of our target if we would rotate our frame of reference by 90° counterclockwise. It corresponds to the reference frame where the muscle cells are controlled.
+
 ## Implementation of a muscle control
 
-In the following we will focus on the concrete implementation. To control the muscles for our swarmbot, we need the following cell programs:
+To control the muscles for our swarmbot, we need the following cell programs:
 
 ![Cell programs for the muscle control](<../../.gitbook/assets/muscle programming.PNG>)
 
@@ -180,47 +213,6 @@ endif
 * Line 2 - 15: The code works similarly to the previous one with the difference that we first perform a contraction and then an expansion. Since this results in a right turn, this operation is only performed when the sensor has found a target on the right side.
 
 Our machine would not work properly yet. For this we still need to adjust the sensor appropriately.
-
-## Implementation of a sensor control
-
-The control of a sensor is relatively simple compared to the muscle cells. We only need to set a few options that provide the needed information for the sensor. For this purpose we can place the following small program in the upper left computation cell for our swarmbot.
-
-![Cell programs for sensor and muscle control](<../../.gitbook/assets/sensor programming.PNG>)
-
-The code reads as:
-
-```
-mov SENSOR_IN, SENSOR_IN::SEARCH_VICINITY
-mov SENSOR_IN_MIN_DENSITY, 5
-mov SENSOR_IN_COLOR, 1
-```
-
-The code is actually self-explanatory. A sensor knows two different working modes, which are defined in the memory byte `SENSOR_IN`:
-
-* The scanning of the entire vicinity, which is indicated by the value `SENSOR_IN::SEARCH_VICINITY`.
-* Scanning of a certain direction for which it is necessary to set the value `SENSOR_IN::SEARCH_BY_ANGLE`.
-
-In line 2 we specify the sensitivity of the sensor. The memory byte SENSOR\_IN\_MIN\_DENSITY contains the minimum mass density of particle accumulations that the sensor would detect as potential targets. The density value indicates the number of particles in an area with size 8 x 8.
-
-Finally, we provide a particle color in line 3. A value between 0 to 6 is expected here. The value 1 corresponds to the red color.
-
-When the sensor function has been executed, we can retrieve the result in `SENSOR_OUT` whether a target has been found or not. If this is the case, it has the value `SENSOR_OUT::CLUSTER_FOUND` (see code from the muscle control). We obtain the angle of the target in `SENSOR_INOUT_ANGLE`, the distance in `SENSOR_OUT_DISTANCE` and the exact density in `SENSOR_OUT_MASS`. It should be noted that all these information are encoded in one byte each. For the specification of the angle, 0° to +180° correspond to the byte values from 0 to 127 and -180° to 0° correspond to the byte values from 128 to 255.
-
-The instruction
-
-```
-add SENSOR_INOUT_ANGLE, 64
-```
-
-taken from the code of the computation cell on the right side calculates the relative angle of our target if we would rotate our frame of reference by 90° counterclockwise. It corresponds to the reference frame where the muscle cells are controlled.
-
-Also the line
-
-```
-if SENSOR_INOUT_ANGLE < 128
-```
-
-which is used in one of the computational cells for the muscle control becomes now clear: We just check whether the angle is positive or negative.
 
 ## Test the result
 
