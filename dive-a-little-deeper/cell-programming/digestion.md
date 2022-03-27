@@ -6,7 +6,7 @@ In ALIEN, a digestion process refers to the conversion of a foreign cell into us
 
 ## Cell skeleton
 
-We do not need to change the basic structure, but we will adjust the cell functions and the control logic a bit. First of all, we need to accommodate a digestion unit. The front side of the machine is ideal for this because it will be in contact with other cells most frequently. In our case, it will look like this.
+Let us adopt the swarmbot from the last article and modify it to our purposes. The basic structure does not need to be changed, but we will adjust the cell functions and the control logic a bit. First of all, we need to accommodate a digestion unit. The front side of the machine is ideal for this because it will be in contact with other cells most frequently. In our case, it will look like this.
 
 ![Cell skeleton of a swarmbot with attack capabilities](<../../.gitbook/assets/skeleton attacker.svg>)
 
