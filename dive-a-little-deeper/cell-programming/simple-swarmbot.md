@@ -22,7 +22,7 @@ We now construct the basic structure in the editor by creating 7 cells and conne
 
 ![Skeleton of our swarmbot in ALIEN](../../.gitbook/assets/skeleton.PNG)
 
-We set the cell specializations (_Computation_, _Muscle_ and _Sensor_) as indicated in the screenshot above. The different cell types will be explained in more detail in the following sections and then an  appropriate implementation for our machine will be presented.
+We set the cell specializations (_Computation_, _Muscle_ and _Sensor_) and token branch numbers as indicated in the screenshot above. The different cell types used here will be explained in more detail in the following sections and then an appropriate implementation for our machine will be presented.
 
 ## Working principle of a computing cell
 
@@ -134,14 +134,14 @@ mov SENSOR_IN_MIN_DENSITY, 5
 mov SENSOR_IN_COLOR, 1
 ```
 
-In Line 1 we specify the working mode. A sensor knows two different working modes, which are defined in the memory byte `SENSOR_IN`:
+At line 1 we specify the working mode. A sensor knows two different working modes, which are defined in the memory byte `SENSOR_IN`:
 
 * The scanning of the entire vicinity, which is indicated by the value `SENSOR_IN::SEARCH_VICINITY`.
 * Scanning of a certain direction for which it is necessary to set the value `SENSOR_IN::SEARCH_BY_ANGLE`.
 
-In line 2 we specify the sensitivity of the sensor. The memory byte SENSOR\_IN\_MIN\_DENSITY contains the minimum mass density of particle accumulations that the sensor would detect as potential targets. The density value indicates the number of particles in an area with size 8 x 8.
+At line 2 we specify the sensitivity of the sensor. The memory byte SENSOR\_IN\_MIN\_DENSITY contains the minimum mass density of particle accumulations that the sensor would detect as potential targets. The density value indicates the number of particles in an area with size 8 x 8.
 
-Finally, we provide a particle color in line 3. A value between 0 to 6 is expected here. The value 1 corresponds to the red color.
+Finally, we provide a particle color at line 3. A value between 0 to 6 is expected here. The value 1 corresponds to the red color.
 
 When the sensor function has been executed, we can retrieve the result in `SENSOR_OUT` whether a target has been found or not. If this is the case, it has the value `SENSOR_OUT::CLUSTER_FOUND` (see code from the muscle control). We obtain the angle of the target in `SENSOR_INOUT_ANGLE`, the distance in `SENSOR_OUT_DISTANCE` and the exact density in `SENSOR_OUT_MASS`. It should be noted that all these information are encoded in one byte each. For the specification of the angle, 0° to +180° correspond to the byte values from 0 to 127 and -180° to 0° correspond to the byte values from 128 to 255.
 
@@ -183,12 +183,12 @@ else
 * Line 6: The angle of the target is returned as a signed byte. A value greater than 127 therefore represents a negative angle and means that the target is on the left side.
 * Line 7: The muscle cell on the right hand side is instructed to perform an expansion together with a backward momentum, which will cause the swarmbot to turn left.
 * Line 8: The memory byte `i` is set to `1` to perform a contraction in the next cycle.
-* Line 12: The memory byte `i` is equal to `1` if an expansion was instructed in the last cycle.
+* Line 12: It is checked if an expansion was instructed in the last cycle.
 * Line 13: In order for the cell connection to regain its original reference distance, a contraction without an additional momentum is now instructed.
-* Line 14: The original state for the muscle is restored, which is `i=0`.
+* Line 14: The original state for the muscle is restored, which is `i = 0`.
 
 {% hint style="info" %}
-In the code one can see that an `endif` is missing. It can be omitted at the end of a program. This is even necessary here, because a cell program can only consist of a maximum of 15 commands.
+One can see in the code that an `endif` is missing. It can be omitted at the end of a program. This is even necessary here, because a cell program can only consist of a maximum of 15 commands.
 {% endhint %}
 
 The program of the computing cell on the left side is the counterpart to the one of the right side with the difference that here a forward momentum must be generated to initiate a clockwise rotation. This is due to the fact that the token reaches the muscle cell from below while in the right side it reaches the muscle cell from above (i.e. the frame of reference is rotated by 180°).
@@ -211,10 +211,8 @@ else
 endif
 ```
 
-* Line 1: Here a new branch number is assigned to the token. Normally the token obtains the branch number of the underlying cell. However, in our case we want the token to jump from the cell with the number 4 to the cell above with the same number. Since tokens always jump to the cells with the next higher number, we have to set the branch number of the token to 3.
-* Line 2 - 15: The code works similarly to the previous one with the difference that we first perform a contraction and then an expansion. Since this results in a right turn, this operation is only performed when the sensor has found a target on the right side.
-
-Our machine would not work properly yet. For this we still need to adjust the sensor appropriately.
+* Line 1: Here, a new branch number is assigned to the token. Normally the token obtains the branch number from the underlying cell. However, in our case we want the token to jump from the cell with the number 4 to the connected cell above with the same number. Since tokens always jump to the cells with the next higher number, we have to set the branch number of the token to 3.
+* Line 2 - 15: The code works similarly as the previous one with the difference that we first perform a contraction and then an expansion. Since this results in a right turn, this operation is only performed when the sensor has found a target on the right side.
 
 ## Test the result
 
