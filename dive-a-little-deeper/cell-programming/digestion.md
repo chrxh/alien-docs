@@ -26,6 +26,6 @@ This parameter (among others) assigns a special meaning to the color of a cell. 
 
 #### Successive color dominance
 
-This parameter controls a process which compares the color of the digestion cell with the color of the cell being digested. Each color can be assigned a numerical value between 0 and 6. We say that a color `a` is the successor of another color `b` if `a ≡ b + 1 (mod 7)` holds true.
+This parameter controls a process which compares the color of the digestion cell with the color of the cell being digested. Each color can be assigned a numerical value between 0 and 6. We say that a color `a` is the successor of another color `b` if this cyclic condition `a ≡ b + 1 (mod 7)` holds true.
 
 ![](<../../.gitbook/assets/color dominance.svg>)
