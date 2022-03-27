@@ -8,7 +8,7 @@ Cells in ALIEN can perform a wide variety of actions. We will address cell progr
 
 The basic idea is that our swarmbot scans its environment for certain particle concentrations and as soon as it finds something, it heads for the target. If the target is on the left side, a forward movement combined with a left turn should take place and in the other case a right turn.
 
-A simple skeleton for our purpose consists of a loop-shaped structure in which a token can circulate. In this structure, we need a _muscle_ on both sides that provides us with an impulse depending on the direction we want to direct. We also need to accommodate a sensor that will give us the distance and angle where particle concentrations of a certain color are located.
+A simple skeleton for our purpose consists of a loop-shaped structure in which a token can circulate. In this structure, we need a _muscle_ on both sides that provides us with an impulse depending on the direction we want to direct. We also need to accommodate a sensor that will give us the distance and angle where particle concentrations with a certain color are located.
 
 ![Cell skeleton of a simple swarmbot](../../.gitbook/assets/skeleton.svg)
 
