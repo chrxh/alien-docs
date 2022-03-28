@@ -26,6 +26,18 @@ This parameter (among others) assigns a special meaning to the color of a cell. 
 
 #### Successive color dominance
 
-This parameter controls the influence of the color combination of the digestion cell and the cell being digested on the energy transfer. Each color can be assigned a numerical value between 0 and 6. We say that a color `a` is the successor of another color `b` if this cyclic condition `a ≡ b + 1 (mod 7)` holds true.&#x20;
+This parameter controls the influence of the color combination of the digestion cell and the cell being digested on the energy extraction. Each color can be assigned a numerical value between 0 and 6. We say that a color `a` is the successor of another color `b` if this cyclic condition `a ≡ b + 1 (mod 7)` holds true.&#x20;
 
-![Visualization of the cyclic condition. Right: dominating cell color](<../../.gitbook/assets/color dominance.svg>)
+![Visualization of the cyclic condition. Right: dominant cell color, Left: inferior cell color](<../../.gitbook/assets/color dominance.svg>)
+
+If the _Successive color dominance_ parameter is greater than 0 and the cyclic color condition is not met (i.e., the digestion cell does not have the dominant color to the digested cell), then less energy can be extracted.
+
+#### Geometry penalty
+
+This parameter can be used to regulate that digestion processes can draw less energy if the local geometry of the digestion cell does not match that of the digested cell. For this purpose, two angles are calculated, illustrated in the figure below. We say here that the local geometry of both cells deviates when the sum of the angles α and _β_ differs from 360°. The stronger the deviation is and the larger the geometry penalty parameter is chosen, the less energy can be extracted in the digestion process.
+
+![Left: digestion cell, Right: cell to be digested](<../../.gitbook/assets/geometry penalty.svg>)
+
+Below is another example of a perfect match. In this case, the maximum energy can be obtained from the process.
+
+![Perfect match with no geometry penalty](<../../.gitbook/assets/geometry match.svg>)
