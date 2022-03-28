@@ -55,3 +55,15 @@ The result of the digestion process is returned in `DIGESTION_OUT` and can take 
 * `DIGESTION_OUT::NO_TARGET`: There were no foreign cells in the direct vicinity.
 * `DIGESTION_OUT::SUCCESS`: There was at least one cell in the vicinity. Each of these cells underwent a digestion process and none of them was poisoned (see next point).
 * `DIGESTION_OUT::POISONED`:  There was at least one cell in the vicinity and one of them was poisoned. Poisoned cells can only occur if the target color mismatch penalty parameter is greater than 1.
+
+## Test the result
+
+An interesting way to try out our upgraded swarmbot is to create two grid formations of swarmbots via the _Multiplier_ window: The first formation consists of blue machines we have just created. The second formation in close proximity consists of red machines, where we will change the control code for the sensor in order to detect blue cells. Specifically, we set
+
+```
+mov SENSOR_IN_COLOR, 0
+```
+
+in the bottom computing cell. In effect, we have created two swarms that chase and attack each other.
+
+![Two swarms chasing each other](<../../.gitbook/assets/swarmbot fighting.PNG>)
