@@ -1,8 +1,8 @@
-# Digestion
+# Attack functions
 
 #### Abstract
 
-In ALIEN, a digestion process refers to the attempt of converting a foreign cell into usable energy and can also be considered as a form of attack. This capability to extract energy is required by cell clusters to have a functioning metabolism. To explain its functioning and implementation, the swarmbot from the previous article will be upgraded and equipped with an attack function.
+In ALIEN, a cell digestion process refers to the attempt of converting a foreign cell into usable energy and can also be considered as a form of attack. This capability to extract energy is required by cell clusters to have a functioning metabolism. To explain its functioning and implementation, the swarmbot from the previous article will be upgraded and equipped with an attack function.
 
 ## Cell skeleton
 

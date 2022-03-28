@@ -21,7 +21,7 @@
 * [Evolution experiments](dive-a-little-deeper/evolution-experiments.md)
 * [Cell programming](dive-a-little-deeper/cell-programming/README.md)
   * [Simple swarmbot](dive-a-little-deeper/cell-programming/simple-swarmbot.md)
-  * [Digestion](dive-a-little-deeper/cell-programming/digestion.md)
+  * [Attack functions](dive-a-little-deeper/cell-programming/attack-functions.md)
   * [Self-replication](dive-a-little-deeper/cell-programming/self-replication.md)
 
 ## Under the hood
