@@ -18,23 +18,23 @@ The basic principle is simple: As soon as a digestion cell is triggered by a tok
 
 #### Energy cost
 
-If we set the energy cost greater than 0, then after each digestion process, even if no nearby cells were found, the cell loses the energy specified by this parameter and in return releases an energy particle with that energy. Thus, a large value penalizes structures that attack their vicinity on a massive and unselective basis.
+If we set the energy cost greater than 0, then after each activation of the digestion cell, even if no nearby cells were found, the internal energy is decreased to an amount specified by this parameter and in return released as an energy particle to the environment. Thus, a large value penalizes structures that attack their vicinity on a massive and unselective basis.
 
 #### Target color mismatch penalty
 
-This parameter (among others) assigns a special meaning to the color of a cell. One can also think of the cell color as another form of typification, which can contribute to more diverse ecosystems. In the token memory, a specific color can be set for the cells that are aimed to be digested. This effect will be activated if the _Target color mismatch penalty_ parameter is greater than 0. If the color of the cell to be digested does not match the specified color, less energy is drawn from it, depending on the value of this parameter. In the extreme case, when the parameter is greater than 1, the cell even loses energy when it tries to digest cells with the wrong color.
+This parameter (among others) assigns a special meaning to the color of a cell. One can also think of the cell color as another form of specialization, which can contribute to more diverse ecosystems. In the token memory, a specific color can be set for the cells that are aimed to be digested. This effect will be activated if the _Target color mismatch penalty_ parameter is greater than 0. If the color of the cell to be digested does not match the specified color, less energy is drawn from it, depending on the value of this parameter. In the extreme case, when the parameter is greater than 1, the cell even loses energy when it tries to digest cells with the wrong color.
 
 #### Successive color dominance
 
-This parameter controls the influence of the color combination of the digestion cell and the cell being digested on the energy extraction. Each color can be assigned a numerical value between 0 and 6. We say that a color `a` is the successor of another color `b` if this cyclic condition `a ≡ b + 1 (mod 7)` holds true.&#x20;
+This parameter controls the influence of the color combination of the digestion cell and the cell being digested on the energy extraction. Each color can be assigned a numerical value between 0 and 6. We say that a color `a` is the successor of another color `b` if the cyclic condition `a ≡ b + 1 (mod 7)` holds true.&#x20;
 
 ![Visualization of the cyclic condition. Right: dominant cell color, Left: inferior cell color](<../../.gitbook/assets/color dominance.svg>)
 
-If the _Successive color dominance_ parameter is greater than 0 and the cyclic color condition is not met (i.e., the digestion cell does not have the dominant color to the digested cell), then less energy can be extracted.
+If the _Successive color dominance_ parameter is greater than 0 and the cyclic color condition is not met (i.e., the digestion cell does not have the dominant color with respect to the digested cell), then less energy can be extracted.
 
 #### Geometry penalty
 
-This parameter can be used to regulate that digestion processes can draw less energy if the local geometry of the digestion cell does not match that of the digested cell. For this purpose, two angles are calculated, illustrated in the figure below. We say here that the local geometry of both cells deviates when the sum of the angles α and _β_ differs from 360°. The stronger the deviation is and the larger the geometry penalty parameter is chosen, the less energy can be extracted in the digestion process.
+This parameter can be used to regulate the extent to which digestion processes extract less energy when the local geometry of the digestion cell does not match with that of the digested cell. For this purpose, two angles are calculated, illustrated in the figure below. We say here that the local geometry of both cells deviates when the sum of the angles α and _β_ differs from 360°. The stronger the deviation is and the larger the geometry penalty parameter is chosen, the less energy can be extracted in the digestion process.
 
 ![Left: digestion cell, Right: cell to be digested](<../../.gitbook/assets/geometry penalty.svg>)
 
