@@ -38,6 +38,20 @@ This parameter can be used to regulate that digestion processes can draw less en
 
 ![Left: digestion cell, Right: cell to be digested](<../../.gitbook/assets/geometry penalty.svg>)
 
-Below is another example of a perfect match. In this case, the maximum energy can be obtained from the process.
+Below is example for a perfect match. In this case, the maximum energy can be obtained from the process.
 
 ![Perfect match with no geometry penalty](<../../.gitbook/assets/geometry match.svg>)
+
+## Implementation
+
+We do not have to change too much in the programming of our swarmbot. First, we move the code to control the sensor down into the computing cell. Second, we select _Digestion_ as specialization in the upper left cell. The result should look something like this.
+
+![Our extended swarmbot with attacking capabilities](<../../.gitbook/assets/swarmbot upgraded.PNG>)
+
+If the _Target color mismatch penalty_ parameter is greater than 0, the digestion cell still needs a target color for digestion. This information is given in the token memory referenced by the symbol `DIGESTION_IN_COLOR`. However, the symbol references the same memory location as `SENSOR_IN_COLOR`. This means that by default, the color of the cells that the sensor detects represent the target color for the digestion.
+
+The result of the digestion process is returned in `DIGESTION_OUT` and can take the following values:
+
+* `DIGESTION_OUT::NO_TARGET`: There were no foreign cells in the direct vicinity.
+* `DIGESTION_OUT::SUCCESS`: There was at least one cell in the vicinity. Each of these cells underwent a digestion process and none of them was poisoned (see next point).
+* `DIGESTION_OUT::POISONED`:  There was at least one cell in the vicinity and one of them was poisoned. Poisoned cells can only occur if the target color mismatch penalty parameter is greater than 1.
