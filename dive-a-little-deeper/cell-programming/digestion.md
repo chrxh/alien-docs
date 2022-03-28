@@ -34,7 +34,7 @@ If the _Successive color dominance_ parameter is greater than 0 and the cyclic c
 
 #### Geometry penalty
 
-This parameter can be used to regulate the extent to which digestion processes extract less energy when the local geometry of the digestion cell does not match with that of the digested cell. For this purpose, two angles are calculated, illustrated in the figure below. We say here that the local geometry of both cells deviates when the sum of the angles α and _β_ differs from 360°. The stronger the deviation is and the larger the geometry penalty parameter is chosen, the less energy can be extracted in the digestion process.
+This parameter can be used to regulate the extent to which digestion processes extract less energy when the local geometry of the digestion cell does not match with that of the digested cell. For this purpose, two angles are calculated as illustrated in the figure below. We say here that the local geometries of both cells deviate when the sum of the angles α and _β_ differs from 360°. The stronger the deviation is and the larger the _Geometry penalty_ parameter is chosen, the less energy can be extracted in the digestion process.
 
 ![Left: digestion cell, Right: cell to be digested](<../../.gitbook/assets/geometry penalty.svg>)
 
