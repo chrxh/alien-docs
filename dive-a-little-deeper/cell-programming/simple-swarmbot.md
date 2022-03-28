@@ -214,7 +214,7 @@ endif
 * Line 1: Here, a new branch number is assigned to the token. Normally the token obtains the branch number from the underlying cell. However, in our case we want the token to jump from the cell with the number 4 to the connected cell above with the same number. Since tokens always jump to the cells with the next higher number, we have to set the branch number of the token to 3.
 * Line 2 - 15: The code works similarly as the previous one with the difference that we first perform a contraction and then an expansion. Since this results in a right turn, this operation is only performed when the sensor has found a target on the right side.
 
-## Test the result
+## Testing the result
 
 We have now finished putting together our machine. One can also find it as a pattern file at `./examples/patterns/swarmbots/Interceptor (Red Target).sim` if something does not work as expected. To experiment with our creature, we can, for example, build a large red rectangular cluster of cells nearby. We should then observe how the red cluster is pursued or orbited by the swarmbot while running the simulation (with a slow down!)
 

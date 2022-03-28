@@ -56,7 +56,7 @@ The result of the cell process is returned to `DIGESTION_OUT` and can take one o
 * `DIGESTION_OUT::SUCCESS`: There was at least one cell in the vicinity. Each of these cells have been tried to digest and none of them was poisoned (see next point).
 * `DIGESTION_OUT::POISONED`:  There was at least one cell in the vicinity which was poisoned. Poisoned cells can only occur if the _Target color mismatch penalty_ parameter is greater than 1.
 
-## Test the result
+## Testing the result
 
 An interesting way to try out our upgraded swarmbot is to create two grid formations of swarmbots via the _Multiplier_ window: The first formation consists of blue machines we have just created. The second formation in close proximity consists of red machines, where we will change the control code for the sensor in order to detect blue cells. Specifically, we set
 
