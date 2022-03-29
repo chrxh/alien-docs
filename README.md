@@ -15,7 +15,7 @@ What characterizes the simulator:
 * World editor: Parts of existing bodies can be easily disassembled, rearranged and connected just by using the mouse. The graphs of new bodies can be created as geometric shapes or freehand drawings. Mass and scaling operations facilitate the creation of large worlds.
 * Extensive capabilities to control simulation parameters: It is possible to define different simulation parameters in spatial zones as well as to fluctuate them in time.
 
-Main design goals:
+The main design goals:
 
 * Utilization of CUDA and OpenGL for simulation and rendering to support large worlds with millions of particles.
 * No hard-coded behavior patterns. Everything should emerge from the interaction of particles.
