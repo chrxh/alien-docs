@@ -9,3 +9,5 @@ At the coarsest level in the source code, we can consider the libraries and exec
 ## Engine
 
 ![](../.gitbook/assets/engine.svg)
+
+## GUI
