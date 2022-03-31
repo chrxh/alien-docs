@@ -22,7 +22,7 @@
 * [Cell programming](dive-a-little-deeper/cell-programming/README.md)
   * [Simple swarmbot](dive-a-little-deeper/cell-programming/simple-swarmbot.md)
   * [Attack functions](dive-a-little-deeper/cell-programming/attack-functions.md)
-  * [Self-replication](dive-a-little-deeper/cell-programming/self-replication.md)
+  * [Self-replicating machines](dive-a-little-deeper/cell-programming/self-replicating-machines.md)
 
 ## Under the hood
 
