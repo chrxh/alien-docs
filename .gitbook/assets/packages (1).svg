@@ -60,10 +60,10 @@
       /><text x="5" font-size="14px" y="15.9688" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none" xml:space="preserve"
       >Gui</text
     ></g
-    ><g fill="rgb(255,165,0)" fill-opacity="0.4902" transform="translate(720,200)" stroke-opacity="0.4902" stroke="rgb(255,165,0)"
+    ><g fill="rgb(200,200,200)" fill-opacity="0.4902" transform="translate(450,200)" stroke-opacity="0.4902" stroke="rgb(200,200,200)"
     ><path d="M0.5 0.5 L56.5 0.5 L56.5 21.4688 L139 21.4688 L139 69 L0.5 69 Z" stroke="none" clip-path="url(#clipPath2)"
     /></g
-    ><g transform="translate(720,200)"
+    ><g transform="translate(450,200)"
     ><path fill="none" d="M0.5 0.5 L56.5 0.5 L56.5 21.4688 L139 21.4688 L139 69 L0.5 69 Z" clip-path="url(#clipPath2)"
       /><path fill="none" d="M0.5 21.4688 L56.5 21.4688" clip-path="url(#clipPath2)"
       /><text x="5" font-size="14px" y="15.9688" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none" xml:space="preserve"
