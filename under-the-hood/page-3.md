@@ -2,7 +2,7 @@
 
 ## Overview
 
-At the coarsest level, the source code can be structured into targets (libraries and executables) and their dependencies. The `Base` library is used by all others and therefore is not separately marked with dependency arrows. The graphical user interface and the engine are completely separated. For example, it would be possible to use a different backend instead of CUDA.
+At the coarsest level, the source code can be structured into targets (libraries and executables) and their dependencies. The `Base` library is used by all others and therefore is not separately marked with dependency arrows. The graphical user interface and the engine are completely decoupled. For example, it would be possible to use a different backend instead of CUDA.
 
 ![Dependencies of libraries (orange) and executables (green)](../.gitbook/assets/packages.svg)
 
