@@ -11,3 +11,5 @@ At the coarsest level, the source code can be structured into targets (libraries
 ![](../.gitbook/assets/engine.svg)
 
 ## GUI
+
+![](../.gitbook/assets/gui.svg)
