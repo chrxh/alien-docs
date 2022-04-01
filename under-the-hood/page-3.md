@@ -12,7 +12,7 @@ The main classes of the engine libraries and their relationships are shown in th
 
 ![Engine classes and their dependencies](../.gitbook/assets/engine.svg)
 
-The data for the simulation consists of different sets of classes/structures on the CPU as well as GPU side. For the data transfer in both directions separate transfer objects (TOs) are used.
+The data for the simulation consists of different sets of classes/structures on the CPU as well as GPU side. For the data transfer in both directions separate transfer objects (TOs) consisting of C arrays are used.
 
 ![](../.gitbook/assets/data.svg)
 
