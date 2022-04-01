@@ -8,8 +8,8 @@ At the coarsest level, the source code can be structured into targets (libraries
 
 ## Engine
 
-![](../.gitbook/assets/engine.svg)
+![Engine classes and their dependencies](../.gitbook/assets/engine.svg)
 
 ## GUI
 
-![](../.gitbook/assets/gui.svg)
+![Gui classes and their dependencies](../.gitbook/assets/gui.svg)
