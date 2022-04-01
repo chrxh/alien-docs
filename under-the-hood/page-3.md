@@ -2,7 +2,7 @@
 
 ## Overview
 
-At the coarsest level, the source code can be structured into targets (libraries and executables) and their dependencies. The `Base` library is used by all others and therefore is not separately marked with dependency arrows.
+At the coarsest level, the source code can be structured into targets (libraries and executables) and their dependencies. The `Base` library is used by all others and therefore is not separately marked with dependency arrows. The graphical user interface and the engine are completely separated. For example, it would be possible to use a different backend instead of CUDA.
 
 ![Dependencies of libraries (orange) and executables (green)](../.gitbook/assets/packages.svg)
 
@@ -17,5 +17,7 @@ The data for the simulation consists of different sets of classes/structures on 
 ![](../.gitbook/assets/data.svg)
 
 ## GUI
+
+The user interface was developed with Imgui and all windows and dialogs that can be displayed were encapsulated in independent classes. The controller classes manage processes in the background or other windows. MVC patterns were not used in order not to unnecessarily bloat the code.
 
 ![Gui classes and their dependencies](../.gitbook/assets/gui.svg)
