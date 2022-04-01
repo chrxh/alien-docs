@@ -22,4 +22,4 @@ The data for the simulation consists of different sets of classes/structs on the
 
 The user interface is developed with [Dear Imgui](https://github.com/ocornut/imgui). All windows and dialogs that can be displayed are encapsulated in independent classes. The controller classes manage processes in the background or further windows. MVC patterns are not used in order not to unnecessarily bloat the code.
 
-![Gui classes and their dependencies](../.gitbook/assets/gui.svg)
+![Gui classes and some of their dependencies](../.gitbook/assets/gui.svg)
