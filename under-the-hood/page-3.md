@@ -20,7 +20,7 @@ The data for the simulation consists of different sets of classes/structs on the
 
 ![Main data structures for storing the simulation data](../.gitbook/assets/data.svg)
 
-Alternatively, it is also possible to use a `ClusteredDataDescription` on the CPU side. In this case, connected `CellDescriptions` are each packed in a `ClusterDescription`.
+Sometimes it is more convenient to use a `ClusteredDataDescription` on the CPU side. In this case, connected `CellDescriptions` are each packed in a `ClusterDescription`.
 
 ## GUI
 
