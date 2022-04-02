@@ -16,7 +16,7 @@ The main classes of the engine libraries and their relationships are shown in th
 
 The simulation code for calculating the next time step is located in `SimulationKernelsLauncher`.
 
-The data for a simulation are encapsulated in different sets of classes/structs on the CPU as well as GPU side. For the data transfer in both directions, they are translated into separate transfer objects (TOs) consisting of C arrays.
+The data for a simulation are encapsulated in different sets of classes/structs on the CPU as well as GPU side. For the data transfer in both directions, they are translated in the `DataConverter` into separate transfer objects (TOs) consisting of C arrays.
 
 ![Main data structures for storing the simulation data](../.gitbook/assets/data.svg)
 
