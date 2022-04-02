@@ -14,9 +14,13 @@ The main classes of the engine libraries and their relationships are shown in th
 
 ![Engine classes and their dependencies](../.gitbook/assets/engine.svg)
 
+The simulation code for calculating the next time step is located in `SimulationKernelsLauncher`.
+
 The data for the simulation consists of different sets of classes/structs on the CPU as well as GPU side. For the data transfer in both directions separate transfer objects (TOs) consisting of C arrays are used.
 
-![](../.gitbook/assets/data.svg)
+![Main data structures for storing the simulation data](../.gitbook/assets/data.svg)
+
+Alternatively, it is also possible to use a `ClusteredDataDescription`. In this case, connected `CellDescriptions` are each packed in a `ClusterDescription`.
 
 ## GUI
 
