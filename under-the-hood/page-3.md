@@ -18,7 +18,7 @@ The simulation code for calculating the next time step is located in `Simulation
 
 The data for a simulation are encapsulated in different sets of classes/structs on the CPU as well as GPU side. For the data transfer in both directions, the `DataConverter` translates the `Description` objects into separate transfer objects (TOs) consisting of C arrays, and vice versa.
 
-![Main data structures for storing the simulation data](../.gitbook/assets/data.svg)
+![Main data structures for storing simulation data](../.gitbook/assets/data.svg)
 
 For some use cases it is more convenient to utilize a `ClusteredDataDescription` instead of a `DataDescription` on the CPU side. The difference is that the `ClusteredDataDescription` consists of `ClusterDescriptions`, which in turn contain `CellDescriptions` that are connected to each other.
 
