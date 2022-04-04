@@ -7,3 +7,5 @@ There are several ways to create self-replicating structures. In this article, m
 ## Cell skeleton
 
 We build our self-replicating machine as a simple loop. A more complicated topology is of course also conceivable, but not relevant for our rather minimal example. In general, replication costs energy and since energy conservation must be satisfied in ALIEN, in addition to the ability to self-replicate, we also need simple movement and digestion functionality so that sufficient energy can be provided.
+
+![](<../../.gitbook/assets/skeleton replicator.svg>)
