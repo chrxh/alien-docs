@@ -10,4 +10,17 @@ We build our self-replicating machine as a simple loop. A more complicated topol
 
 ![Skeleton of a simple self-replicating loop](<../../.gitbook/assets/skeleton replicator.svg>)
 
-A possible basic framework is shown above. At the front (right) is a cell with attack capabilities and at the sides are muscle units to accelerate in the respective direction. For simplicity, we will implement a straight ahead movement pattern. At the back (left) we attach a scanner cell to read out the inner structure and a constructor cell to rebuild the extracted information.
+A possible basic framework is shown above. At the front (right) is a cell with attack capabilities and at the sides are muscle units to accelerate in the respective direction. For simplicity, we will implement a straight ahead movement pattern. At the back (left) we attach a scanner cell to read out the inner structure and a constructor cell to rebuild the extracted information. The challenge here is that we have a variety of cell types and we need to provide them with the appropriate information using the computational cells.
+
+In the ALIEN editor, our self-replicator then looks like this:
+
+![Self-replicating loop in ALIEN](<../../.gitbook/assets/loop closeup.png>)
+
+In the following, we will first explain the two new cell types (Scanner and Constructor) and then discuss the data supply.
+
+## Working principle of a scanner cell
+
+
+
+## Working principle of a construction cell
+
