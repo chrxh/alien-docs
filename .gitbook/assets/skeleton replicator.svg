@@ -7,7 +7,7 @@
    viewBox="0 0 120 100"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
    sodipodi:docname="skeleton replicator.svg"
    inkscape:export-filename="D:\Alle wichtigen Dateien\Artificial Life\documentation\model\tokenmodel.png"
    inkscape:export-xdpi="1745.2494"
@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="2.096401"
-     inkscape:cx="197.71981"
-     inkscape:cy="184.12508"
+     inkscape:zoom="0.74118968"
+     inkscape:cx="142.33873"
+     inkscape:cy="39.800878"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -628,32 +628,14 @@
        y="21.344015"
        ry="6.1524024"
        transform="matrix(0.71849295,0.69553424,-0.69863819,0.71547514,0,0)" />
-    <rect
-       style="fill:#090057;fill-opacity:0.243137;stroke:#074e00;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect5545"
-       width="22.787066"
-       height="23.574467"
-       x="-39.198853"
-       y="-93.989853"
-       ry="6.6786394"
-       transform="matrix(-0.6508829,0.75917814,-0.78433945,-0.62033187,0,0)" />
-    <rect
-       style="fill:#090057;fill-opacity:0.243137;stroke:#074e00;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect5545-3"
-       width="22.787066"
-       height="23.574467"
-       x="-4.1770129"
-       y="-124.62034"
-       ry="6.6786394"
-       transform="matrix(-0.6508829,0.75917814,-0.78433945,-0.62033187,0,0)" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.652145;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#DotM-49);marker-end:url(#marker7344-4)"
-       d="m 96.874543,29.511056 17.503927,-0.0075"
+       d="m 95.620373,32.78747 16.433267,6.027904"
        id="path5327"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.652145;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#DotM-49-1);marker-end:url(#marker7344-4-6)"
-       d="m 98.927411,75.333217 17.503929,-0.0075"
+       d="M 97.434387,75.237072 114.11318,69.926203"
        id="path5327-9"
        sodipodi:nodetypes="cc" />
     <g
@@ -726,6 +708,24 @@
        x="14.594635"
        y="16.860598"
        ry="0.37928185" />
+    <rect
+       style="fill:#090057;fill-opacity:0.242424;stroke:#070000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect3678"
+       width="25.844893"
+       height="52.426613"
+       x="-10.285594"
+       y="47.504192"
+       ry="11.522783"
+       transform="matrix(0.37509601,-0.92698597,0.92906886,0.36990681,0,0)" />
+    <rect
+       style="fill:#090057;fill-opacity:0.242424;stroke:#070000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect3678-5"
+       width="25.844893"
+       height="52.426613"
+       x="-111.55493"
+       y="16.963655"
+       ry="11.522783"
+       transform="matrix(-0.29855827,-0.95439141,0.95270707,-0.30389018,0,0)" />
   </g>
   <script
      id="script23400"
