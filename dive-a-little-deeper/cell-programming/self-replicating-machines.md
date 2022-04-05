@@ -14,7 +14,7 @@ A possible basic framework is shown above. At the front (right) is a cell with a
 
 In the ALIEN editor, our self-replicator then looks like this:
 
-![Realization of a self-replicating loop in ALIEN](<../../.gitbook/assets/loop closeup.png>)
+![Self-replicating loop in ALIEN](<../../.gitbook/assets/loop closeup.png>)
 
 In the following, we will first explain the two new cell types (Scanner and Constructor) and then discuss the data supply.
 
