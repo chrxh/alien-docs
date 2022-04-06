@@ -54,7 +54,9 @@ For example, suppose that we want to scan the cell with number 3 in our replicat
 
 There are a few special cases:
 
-
+* When reading out the cell with number 0, no distance and angle information are returned.
+* The cell with the largest number is read, i.e. there is no successor cell: In this case, no angle information is supplied and the reaching of the end is reported.
+* If the number of the cell to be read in does not exist, a reaching of the end is also returned.
 
 ## Working principle of a construction cell
 
