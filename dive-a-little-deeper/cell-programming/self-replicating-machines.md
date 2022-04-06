@@ -48,7 +48,11 @@ Let us assume we want to read the cell with the number `n`. The scanner cell the
 It should be noted that only the cell connection information to the predecessor and successor cells are retrieved. Other possible cell connections are not read out. We will see in the next section that this information is nevertheless usually sufficient to rebuild even more complex topologies than simple loops.
 {% endhint %}
 
+For example, suppose that we want to scan the cell with number 3 in our replicator above. We would then obtain the (reference) distance `d` and angle `α` as follows:
 
+![Scanning the distance and angle of cell number 3](../../.gitbook/assets/scanner.svg)
+
+There are a few special cases:
 
 
 
