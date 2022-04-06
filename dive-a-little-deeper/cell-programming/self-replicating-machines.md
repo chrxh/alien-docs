@@ -36,7 +36,7 @@ However, in this example, the cell cluster is not completely covered by the numb
 
 ![Numbering example 3: loop-shaped cell cluster](<../../.gitbook/assets/numbering 3.svg>)
 
-For our replicator, this results in a relatively simple numbering of the cells.
+For our replicator, the resulting numbering of the cells is relatively simple. With the help of this (relative) numbering, the scanner cell can now be provided with a number indicating for which cell in the cluster the information should be read out.
 
 ## Working principle of a construction cell
 
