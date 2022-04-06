@@ -38,5 +38,19 @@ However, in this example, the cell cluster is not completely covered by the numb
 
 For our replicator, the resulting numbering of the cells is relatively simple. With the help of this (relative) numbering, the scanner cell can now be provided with a number indicating for which cell in the cluster the information should be read out.
 
+Let us assume we want to read the cell with the number `n`. The scanner cell then provides the following information as output:
+
+* The reference distance of cell `n` from cell `n-1`.
+* The reference angle between the two cell connections of cells `n` and `n-1` and cells `n` and `n+1`.
+* Internal state of cell `n` including energy, maximal connection, branch number, color, cell specialization und cell memories.
+
+{% hint style="info" %}
+It should be noted that only the cell connection information to the predecessor and successor cells are retrieved. Other possible cell connections are not read out. We will see in the next section that this information is nevertheless usually sufficient to rebuild even more complex topologies than simple loops.
+{% endhint %}
+
+
+
+
+
 ## Working principle of a construction cell
 
