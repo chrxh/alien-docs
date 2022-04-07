@@ -16,7 +16,7 @@ In the ALIEN editor, our self-replicator then looks like this:
 
 ![Realization of a self-replicating loop in ALIEN](<../../.gitbook/assets/loop closeup.png>)
 
-In the following, we will first explain the two new cell types (Scanner and Constructor) and then discuss the data supply.
+The different cell colors are only used here to highlight certain parts. In the following, we will first explain the two new cell types (Scanner and Constructor) and then discuss the data supply.
 
 ## Working principle of a scanner cell
 
@@ -95,7 +95,7 @@ If there are other cells in the immediate vicinity of the newly created cell, th
 
 #### 3. Finish the construction site
 
-The second step is repeated until the construction site is completed except for the last cell. After creating the last cell the construction site needs to be separated from the construction cell and thus will form a new cell cluster. Consequently, the only difference to step 2 is that the created cell will not be connected to the construction cell and that the _block token_ flag remains disabled.
+The second step is repeated until the construction site is completed except for the last cell. But during the creation of the last cell, the construction site needs to be separated from the construction cell and thus will form a new cell cluster. Consequently, the only difference to step 2 is that the created cell will not be connected to the construction cell and that the _block token_ flag remains disabled.
 
 ![Separation of the construction site from the construction cell](../../.gitbook/assets/construction4.svg)
 
