@@ -79,9 +79,9 @@ The above angle calculation refers to the reference angles and not to the actual
 
 In order for the newly created cell to be recognized as a _construction site_ in the further process, it is marked in a certain way. For this purpose, the _block token_ flag is on that cell. It also causes that this cell cannot accept tokens.
 
-#### 2. Continue a construction
+#### 2. Extend the construction site
 
-Here it is assumed that a construction site already exists, i.e., that at least one cell connected to the construction cell has the _block token_ flag set. The new cell is created between the construction cell and the cell representing the construction site. The angle to the construction site is preserved and denoted by `δ_old` in the illustration (and identical to `δ` from the 1st step).
+Here it is assumed that a construction site already exists, i.e., that at least one cell connected to the construction cell has the _block token_ flag set. During the process, the direct connection between the construction cell and the cell representing the construction site will be deleted. Then a new cell will be created between the construction cell and the construction site. The angle to the construction site is preserved and denoted by `δ_old` in the illustration (and identical to `δ` from the 1st step).
 
 ![Creation of a new cell (dashed line) in the presence of a construction site](../../.gitbook/assets/construction2.svg)
 
@@ -89,6 +89,9 @@ The situation with the angle between the two connections of the new cell is a bi
 
 The distance between the new cell and the cell of the construction site is denoted by `d` and handed over to the construction cell. Here, the actual spatial distance equals the reference distance.
 
-If there are other cells in the immediate vicinity of the newly created cell, they will be connected to each other. In this way, a more complex cell cluster can be reproduced. The reference angles and distances required for the further connections are calculated from the spatial conditions and cannot be handed over. However, it is possible to project the reference angles to an integer multiple of, for example, 60 or 90 degrees in order to be able to control the angles of the additional connections.
+If there are other cells in the immediate vicinity of the newly created cell, they will be connected to each other. In this way, a more complex cell cluster can be reproduced. The reference angles and distances required for the further connections are calculated from the spatial conditions and cannot be handed over. However, it is possible to project the reference angles to an integer multiple of, for example, 60 or 90 degrees in order to be able to somehow control the angles to the additional connections.
 
-![Created cell can be connected to further cells](../../.gitbook/assets/construction3.svg)
+![A created cell can be connected to further cells in the vicinity](../../.gitbook/assets/construction3.svg)
+
+#### Finish the construction site
+
