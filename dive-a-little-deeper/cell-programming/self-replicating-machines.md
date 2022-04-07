@@ -60,7 +60,7 @@ There are a few special cases:
 
 ## Working principle of a construction cell
 
-A construction cell is, in a sense, the counterpart to a scanner cell. It can use the information provided by the scanner cell to build a replica of the scanned cell. It is, of course, also possible to provide completely new construction information through preceding computational cells. A construction process follows a 3 stage pattern, which we will discuss below.
+A construction cell is, in a sense, the counterpart to a scanner cell. It can use the information provided by the scanner cell to build a replica of the scanned cell. It is, of course, also possible to provide completely new construction information through preceding computational cells. A construction cell can only create one new cell per invocation at most. Consequently, in order to create a complete cell cluster including its connections, the construction cell must be called several times. Such a cluster construction process follows a 3 stage pattern, which we will discuss below.
 
 #### 1. Create a construction site
 
@@ -77,3 +77,10 @@ In the above illustration, the blue construction cell is already connected to 3 
 The above angle calculation refers to the reference angles and not to the actual spatial angles.
 {% endhint %}
 
+In order for the newly created cell to be recognized as a _construction site_ in the further process, it is marked in a certain way. For this purpose, the _block token_ flag is on that cell. It also causes that this cell cannot accept tokens.
+
+#### 2. Continue construction
+
+Here it is assumed that a construction site already exists, i.e., that at least one cell connected to the construction cell has the _block token_ flag set. The new cell is created on the connecting line to the cell representing the construction site. The angle to the construction site is preserved and is denoted by δ\_old in the illustration (and identical to δ from the 1st step).
+
+![](../../.gitbook/assets/construction2.svg)
