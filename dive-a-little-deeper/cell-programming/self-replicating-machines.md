@@ -81,7 +81,7 @@ In order for the newly created cell to be recognized as a _construction site_ in
 
 #### 2. Extend the construction site
 
-Here it is assumed that a construction site already exists, i.e., that at least one cell connected to the construction cell has the _block token_ flag set. During the process, the direct connection between the construction cell and the cell representing the construction site will be deleted. Then a new cell will be created between the construction cell and the construction site. The angle to the construction site is preserved and denoted by `δ_old` in the illustration (and identical to `δ` from the 1st step).
+Here, it is assumed that a construction site already exists, i.e., that at least one cell connected to the construction cell has the _block token_ flag set. During the process, the direct connection between the construction cell and the cell representing the construction site will be deleted and  _block token_ flag disabled. Then, a new cell (with _block token_ flag set) will be created between the construction cell and the construction site. The angle to the construction site is preserved and denoted by `δ_old` in the illustration (and identical to `δ` from the 1st step).
 
 ![Creation of a new cell (dashed line) in the presence of a construction site](../../.gitbook/assets/construction2.svg)
 
@@ -93,5 +93,9 @@ If there are other cells in the immediate vicinity of the newly created cell, th
 
 ![A created cell can be connected to further cells in the vicinity](../../.gitbook/assets/construction3.svg)
 
-#### Finish the construction site
+#### 3. Finish the construction site
+
+The second step is repeated until the construction site is completed except for the last cell. After creating the last cell the construction site needs to be separated from the construction cell and thus will form a new cell cluster. Consequently, the only difference to step 2 is that the created cell will not be connected to the construction cell and that the _block token_ flag remains disabled.
+
+![Separation of the construction site from the construction cell](../../.gitbook/assets/construction4.svg)
 
