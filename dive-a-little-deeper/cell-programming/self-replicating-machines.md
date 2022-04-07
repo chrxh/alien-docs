@@ -69,7 +69,7 @@ In this case, we assume that we have not yet created a cell or, more precisely, 
 * First of all, two successive cell connections of the construction cell are searched for, which have the largest angle to each other. The new cell is then created with the specified angle in this area (see illustration below).
 * The distance from the construction cell is a fixed value and cannot be adjusted.
 
-![Determination of the angle position for the cell to be created](../../.gitbook/assets/construction1.svg)
+![Determination of the angle position for the cell to be created (dashed line)](../../.gitbook/assets/construction1.svg)
 
 In the above illustration, the blue construction cell is already connected to 3 other cells. The angles between the connections are labeled as α, β and γ, of which α is the largest. Therefore, the new cell is created in the neighborhood to the angle α. The angle δ is passed to the construction cell and thus defines the exact angle position.
 
@@ -81,6 +81,8 @@ In order for the newly created cell to be recognized as a _construction site_ in
 
 #### 2. Continue construction
 
-Here it is assumed that a construction site already exists, i.e., that at least one cell connected to the construction cell has the _block token_ flag set. The new cell is created on the connecting line to the cell representing the construction site. The angle to the construction site is preserved and is denoted by δ\_old in the illustration (and identical to δ from the 1st step).
+Here it is assumed that a construction site already exists, i.e., that at least one cell connected to the construction cell has the _block token_ flag set. The new cell is created between the construction cell and the cell representing the construction site. The angle to the construction site is preserved and denoted by δ\_old in the illustration (and identical to δ from the 1st step).
 
-![](../../.gitbook/assets/construction2.svg)
+![Creation of a new cell (dashed line) in the presence of a construction site](../../.gitbook/assets/construction2.svg)
+
+The situation with the angle between the two connections of the new cell is a bit more complicated. The actual spatial angle is 180 degree, but the reference angle is set to δ, which is the angle passed to the construction cell beforehand. The difference between the reference angle and the actual spatial angle results in forces on the cells that move them to the desired positions after a few time steps.
