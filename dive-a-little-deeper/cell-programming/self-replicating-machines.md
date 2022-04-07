@@ -60,3 +60,20 @@ There are a few special cases:
 
 ## Working principle of a construction cell
 
+A construction cell is, in a sense, the counterpart to a scanner cell. It can use the information provided by the scanner cell to build a replica of the scanned cell. It is, of course, also possible to provide completely new construction information through preceding computational cells. A construction process follows a 3 stage pattern, which we will discuss below.
+
+#### 1. Create a construction site
+
+In this case, we assume that we have not yet created a cell or, more precisely, none of the created cells is still connected to the construction cell. The goal is here to create a new adjacent cell which will be connected to the construction cell (if desired). This requires an angle specification and the internal state of the new cell. The exact spatial position then results as follows:
+
+* First of all, two successive cell connections of the construction cell are searched for, which have the largest angle to each other. The new cell is then created with the specified angle in this area (see illustration below).
+* The distance from the construction cell is a fixed value and cannot be adjusted.
+
+![Determination of the angle position for the cell to be created](../../.gitbook/assets/construction1.svg)
+
+In the above illustration, the blue construction cell is already connected to 3 other cells. The angles between the connections are labeled as α, β and γ, of which α is the largest. Therefore, the new cell is created in the neighborhood to the angle α. The angle δ is passed to the construction cell and thus defines the exact angle position.
+
+{% hint style="info" %}
+The above angle calculation refers to the reference angles and not to the actual spatial angles.
+{% endhint %}
+
