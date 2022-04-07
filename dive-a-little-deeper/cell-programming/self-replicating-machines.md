@@ -89,4 +89,6 @@ The situation with the angle between the two connections of the new cell is a bi
 
 The distance between the new cell and the cell of the construction site is denoted by `d` and handed over to the construction cell. Here, the actual spatial distance equals the reference distance.
 
-If there are other cells in the immediate vicinity of the newly created cell, they will be connected to each other. In this way, a more complex cell cluster can be reproduced. The reference angles and distances required for the further connections are calculated from the spatial conditions and cannot be handed over.
+If there are other cells in the immediate vicinity of the newly created cell, they will be connected to each other. In this way, a more complex cell cluster can be reproduced. The reference angles and distances required for the further connections are calculated from the spatial conditions and cannot be handed over. However, it is possible to project the reference angles to an integer multiple of, for example, 60 or 90 degrees in order to be able to control the angles of the additional connections.
+
+![Created cell can be connected to further cells](../../.gitbook/assets/construction3.svg)
