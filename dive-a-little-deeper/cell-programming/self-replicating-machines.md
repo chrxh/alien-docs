@@ -182,7 +182,7 @@ Line 1 checks whether the last construction process was successful. In this case
 * `CONSTR_OUT::ERROR_DIST`: The cell could not be created because there is not enough space at the required distance.
 
 {% hint style="info" %}
-It should be noted that the scanner cell stores the internal state of the scanned cell (specialization, memory, etc. ), angle and distance at the same position in the token memory where the constructor reads them out. Therefore we do not have to copy this information.
+It should be noted that the scanner cell stores the internal state of the scanned cell (specialization, memory, etc. ), angle and distance at the same location in the token memory where the constructor reads them out. Therefore we do not have to copy this information.
 {% endhint %}
 
 Our self-replicator is now ready! The finished example can also be found as a pattern under `./examples/patterns/replicators/Loop.sim`. To test the machine, please refer to the article on [Evolution experiments](../evolution-experiments.md).
