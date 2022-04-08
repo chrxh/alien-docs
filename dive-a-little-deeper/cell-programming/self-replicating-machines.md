@@ -159,7 +159,7 @@ For completeness, the different values for `CONSTR_IN_OPTION` are explained belo
 * `CONSTR_IN_OPTION::STANDARD`: Option for constructing a new cell without a token and without separation.
 * `CONSTR_IN_OPTION::CREATE_EMPTY_TOKEN`: Option for constructing a new cell with an empty token (memory is filled with zeros) and without separation.
 * `CONSTR_IN_OPTION::CREATE_DUP_TOKEN`: Option for constructing a new cell with a duplicated token (memory is copied from token on constructor cell) and without separation.
-* `CONSTR_IN_OPTION::FINISH_NO_SEP`: With this option, a new cell should be created and the site should be closed without separation. This is done by not setting the block token flag on the new cell.
+* `CONSTR_IN_OPTION::FINISH_NO_SEP`: With this option, a new cell should be created and the site should be closed without separation. This is done by unsetting the _block token_ flag on the new cell.
 * `CONSTR_IN_OPTION::FINISH_WITH_SEP`: Option for constructing a new cell without a token but with separation.
 * `CONSTR_IN_OPTION::FINISH_WITH_EMPTY_TOKEN_SEP`: Option for constructing a new cell with an empty token and with separation.
 * `CONSTR_IN_OPTION::FINISH_WITH_DUP_TOKEN_SEP`: Option for constructing a new cell with a duplicated token and with separation.
