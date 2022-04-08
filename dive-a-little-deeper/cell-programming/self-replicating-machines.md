@@ -85,7 +85,7 @@ Here, it is assumed that a construction site already exists, i.e., that at least
 
 ![Creation of a new cell (dashed line) in the presence of a construction site](../../.gitbook/assets/construction2.svg)
 
-The situation with the angle between the two connections of the new cell is a bit more complicated. The actual spatial angle is 180 degree, but the reference angle is set to `δ`, which is the angle passed to the construction cell beforehand. The difference between the reference angle and the actual spatial angle results in forces on the cells that move them to the desired positions after a few time steps.
+The situation with the angle between the two connections of the new cell is a bit more complicated. The actual spatial angle is 180 degree, but the reference angle is set to `δ`, which is the angle passed to the construction cell beforehand. The difference between the reference angle and the actual spatial angle results in forces on the cells that fold them to the desired positions after a few time steps.
 
 The distance between the new cell and the cell of the construction site is denoted by `d` and handed over to the construction cell. Here, the actual spatial distance equals the reference distance.
 
@@ -98,5 +98,7 @@ If there are other cells in the immediate vicinity of the newly created cell, th
 The second step is repeated until the construction site is completed except for the last cell. But during the creation of the last cell, the construction site needs to be separated from the construction cell and thus will form a new cell cluster. Consequently, the only difference to step 2 is that the created cell will not be connected to the construction cell and that the _block token_ flag remains disabled.
 
 ![Separation of the construction site from the construction cell](../../.gitbook/assets/construction4.svg)
+
+In all three steps optionally also a token can be generated on the new cell. The token memory can not be specified directly. But one has the choice between a new token with empty memory and one with a copy of the memory of the token that invokes the constructor cell.
 
 ## Implementation
