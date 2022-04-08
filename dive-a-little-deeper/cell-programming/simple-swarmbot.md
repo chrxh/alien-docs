@@ -94,9 +94,9 @@ Muscle cells can perform four different operations. The reference distance of th
 The graphic above illustrates the different operations. Here we have two connected cells (a computing cell on the left and a muscle cell on the right) and a token that jumps from the left to the right cell and thus triggers the muscle function.
 
 * The first operation refers to a pure contraction. Here, the reference distance of the cell connections is reduced by a fixed factor. This results in a force that brings the cells closer together.
-* In the second case, the reference distance is also reduced and at the same time the muscle cell is given a forward impulse.
+* In the second case, the reference distance is also reduced and at the same time the muscle cell is given a forward momentum.
 * The third operation describes a pure expansion. The distance between the connected cells is increased.
-* Analogous to the second case, the fourth operation leads to an increase in distance and, at the same time, to a backward impulse of the muscle cell.
+* Analogous to the second case, the fourth operation leads to an increase in distance and, at the same time, to a backward momentum of the muscle cell.
 
 The indication of which operation should be performed is specified in the token memory. To simplify programming, there are default symbols for the memory location and its values. These can be viewed in the symbol editor, which can be opened in the editor menu.
 
@@ -181,17 +181,17 @@ else
 * Line 4: It is checked whether the memory byte `i` is equal to `0`. This is the case if no muscle operations were performed in the last cycle.
 * Line 5: It is then checked whether the sensor has found some target.
 * Line 6: The angle of the target is returned as a signed byte. A value greater than 127 therefore represents a negative angle and means that the target is on the left side.
-* Line 7: The muscle cell on the right hand side is instructed to perform an expansion together with a backward impulse, which will cause the swarmbot to turn left.
+* Line 7: The muscle cell on the right hand side is instructed to perform an expansion together with a backward momentum, which will cause the swarmbot to turn left.
 * Line 8: The memory byte `i` is set to `1` to perform a contraction in the next cycle.
 * Line 12: It is checked if an expansion was instructed in the last cycle.
-* Line 13: In order for the cell connection to regain its original reference distance, a contraction without an additional impulse is now instructed.
+* Line 13: In order for the cell connection to regain its original reference distance, a contraction without an additional momentum is now instructed.
 * Line 14: The original state for the muscle is restored, which is `i = 0`.
 
 {% hint style="info" %}
 One can see in the code that an `endif` is missing. It can be omitted at the end of a program. This is even necessary here, because a cell program can only consist of a maximum of 15 commands.
 {% endhint %}
 
-The program of the computing cell on the left side is the counterpart to the one of the right side with the difference that here a forward impulse must be generated to initiate a clockwise rotation. This is due to the fact that the token reaches the muscle cell from below while in the right side it reaches the muscle cell from above (i.e. the frame of reference is rotated by 180°).
+The program of the computing cell on the left side is the counterpart to the one of the right side with the difference that here a forward momentum must be generated to initiate a clockwise rotation. This is due to the fact that the token reaches the muscle cell from below while in the right side it reaches the muscle cell from above (i.e. the frame of reference is rotated by 180°).
 
 ```
 mov BRANCH_NUMBER, 3

@@ -85,7 +85,7 @@ Here, it is assumed that a construction site already exists, i.e., that at least
 
 ![Creation of a new cell (dashed line) in the presence of a construction site](../../.gitbook/assets/construction2.svg)
 
-The situation with the angle between the two connections of the new cell is a bit more complicated. The actual spatial angle is 180 degree, but the reference angle is set to `δ`, which is the angle passed to the construction cell beforehand. The difference between the reference angle and the actual spatial angle results in forces on the cells that fold them to the desired positions after a few time steps.
+The situation with the angle between the two connections of the new cell is a bit more complicated. The actual spatial angle is 180°, but the reference angle is set to `δ`, which is the angle passed to the construction cell beforehand. The difference between the reference angle and the actual spatial angle results in forces on the cells that fold them to the desired positions after a few time steps.
 
 The distance between the new cell and the cell of the construction site is denoted by `d` and handed over to the construction cell. Here, the actual spatial distance equals the reference distance.
 
@@ -123,14 +123,35 @@ else
 endif
 ```
 
-* Line 1 - 8: `k` is a variable used to introduce additional delays in the construction process, because after a new cell is created, it needs some time to fold into the correct position. `k` is incremented to `35` and then reset. During the increment we force the token not to jump to the next cell but to the previous cell by setting the `BRANCH_NUMBER` appropriately. Only when `k` is equal to `35` we let the token jump to the successor cell in the ring and specify in `SCANNER_INOUT_CELL_NUMBER` the cell number we want to scan and replicate next. The variable `i` simply serves here as a pointer to the current cell we want to replicate.
-* Line 9 - 15: Here is a simple muscle controller that leads to periodic expansion and contraction and generates an impulse. We have already seen such programming for the swarmbot.
+* Line 1 - 8: `k` is a variable used to introduce additional delays in the construction process, because after a new cell is created, it needs some time to fold into the correct position. `k` is incremented to `35` and then reset. During the increment we force the token not to jump to the next cell but to the previous cell by setting the `BRANCH_NUMBER` appropriately. The previous cell is a digestion cell and provides our replicator with energy. Only when `k` is equal to `35` we let the token jump to the successor cell in the ring and specify in `SCANNER_INOUT_CELL_NUMBER` the cell number we want to scan and replicate next. The variable `i` simply serves here as a pointer to the current cell we want to replicate.
+* Line 9 - 15: Here is a simple muscle controller that leads to periodic expansion and contraction and generates an impulse. We have already seen such programming in the swarmbot example.
+
+Of particular interest to us is the programming of the lower left computational cell:
+
+```
+if i = 0
+  mov CONSTR_IN_OPTION, CONSTR_IN_OPTION::STANDARD
+  mov CONSTR_INOUT_ANGLE, 0xD0
+endif
+if SCANNER_OUT = 1
+  mov CONSTR_IN_OPTION, CONSTR_IN_OPTION::FINISH_WITH_DUP_TOKEN_SEP
+  mov i, -1
+endif
+mov CONSTR_IN_CELL_MAX_CONNECTIONS, CONSTR_IN_CELL_MAX_CONNECTIONS::AUTO
+mov CONSTR_IN_DIST, 0x78
+mov CONSTR_IN_UNIFORM_DIST, CONSTR_IN_UNIFORM_DIST::YES
+if j = 1
+  mov MUSCLE_IN, MUSCLE_IN::CONTRACT
+else
+  mov MUSCLE_IN, MUSCLE_IN::EXPAND_RELAX
+
+```
+
+* Line 1 - 4: If we start the construction process, i.e., if `i` is `0`, we set the construction type here with CONSTR\_IN\_OPTION::STANDARD (we will discuss the alternatives below) and the initial angle of our construction site. The angles are always specified with respect to the direction of the token movement. The value `0xD0` corresponds to approx. `-67.5` degrees.
 
 
 
-
-
-
+Finally, we inspect our computing cell on the top:
 
 ```
 if CONSTR_OUT=CONSTR_OUT::SUCCESS
