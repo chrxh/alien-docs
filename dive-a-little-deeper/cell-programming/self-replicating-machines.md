@@ -148,13 +148,21 @@ else
 ```
 
 * Line 1 - 4: If we start the construction process, i.e., if `i` is `0`, we set the construction option here with `CONSTR_IN_OPTION::STANDARD` (we will discuss the alternatives below) and the initial angle of our construction site. The angles are always specified with respect to the direction of the token movement. The value `0xD0` corresponds to approx. `-67.5` degrees.
-* Line 5 - 8:  We check if we have already scanned the last cell (alternatively, we could also check that `i` equals `8`). If this is the case, we instruct the constructor to detach the cluster after creating the new cell and create a token on it.
+* Line 5 - 8:  We check if we have already scanned the last cell (alternatively, we could also check that `i` equals `8`). If this is the case, we instruct the constructor to detach the cluster after creating the new cell and create a token on it. Furthermore, our counter `i` is reset to `-1` because the last cell still needs to be constructed.
 * Line 9: In this line, `CONSTR_IN::CONSTRUCT` will later inform the constructor that we want to create a new cell. The only alternative value is `CONSTR_IN::DO_NOTHING`.
 * Line 10: We instruct the constructor to automatically adjust the maximum number of cell connections to the cells. This always ensures that the construction process does not fail because the cells can no longer form new connections.
 * Line 11: We set a uniform cell distance for all new cell connections.&#x20;
 * Line 12 - 15: This is where the control for the second muscle is located and also causes periodic contraction and expansion while producing an impulse.
 
+For completeness, the different values for `CONSTR_IN_OPTION` are explained below:
 
+* `CONSTR_IN_OPTION::STANDARD`: Option for constructing a new cell without a token and without separation.
+* `CONSTR_IN_OPTION::CREATE_EMPTY_TOKEN`: Option for constructing a new cell with an empty token (memory is filled with zeros) and without separation.
+* `CONSTR_IN_OPTION::CREATE_DUP_TOKEN`: Option for constructing a new cell with a duplicated token (memory is copied from token on constructor cell) and without separation.
+* `CONSTR_IN_OPTION::FINISH_NO_SEP`: With this option, a new cell should be created and the site should be closed without separation. This is done by not setting the block token flag on the new cell.
+* `CONSTR_IN_OPTION::FINISH_WITH_SEP`: Option for constructing a new cell without a token but with separation.
+* `CONSTR_IN_OPTION::FINISH_WITH_EMPTY_TOKEN_SEP`: Option for constructing a new cell with an empty token and with separation.
+* `CONSTR_IN_OPTION::FINISH_WITH_DUP_TOKEN_SEP`: Option for constructing a new cell with a duplicated token and with separation.
 
 Finally, we inspect our computing cell on the top:
 
@@ -173,5 +181,5 @@ Line 1 checks whether the last construction process was successful. In this case
 * `CONSTR_OUT::ERROR_LOCK`: Another token blocks the construction process.
 * `CONSTR_OUT::ERROR_DIST`: The cell could not be created because there is not enough space at the required distance.
 
-
+Scanner speichert internen Zustand an der selben Stelle wo Construktor ihn ausliest => müssen nichts machen
 
