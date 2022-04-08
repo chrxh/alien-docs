@@ -124,7 +124,7 @@ endif
 ```
 
 * Line 1 - 8: `k` is a variable used to introduce additional delays in the construction process, because after a new cell is created, it needs some time to fold into the correct position. `k` is incremented to `35` and then reset. During the increment we force the token not to jump to the next cell but to the previous cell by setting the `BRANCH_NUMBER` appropriately. The previous cell is a digestion cell and provides our replicator with energy. Only when `k` is equal to `35` we let the token jump to the successor cell in the ring and specify in `SCANNER_INOUT_CELL_NUMBER` the cell number we want to scan and replicate next. The variable `i` simply serves here as a pointer to the current cell we want to replicate.
-* Line 9 - 15: Here is a simple muscle controller that leads to periodic expansion and contraction and generates an impulse. We have already seen such programming in the swarmbot example.
+* Line 9 - 15: Here one finds a simple muscle controller with a counter variable `j` that leads to periodic expansion and contraction and generates an impulse. We have already seen such programming in the swarmbot example.
 
 Of particular interest to us is the programming of the lower left computational cell:
 
@@ -133,12 +133,12 @@ if i = 0
   mov CONSTR_IN_OPTION, CONSTR_IN_OPTION::STANDARD
   mov CONSTR_INOUT_ANGLE, 0xD0
 endif
-if SCANNER_OUT = 1
+if SCANNER_OUT = SCANNER_OUT::FINISHED
   mov CONSTR_IN_OPTION, CONSTR_IN_OPTION::FINISH_WITH_DUP_TOKEN_SEP
   mov i, -1
 endif
+mov CONSTR_IN, CONSTR_IN::CONSTRUCT
 mov CONSTR_IN_CELL_MAX_CONNECTIONS, CONSTR_IN_CELL_MAX_CONNECTIONS::AUTO
-mov CONSTR_IN_DIST, 0x78
 mov CONSTR_IN_UNIFORM_DIST, CONSTR_IN_UNIFORM_DIST::YES
 if j = 1
   mov MUSCLE_IN, MUSCLE_IN::CONTRACT
@@ -147,7 +147,12 @@ else
 
 ```
 
-* Line 1 - 4: If we start the construction process, i.e., if `i` is `0`, we set the construction type here with CONSTR\_IN\_OPTION::STANDARD (we will discuss the alternatives below) and the initial angle of our construction site. The angles are always specified with respect to the direction of the token movement. The value `0xD0` corresponds to approx. `-67.5` degrees.
+* Line 1 - 4: If we start the construction process, i.e., if `i` is `0`, we set the construction option here with `CONSTR_IN_OPTION::STANDARD` (we will discuss the alternatives below) and the initial angle of our construction site. The angles are always specified with respect to the direction of the token movement. The value `0xD0` corresponds to approx. `-67.5` degrees.
+* Line 5 - 8:  We check if we have already scanned the last cell (alternatively, we could also check that `i` equals `8`). If this is the case, we instruct the constructor to detach the cluster after creating the new cell and create a token on it.
+* Line 9: In this line, `CONSTR_IN::CONSTRUCT` will later inform the constructor that we want to create a new cell. The only alternative value is `CONSTR_IN::DO_NOTHING`.
+* Line 10: We instruct the constructor to automatically adjust the maximum number of cell connections to the cells. This always ensures that the construction process does not fail because the cells can no longer form new connections.
+* Line 11: We set a uniform cell distance for all new cell connections.&#x20;
+* Line 12 - 15: This is where the control for the second muscle is located and also causes periodic contraction and expansion while producing an impulse.
 
 
 
