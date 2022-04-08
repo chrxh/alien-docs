@@ -102,3 +102,23 @@ The second step is repeated until the construction site is completed except for 
 In all three steps optionally also a token can be generated on the new cell. The token memory can not be specified directly. But one has the choice between a new token with empty memory and one with a copy of the memory of the token that invokes the constructor cell.
 
 ## Implementation
+
+We will examine the control of the scanner and constructor cells using our example of the self-replicating machine from the beginning. Let us start with the computing cell at the top. It contains the following cell code:
+
+```
+if CONSTR_OUT=CONSTR_OUT::SUCCESS
+  add i, 1
+endif
+mov BRANCH_NUMBER, 0
+```
+
+The variable `i` serves here as a pointer to the current cell we want to replicate. Line 1 checks whether the last construction process was successful. In this case, `i` is incremented by one and thus points to the next cell. In general, `CONSTR_OUT` can take the following values:
+
+* `CONSTR_OUT::SUCCESS`: A new cell has been created.
+* `CONSTR_OUT::ERROR_NO_ENERGY`: The token that calls the constructor cell does not provide enough energy to create a cell (optionally with token).
+* `CONSTR_OUT::ERROR_CONNECTION`: No cell could be created because either the constructor or the new cell would not allow additional connections.
+* `CONSTR_OUT::ERROR_LOCK`: Another token blocks the construction process.
+* `CONSTR_OUT::ERROR_DIST`: The cell could not be created because there is not enough space at the required distance.
+
+
+
