@@ -103,7 +103,34 @@ In all three steps optionally also a token can be generated on the new cell. The
 
 ## Implementation
 
-We will examine the control of the scanner and constructor cells using our example of the self-replicating machine from the beginning. Let us start with the computing cell at the top. It contains the following cell code:
+We will examine the control of the scanner and constructor cells using our example of the self-replicating machine from the beginning. Let us start with the computing cell at the bottom right. It contains the following cell code:
+
+```
+add k, 1
+if k = 35
+  mov k, 0
+  mov SCANNER_INOUT_CELL_NUMBER, i
+  mov BRANCH_NUMBER, 4
+else
+  mov BRANCH_NUMBER, 1
+endif
+add j, 1
+if j = 1
+  mov MUSCLE_IN, MUSCLE_IN::EXPAND
+else
+  mov MUSCLE_IN, MUSCLE_IN::CONTRACT_RELAX
+  mov j, 0
+endif
+```
+
+* Line 1 - 8: `k` is a variable used to introduce additional delays in the construction process, because after a new cell is created, it needs some time to fold into the correct position. `k` is incremented to `35` and then reset. During the increment we force the token not to jump to the next cell but to the previous cell by setting the `BRANCH_NUMBER` appropriately. Only when `k` is equal to `35` we let the token jump to the successor cell in the ring and specify in `SCANNER_INOUT_CELL_NUMBER` the cell number we want to scan and replicate next. The variable `i` simply serves here as a pointer to the current cell we want to replicate.
+* Line 9 - 15: Here is a simple muscle controller that leads to periodic expansion and contraction and generates an impulse. We have already seen such programming for the swarmbot.
+
+
+
+
+
+
 
 ```
 if CONSTR_OUT=CONSTR_OUT::SUCCESS
@@ -112,7 +139,7 @@ endif
 mov BRANCH_NUMBER, 0
 ```
 
-The variable `i` serves here as a pointer to the current cell we want to replicate. Line 1 checks whether the last construction process was successful. In this case, `i` is incremented by one and thus points to the next cell. In general, `CONSTR_OUT` can take the following values:
+Line 1 checks whether the last construction process was successful. In this case, `i` is incremented by one and thus points to the next cell. In general, `CONSTR_OUT` can take the following values:
 
 * `CONSTR_OUT::SUCCESS`: A new cell has been created.
 * `CONSTR_OUT::ERROR_NO_ENERGY`: The token that calls the constructor cell does not provide enough energy to create a cell (optionally with token).
