@@ -173,7 +173,7 @@ endif
 mov BRANCH_NUMBER, 0
 ```
 
-Line 1 checks whether the last construction process was successful. In this case, `i` is incremented by one and thus points to the next cell. In general, `CONSTR_OUT` can take the following values:
+Line 1 checks whether the last construction process was successful. In this case, `i` is incremented by one in line 2 and thus points to the next cell. In general, `CONSTR_OUT` can take the following values:
 
 * `CONSTR_OUT::SUCCESS`: A new cell has been created.
 * `CONSTR_OUT::ERROR_NO_ENERGY`: The token that calls the constructor cell does not provide enough energy to create a cell (optionally with token).
@@ -181,5 +181,8 @@ Line 1 checks whether the last construction process was successful. In this case
 * `CONSTR_OUT::ERROR_LOCK`: Another token blocks the construction process.
 * `CONSTR_OUT::ERROR_DIST`: The cell could not be created because there is not enough space at the required distance.
 
-Scanner speichert internen Zustand an der selben Stelle wo Construktor ihn ausliest => müssen nichts machen
+{% hint style="info" %}
+It should be noted that the scanner cell stores the internal state of the scanned cell (specialization, memory, etc. ), angle and distance at the same position in the token memory where the constructor reads them out. Therefore we do not have to copy this information.
+{% endhint %}
 
+Finally, our self-replicator is ready! The finished example can also be found as a pattern under `./examples/patterns/replicators/Loop.sim`. To test the machine, please refer to the article on [Evolution experiments](../evolution-experiments.md).
