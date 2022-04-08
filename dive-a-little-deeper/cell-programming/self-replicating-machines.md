@@ -185,4 +185,4 @@ Line 1 checks whether the last construction process was successful. In this case
 It should be noted that the scanner cell stores the internal state of the scanned cell (specialization, memory, etc. ), angle and distance at the same position in the token memory where the constructor reads them out. Therefore we do not have to copy this information.
 {% endhint %}
 
-Finally, our self-replicator is ready! The finished example can also be found as a pattern under `./examples/patterns/replicators/Loop.sim`. To test the machine, please refer to the article on [Evolution experiments](../evolution-experiments.md).
+Our self-replicator is now ready! The finished example can also be found as a pattern under `./examples/patterns/replicators/Loop.sim`. To test the machine, please refer to the article on [Evolution experiments](../evolution-experiments.md).
