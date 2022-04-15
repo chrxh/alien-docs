@@ -74,7 +74,7 @@ The parameters are explored in more detail in the article for [Attack functions]
 ![Statistics window shows the number of cells broken down by color](../.gitbook/assets/statistics.PNG)
 
 {% hint style="warning" %}
-Small populations can sometimes fail to survive the pressure to adapt. In order to prevent this as far as possible, the world including the population can be enlarged using the scaling function.
+Small populations can sometimes fail to survive the pressure to adapt. In order to prevent this as far as possible, the world including the population can be enlarged using the [Scaling function](../getting-started/scaling-functions.md).
 {% endhint %}
 
 ## Inhomogeneous simulation parameters
