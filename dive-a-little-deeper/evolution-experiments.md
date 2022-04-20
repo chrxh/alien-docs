@@ -2,7 +2,7 @@
 
 #### Abstract
 
-We will perform evolutionary simulations by injecting self-replicating machines into pristine worlds. Mutations will lead to gradual optimizations of the individuals. In this context, we want discuss the influence of crucial simulation parameters on cell functions. ALIEN offers several features for changing simulation parameters, which we will also make use of. We will then address how larger self-replicating machines can be made functioning.
+We will perform evolutionary simulations by injecting self-replicating machines into pristine worlds. Mutations will lead to gradual optimizations of the individuals. In this context, we want discuss the influence of crucial simulation parameters on cell functions. ALIEN offers several features for changing simulation parameters, which we will also make use of. We will also address how larger self-replicating machines can be made functioning and barriers can be used.
 
 ## Simple simulation setup for small self-replicators
 
@@ -87,7 +87,7 @@ Another possibility to model external influences and regular disturbances is to 
 
 ## Separating populations with barriers
 
-From ALIEN version 3.1 it is possible to set up barriers. These are realized by special cells that are indestructible and immovable. This allows us to partly or completely separate ecosystems. In combination with spatially different simulation parameters, interesting evolution simulations can be performed. We can divide our experiment into three phases:
+Since ALIEN version 3.1 it is possible to set up barriers. These are realized by special cells that are indestructible and immovable. This allows us to partly or completely separate ecosystems. In combination with spatially different simulation parameters, interesting evolution simulations can be performed. We can divide our experiment into three phases:
 
 #### 1. Initial Phase
 
@@ -99,12 +99,12 @@ We now start the simulation and let the replicators multiply undisturbed.
 
 #### 2. Diverge simulation parameters
 
-Once the world has filled up with self-replicators, we can start varying the simulation parameters in each chamber. This should happen slowly and in many steps so that the population has time to adapt through mutations. A few possibilities for consideration:
+Once the world has filled up with self-replicators, we can start varying the simulation parameters in each chamber. This should happen slowly and in many steps so that the population has time to adapt through mutations. A few suggestions for consideration:
 
 * A high friction factor creates an evolutionary pressure to develop stronger movements.
 * A high energy cost on digestion favors individuals that are more sparing with attacks.
 * A high value for _Target mismatch penalty_ prefers individuals that pick out food with certain color.
-* A low value for _Binding max energy_ destroys individuals who consume too much energy.
+* A low value for _Binding max energy_ destroys individuals that consume too much energy.
 
 {% hint style="info" %}
 The conditions should diverge such that individuals can survive in the long term only in their own chamber.
