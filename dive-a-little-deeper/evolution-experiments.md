@@ -87,11 +87,11 @@ Another possibility to model external influences and regular disturbances is to 
 
 ## Separating populations with barriers
 
-Since ALIEN version 3.1 it is possible to set up barriers. These are realized by special cells that are indestructible and immovable. This allows us to partly or completely separate ecosystems. In combination with spatially different simulation parameters, interesting evolution simulations can be performed. We can divide our experiment into three phases:
+Since ALIEN version 3.1 it is possible to set up barriers. These are realized by special cells that are indestructible and immovable. They allow us to partly or completely separate populations. In combination with spatially different simulation parameters, interesting evolution simulations can be performed. We can divide our experiment into three phases:
 
 #### 1. Initial Phase
 
-We hereby create a world with different (e.g. rectangular) areas surrounded by barriers. Barriers can be created in the _Creator_ window by activating the _Barrier_ checkbox. In the individual chambers we can then set simulation parameter spots with identical values (for now). We also place self-replicators and nutrients in each chambers. If one likes to cheat, it is possible to load the simulation `./examples/simulations/evolution/Multiverse.sim` with these setting. Much more interesting designs with labyrinth structures are also conceivable.
+We hereby create a world containing different (e.g. rectangular) areas surrounded by barriers. Barriers can be created in the _Creator_ window by activating the _Barrier_ checkbox. In the individual chambers we can then set simulation parameter spots with identical values (for now). We then place self-replicators and nutrients in each chambers. If one likes to cheat, it is possible to load the simulation `./examples/simulations/evolution/Multiverse.sim` where everything is already prepared. Much more interesting designs with labyrinth structures are also conceivable.
 
 ![Initial setup for a evolution simulation with barriers](../.gitbook/assets/Multiverse.png)
 
@@ -107,11 +107,11 @@ Once the world has filled up with self-replicators, we can start varying the sim
 * A low value for _Binding max energy_ destroys individuals that consume too much energy.
 
 {% hint style="info" %}
-The conditions should diverge such that individuals can survive in the long term only in their own chamber.
+The conditions should diverge in the sense that individuals can only survive in their own chamber in the long term.
 {% endhint %}
 
 #### 3. Enable material exchange
 
-Finally, we can install the small openings between the individual chambers, so that some material exchange is possible. The populations can now make contact. The fact that each population is best adapted to its own chambers reduces the risk that it will wipe out the others.
+Finally, we can install small openings between the individual chambers, so that some material exchange is possible. The populations can now interact. The fact that each population is best adapted to its own chambers reduces the risk that it will wipe out the others.
 
 ![Small holes in the barriers](<../.gitbook/assets/Multiverse evolved.png>)
