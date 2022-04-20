@@ -18,7 +18,7 @@
 ## Dive a little deeper
 
 * [Particle editing](dive-a-little-deeper/particle-editing.md)
-* [Evolution experiments](dive-a-little-deeper/evolution-experiments.md)
+* [Evolution simulations](dive-a-little-deeper/evolution-simulations.md)
 * [Cell programming](dive-a-little-deeper/cell-programming/README.md)
   * [Simple swarmbot](dive-a-little-deeper/cell-programming/simple-swarmbot.md)
   * [Attack functions](dive-a-little-deeper/cell-programming/attack-functions.md)

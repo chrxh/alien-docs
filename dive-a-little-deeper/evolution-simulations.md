@@ -1,4 +1,4 @@
-# Evolution experiments
+# Evolution simulations
 
 #### Abstract
 
@@ -99,3 +99,15 @@ We now start the simulation and let the replicators multiply undisturbed.
 
 #### 2. Diverge simulation parameters
 
+Once the world has filled up with self-replicators, we can start varying the simulation parameters in each chamber. This should happen slowly and in many steps so that the population has time to adapt through mutations. A few possibilities for consideration:
+
+* A high friction factor creates an evolutionary pressure to develop stronger movements.
+* A high energy cost on digestion favors individuals that are more sparing with attacks.
+* A high value for _Target mismatch penalty_ prefers individuals that pick out food with certain color.
+* A low value for _Binding max energy_ destroys individuals who consume too much energy.
+
+{% hint style="info" %}
+The conditions should diverge such that individuals can survive in the long term only in their own chamber.
+{% endhint %}
+
+3\.&#x20;
