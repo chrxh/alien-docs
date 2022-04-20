@@ -110,4 +110,8 @@ Once the world has filled up with self-replicators, we can start varying the sim
 The conditions should diverge such that individuals can survive in the long term only in their own chamber.
 {% endhint %}
 
-3\.&#x20;
+#### 3. Enable material exchange
+
+Finally, we can install the small openings between the individual chambers, so that some material exchange is possible. The populations can now make contact. The fact that each population is best adapted to its own chambers reduces the risk that it will wipe out the others.
+
+![](<../.gitbook/assets/Multiverse evolved.png>)
