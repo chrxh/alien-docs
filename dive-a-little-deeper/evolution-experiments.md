@@ -84,3 +84,18 @@ An interesting way to construct more dynamic worlds is to specify regions with d
 ![Two nearly distinct ecosystems separated by layers of high friction](<../.gitbook/assets/inhomogeneous parameters.png>)
 
 Another possibility to model external influences and regular disturbances is to let the parameters change automatically in time. This functionality can also be enabled in the simulation parameters window with the toggle _Change automatically_. The parameters are then not only periodically varied, but the population size based on the number of tokens is continuously monitored and the parameters are restored if necessary.
+
+## Separating populations with barriers
+
+From ALIEN version 3.1 it is possible to set up barriers. These are realized by special cells that are indestructible and immovable. This allows us to partly or completely separate ecosystems. In combination with spatially different simulation parameters, interesting evolution simulations can be performed. We can divide our experiment into three phases:
+
+#### 1. Initial Phase
+
+We hereby create a world with different (e.g. rectangular) areas surrounded by barriers. Barriers can be created in the _Creator_ window by activating the _Barrier_ checkbox. In the individual chambers we can then set simulation parameter spots with identical values (for now). We also place self-replicators and nutrients in each chambers. If one likes to cheat, it is possible to load the simulation `./examples/simulations/evolution/Multiverse.sim` with these setting. Much more interesting designs with labyrinth structures are also conceivable.
+
+![Initial setup for a evolution simulation with barriers](../.gitbook/assets/Multiverse.png)
+
+We now start the simulation and let the replicators multiply undisturbed.
+
+#### 2. Diverge simulation parameters
+
