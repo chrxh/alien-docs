@@ -26,4 +26,4 @@
 
 ## Under the hood
 
-* [Architecture](under-the-hood/page-3.md)
+* [Architecture](under-the-hood/architecture.md)
