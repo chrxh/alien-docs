@@ -42,6 +42,14 @@ Below is an example for a perfect match (i.e., α + _β_ = 360°). In this case,
 
 ![Perfect match with no geometry penalty](<../../.gitbook/assets/geometry match.svg>)
 
+#### Connection mismatch penalty
+
+The idea behind this parameter is that it should be more difficult to decompose a cell with many cell connections than one with fewer ones. More specifically, the number of connections of the attacking cell is compared to that of the attacked cell. If this parameter is greater than 0 and the attacked cell has more connections than the attacking cell, less energy is obtained in the digestion process. With a large value of this parameter, cell can better protect itself from attacks provided they have more connections. With a value of 1, a cell can no longer be digested if the attacking cell has fewer connections.
+
+#### Token penalty
+
+A positive value causes a cell to be harder to digest (= less energy can be obtained through the digestion process) if it has tokens. With a value of 1, a cell can no longer be digested if there are tokens on it.
+
 ## Implementation
 
 We do not have to change too much in the programming of our swarmbot. First of all, we move the code to control the sensor down into the computing cell. Secondly, we select _Digestion_ as the specialization in the upper left cell. The result should look something like this.
