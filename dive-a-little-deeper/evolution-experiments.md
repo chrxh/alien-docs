@@ -26,7 +26,7 @@ In our first experiment we use almost the default settings for the simulation pa
 * _Cell mutation rate_: 0.0000016
 * _Token mutation rate_: 0.0005
 
-The cell mutation rate indicates the probability with which a byte of the cell memory or other properties (e.g. specialization, color, etc.) are randomly changed per time step. The analog setting is also available for the tokens.
+The cell mutation rate indicates the probability with which a byte of the cell memory including instructions or other properties (e.g. specialization, color, etc.) are randomly changed per time step. The analog setting is also available for the tokens.
 
 If we now run the simulation for a few minutes, our world already does not look that idyllic anymore. The replicators have then eaten up most of the free resources and are now increasingly competing with each others.
 
