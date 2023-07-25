@@ -49,8 +49,8 @@ A computing cell has two memories: One memory in which instructions are encoded 
 
 In C syntax, for example, the statement at line 1 would read as `op1 = op2;` and at line 2 `op1 += op2;`. `op1` should point to a particular byte in memory, while `op2` can be a memory byte or a constant (8 bits size). There are several ways to reference a memory byte for `op1` or `op2`:
 
-* Direct reference to a token memory byte: In this case a byte in the token memory is referenced via an 8 bit address. The address can be specified as decimal or hexadecimal value. Syntax (example): ** `[32]` or `[0x20]`**
-* Direct reference to a cell memory byte: A memory byte of the cell can also be referenced. Syntax (example): ** `(0)`**
+* Direct reference to a token memory byte: In this case a byte in the token memory is referenced via an 8 bit address. The address can be specified as decimal or hexadecimal value. Syntax (example): **`[32]` or `[0x20]`**
+* Direct reference to a cell memory byte: A memory byte of the cell can also be referenced. Syntax (example): **`(0)`**
 * Indirect reference to a token memory byte: It is also possible to obtain the address itself from memory when referencing a token memory byte. Syntax (example): **`[[32]]` or `[[0x20]]`** In this case the actual address is obtained from `[0x20]` and then used to reference the corresponding memory byte.
 
 To make writing code easier, there is a symbol table where one can specify aliases for constants and references to memory bytes. For instance, a code like
@@ -102,7 +102,7 @@ The indication of which operation should be performed is specified in the token 
 
 ![Symbol editor](../../.gitbook/assets/symbols.PNG)
 
-The symbol `MUSCLE_IN` __ denotes the memory byte in the token where the muscle cell reads the operation to be performed. It is an alias for the memory byte at position 36, which can also be written as \[36] in the code. The different operations, on the other hand, are encoded via the symbols `MUSCLE_IN::CONTRACT_RELAX`, `MUSCLE_IN::CONTRACT`, `MUSCLE_IN::EXPAND_RELAX`, `MUSCLE_IN::EXPAND` in the above order. These simply refer to constant values.
+The symbol `MUSCLE_IN` denotes the memory byte in the token where the muscle cell reads the operation to be performed. It is an alias for the memory byte at position 36, which can also be written as \[36] in the code. The different operations, on the other hand, are encoded via the symbols `MUSCLE_IN::CONTRACT_RELAX`, `MUSCLE_IN::CONTRACT`, `MUSCLE_IN::EXPAND_RELAX`, `MUSCLE_IN::EXPAND` in the above order. These simply refer to constant values.
 
 For example, if we want the muscle cell to perform a contraction, we must set the appropriate value in the token memory beforehand. The following command in a preceding computing cell we do this:
 

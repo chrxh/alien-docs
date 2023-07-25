@@ -1,4 +1,7 @@
 ---
+description: >-
+  This documentation is out of date and does not describe the behavior of the
+  current version.
 cover: .gitbook/assets/version3.png
 coverY: 0
 ---
