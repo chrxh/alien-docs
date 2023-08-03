@@ -1,3 +1,9 @@
+---
+description: >-
+  Warning: This documentation is out of date and does not describe the behavior
+  of the current version 4.0.
+---
+
 # Simulation model
 
 The implemented particle engine combines two different concepts for the simulation of matter and its dynamics, which can be regarded as two distinct layers.

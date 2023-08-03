@@ -1,4 +1,10 @@
-# Basic Notion
+---
+description: >-
+  Warning: This documentation is out of date and does not describe the behavior
+  of the current version 4.0.
+---
+
+# Basic notion
 
 Generally, in an ALIEN simulation, all bodies as well as thermal radiation are modeled by different types of particles. The following terms are frequently used in this documentation.
 

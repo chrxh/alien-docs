@@ -1,7 +1,7 @@
 ---
 description: >-
-  This documentation is out of date and does not describe the behavior of the
-  current version.
+  Warning: This documentation is out of date and does not describe the behavior
+  of the current version 4.0.
 cover: .gitbook/assets/version3.png
 coverY: 0
 ---
