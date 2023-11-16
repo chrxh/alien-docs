@@ -1,7 +1,8 @@
 ---
 description: >-
   Warning: This documentation is out of date and does not describe the behavior
-  of the current version 4.0.
+  of the latest major version 4, which implements a new model. An up-to-date
+  documentation can be found in the program help.
 cover: .gitbook/assets/version3.png
 coverY: 0
 ---
