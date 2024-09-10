@@ -27,3 +27,7 @@
 ## Under the hood
 
 * [Architecture](under-the-hood/architecture.md)
+
+***
+
+* [Test](test.md)
